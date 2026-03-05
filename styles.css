@@ -397,6 +397,75 @@ h1 {
   aspect-ratio: 16 / 10;
 }
 
+.envguard-page {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.product-hero {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+.product-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.92fr);
+  gap: clamp(1.1rem, 2.5vw, 2rem);
+  padding: clamp(1.1rem, 2.4vw, 1.9rem);
+}
+
+.product-hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+
+.product-hero-copy p:not(.eyebrow):not(.lead) {
+  margin: 0.95rem 0 0;
+  color: var(--paragraph);
+  max-width: 62ch;
+}
+
+.product-pills,
+.compare-points {
+  list-style: none;
+  padding: 0;
+  margin: 1.35rem 0 0;
+}
+
+.product-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.product-pills li {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.42rem 0.75rem;
+  background: rgba(13, 22, 28, 0.7);
+  color: var(--tag);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.envguard-hero-shot {
+  margin: 0;
+  min-height: clamp(280px, 42vw, 520px);
+  align-self: stretch;
+}
+
+.envguard-hero-shot img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .card-tag {
   margin: 0 0 0.2rem;
   font-size: 0.76rem;
@@ -580,6 +649,10 @@ h2 {
     width: min(1120px, 92vw);
   }
 
+  .product-hero {
+    grid-template-columns: 1fr;
+  }
+
 }
 
 @media (max-width: 640px) {
@@ -602,5 +675,9 @@ h2 {
 
   .envguard-single-shot {
     width: 100%;
+  }
+
+  .product-hero {
+    padding: 1rem;
   }
 }
