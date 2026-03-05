@@ -125,7 +125,7 @@ main {
 .hero-with-profile {
   display: grid;
   grid-template-columns: minmax(0, 1fr) clamp(220px, 28vw, 320px);
-  align-items: center;
+  align-items: start;
   gap: clamp(1.15rem, 3vw, 2.3rem);
   padding: clamp(1rem, 2vw, 1.5rem);
   background: linear-gradient(145deg, rgba(18, 29, 37, 0.74), rgba(15, 24, 30, 0.6));
@@ -147,6 +147,8 @@ main {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  align-self: start;
+  justify-self: end;
   gap: 0.75rem;
 }
 
@@ -158,8 +160,9 @@ main {
   border-radius: 20px;
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
-  justify-self: end;
-  align-self: start;
+  align-self: flex-end;
+  margin-left: auto;
+  display: block;
 }
 
 .eyebrow {
@@ -191,7 +194,7 @@ h1 {
 }
 
 .hero-stack {
-  margin: 0;
+  margin: clamp(2.9rem, 5.3vw, 4.6rem) 0 0;
   padding: 0;
   list-style: none;
   display: flex;
@@ -559,7 +562,8 @@ h2 {
   }
 
   .hero-aside {
-    align-items: flex-start;
+    align-items: flex-end;
+    justify-self: stretch;
   }
 
   .profile-image {
@@ -567,7 +571,8 @@ h2 {
   }
 
   .hero-stack {
-    justify-content: flex-start;
+    justify-content: flex-end;
+    margin-top: 0.9rem;
   }
 
   .site-footer {
