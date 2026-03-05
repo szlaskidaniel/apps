@@ -251,6 +251,110 @@ h1 {
   display: block;
 }
 
+.product-carousel {
+  margin: 1.35rem 0 1.1rem;
+  width: min(620px, 100%);
+}
+
+.carousel-shell {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 0.7rem;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+  padding: 0.45rem;
+  box-shadow: var(--shadow);
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+}
+
+.carousel-slide {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 0;
+  background: #0f1613;
+  flex: 0 0 clamp(220px, 40vw, 300px);
+  scroll-snap-align: center;
+  cursor: zoom-in;
+}
+
+.carousel-slide img {
+  width: 100%;
+  display: block;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.carousel-nav {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 999px;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.carousel-nav:hover,
+.carousel-nav:focus-visible {
+  border-color: var(--surface-hover-line);
+}
+
+.carousel-hint {
+  margin: 0.6rem 0 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.lightbox {
+  border: none;
+  padding: 0;
+  background: transparent;
+}
+
+.lightbox::backdrop {
+  background: rgba(4, 8, 7, 0.82);
+}
+
+.lightbox-content {
+  position: relative;
+  width: min(92vw, 980px);
+}
+
+.lightbox-content img {
+  width: 100%;
+  max-height: 84vh;
+  object-fit: contain;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #0a0f0d;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  border: 1px solid var(--line);
+  background: rgba(8, 13, 11, 0.8);
+  color: var(--text);
+  border-radius: 999px;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.15rem;
+  cursor: pointer;
+}
+
 .card-tag {
   margin: 0 0 0.2rem;
   font-size: 0.76rem;
@@ -386,5 +490,13 @@ h2 {
 @media (max-width: 640px) {
   .cards {
     grid-template-columns: 1fr;
+  }
+
+  .product-carousel {
+    width: 100%;
+  }
+
+  .carousel-slide {
+    flex-basis: 82vw;
   }
 }
