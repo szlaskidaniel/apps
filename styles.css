@@ -137,6 +137,10 @@ main {
 
 .hero-copy {
   min-width: 0;
+  max-width: 68ch;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
 }
 
 .profile-image {
@@ -152,6 +156,7 @@ main {
 }
 
 .eyebrow {
+  margin: 0;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 0.75rem;
@@ -160,19 +165,44 @@ main {
 }
 
 h1 {
-  margin: 0.44rem 0 0.8rem;
+  margin: 0.15rem 0 0.72rem;
   font-family: "Space Grotesk", sans-serif;
-  font-size: clamp(1.95rem, 6vw, 4.2rem);
-  line-height: 1.04;
-  max-width: 13ch;
+  font-size: clamp(2.05rem, 6.1vw, 4.35rem);
+  line-height: 1.02;
+  letter-spacing: -0.012em;
+  max-width: 11.5ch;
   text-wrap: balance;
 }
 
 .lead {
-  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin: 0;
+  font-size: clamp(1.01rem, 1.85vw, 1.15rem);
   color: var(--muted);
-  max-width: 62ch;
-  line-height: 1.65;
+  max-width: 56ch;
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+
+.hero-stack {
+  margin: 0.7rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.42rem;
+  max-width: 56ch;
+}
+
+.hero-stack li {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.24rem 0.56rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--tag);
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  background: rgba(14, 23, 29, 0.66);
 }
 
 .about {
@@ -219,8 +249,39 @@ h1 {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(0.8rem, 1.7vw, 1.2rem);
+  max-width: 960px;
+  margin: 0.6rem auto 0;
+}
+
+.projects {
+  margin-top: clamp(0.7rem, 2vw, 1.6rem);
+}
+
+.projects-head {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.projects-kicker {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  font-size: 0.73rem;
+  font-weight: 800;
+  color: var(--tag);
+}
+
+.projects-title {
+  margin: 0.36rem 0 0;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.24rem, 2.3vw, 1.8rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  max-width: 26ch;
+  color: var(--text);
+  text-wrap: balance;
 }
 
 .card {
@@ -253,7 +314,7 @@ h1 {
 .card-row {
   display: grid;
   grid-template-columns: 72px 1fr;
-  align-items: center;
+  align-items: stretch;
   gap: 0.8rem;
 }
 
@@ -431,6 +492,9 @@ h1 {
 
 .card-copy {
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 h2 {
@@ -441,10 +505,27 @@ h2 {
 }
 
 .card-description {
-  margin-top: 0.35rem;
-  margin-bottom: 0;
+  margin-top: 0.3rem;
+  margin-bottom: 0.7rem;
   color: var(--paragraph);
   font-size: 0.92rem;
+  line-height: 1.58;
+  max-width: 40ch;
+}
+
+.card-foot {
+  margin: 0;
+  color: var(--accent-strong);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.card-foot span {
+  padding-left: 0.24rem;
+}
+
+.card:nth-child(2) {
+  animation-delay: 70ms;
 }
 
 .subpage,
