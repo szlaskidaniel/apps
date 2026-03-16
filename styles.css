@@ -260,7 +260,7 @@ h1 {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(0.8rem, 1.7vw, 1.2rem);
   max-width: 960px;
   margin: 0.6rem auto 0;
@@ -511,6 +511,10 @@ h2 {
 
 .card:nth-child(2) {
   animation-delay: 70ms;
+}
+
+.card:nth-child(3) {
+  animation-delay: 140ms;
 }
 
 .subpage,
@@ -809,6 +813,27 @@ h2 {
   font-size: 0.94rem;
 }
 
+/* Section divider */
+
+.section-divider {
+  text-align: center;
+  margin-top: clamp(1.8rem, 4vw, 3rem);
+  margin-bottom: clamp(-0.6rem, -1vw, -0.2rem);
+}
+
+.section-divider h2 {
+  font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+  margin-bottom: 0.4rem;
+}
+
+.section-divider p {
+  color: var(--muted);
+  margin: 0 auto;
+  max-width: 52ch;
+  font-size: clamp(0.92rem, 1.4vw, 1.02rem);
+  line-height: 1.65;
+}
+
 /* CTA */
 
 .sift-cta {
@@ -860,7 +885,7 @@ h2 {
   }
 
   .cards {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   nav {
