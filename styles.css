@@ -260,7 +260,7 @@ h1 {
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(0.8rem, 1.7vw, 1.2rem);
   max-width: 960px;
   margin: 0.6rem auto 0;
@@ -801,6 +801,18 @@ h2 {
   transform: translateY(-3px);
 }
 
+.feature-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(73, 207, 167, 0.12);
+  color: var(--accent);
+  margin-bottom: 0.7rem;
+}
+
 .sift-feature h2 {
   font-size: clamp(1.05rem, 1.6vw, 1.25rem);
   margin-bottom: 0.55rem;
@@ -885,7 +897,7 @@ h2 {
   }
 
   .cards {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   nav {
