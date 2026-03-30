@@ -466,6 +466,38 @@ h1 {
   object-position: center;
 }
 
+/* Badge */
+
+.badge {
+  display: inline-block;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.22rem 0.58rem;
+  border-radius: 999px;
+  line-height: 1.2;
+  vertical-align: middle;
+}
+
+.badge-coming-soon {
+  background: linear-gradient(135deg, rgba(255, 183, 77, 0.22), rgba(255, 152, 0, 0.18));
+  border: 1px solid rgba(255, 183, 77, 0.4);
+  color: #ffcc80;
+}
+
+.card .badge {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  z-index: 1;
+}
+
+.eyebrow .badge {
+  margin-right: 0.5rem;
+}
+
 .card-tag {
   margin: 0 0 0.2rem;
   font-size: 0.76rem;
