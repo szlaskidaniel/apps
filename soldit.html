@@ -1,152 +1,371 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SoldIt! - Real-Time Sales Notifications | iOS</title>
-  <meta name="description" content="SoldIt! sends you a push notification the instant someone purchases or subscribes in your iOS app. Real-time sales alerts for indie developers.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="page-bg"></div>
-  <header class="site-header">
-    <a class="brand" href="index.html">Developer</a>
-    <nav aria-label="Main">
-      <a href="index.html">Back to Home</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SoldIt! - Real-Time Sales Notifications | iOS</title>
+    <meta
+      name="description"
+      content="Celebrate every sale in real-time! Get instant push alerts and track daily revenue on your Lock Screen with Live Activities. No SDK required. Setup in under 2 minutes."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-bg"></div>
+    <header class="site-header">
+      <a class="brand" href="index.html">Developer</a>
+      <nav aria-label="Main">
+        <a href="index.html">Back to Home</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
 
-  <main class="subpage sift-page">
-
-    <!-- Hero + Carousel row -->
-    <section class="sift-top">
-      <div class="sift-left">
-        <div class="sift-hero">
-          <div class="sift-hero-copy">
-            <p class="eyebrow"><span class="badge badge-coming-soon">Coming Soon</span> iOS Application</p>
-            <h1>SoldIt!</h1>
-            <p class="lead">
-              Real-time push notifications the instant someone purchases or subscribes in your iOS app. Know about every sale as it happens.
-            </p>
-            <div class="actions">
-              <a class="button" href="https://apps.apple.com/us/app/soldit/id6761266197" target="_blank" rel="noopener noreferrer">View on the App Store</a>
+    <main class="subpage sift-page">
+      <!-- Hero + Carousel row -->
+      <section class="sift-top">
+        <div class="sift-left">
+          <div class="sift-hero">
+            <div class="sift-hero-icon">
+              <img src="images/soldit/AppIcon.png" alt="SoldIt! app icon" />
+            </div>
+            <div class="sift-hero-copy">
+              <p class="eyebrow">iOS Application</p>
+              <div class="hero-title-row">
+                <h1>SoldIt!</h1>
+                <a
+                  class="app-store-badge"
+                  href="https://apps.apple.com/us/app/soldit/id6761266197"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83"
+                    alt="Download on the App Store"
+                  />
+                </a>
+              </div>
+              <p class="lead">
+                Celebrate every sale in real-time! Instant push notifications
+                the moment someone purchases, subscribes, or renews in your iOS
+                app. Track daily revenue on your Lock Screen with Live
+                Activities. No SDK required - setup in under 2 minutes.
+              </p>
             </div>
           </div>
+          <div class="sift-tagline">
+            <p class="tagline-highlight">Stop refreshing App Store Connect.</p>
+            <div class="setup-steps">
+              <div class="setup-step">
+                <span class="step-number">1</span>
+                <span>Sign in with Apple</span>
+              </div>
+              <div class="setup-step">
+                <span class="step-number">2</span>
+                <span>Add your app</span>
+              </div>
+              <div class="setup-step">
+                <span class="step-number">3</span>
+                <span>Paste a webhook URL in App Store Connect</span>
+              </div>
+            </div>
+            <p>
+              Get notified on every sale, renewal, refund, and billing event in
+              real time.
+            </p>
+          </div>
         </div>
-        <div class="sift-tagline">
-          <p>No more checking App Store Connect sales reports. Sign in with Apple, add your app, paste a webhook URL in App Store Connect - and get notified on every sale, renewal, refund, and billing event in real time.</p>
+
+        <div class="sift-carousel" aria-label="SoldIt! app screenshots">
+          <div class="sift-carousel-track">
+            <div class="sift-carousel-slide">
+              <img
+                src="images/soldit/Charts.PNG"
+                alt="SoldIt! - sales charts and analytics"
+              />
+            </div>
+            <div class="sift-carousel-slide">
+              <img
+                src="images/soldit/Live.PNG"
+                alt="SoldIt! - Live Activities on Lock Screen"
+              />
+            </div>
+            <div class="sift-carousel-slide">
+              <img
+                src="images/soldit/IMG_6416.PNG"
+                alt="SoldIt! - dashboard with today's sales and activity feed"
+              />
+            </div>
+            <div class="sift-carousel-slide">
+              <img
+                src="images/soldit/IMG_6417.PNG"
+                alt="SoldIt! - 30-day sales trend chart"
+              />
+            </div>
+            <div class="sift-carousel-slide">
+              <img
+                src="images/soldit/IMG_6418.PNG"
+                alt="SoldIt! - app management and webhook setup"
+              />
+            </div>
+            <div class="sift-carousel-slide">
+              <img
+                src="images/soldit/Settings.PNG"
+                alt="SoldIt! - settings and account management"
+              />
+            </div>
+          </div>
+          <button
+            class="sift-carousel-btn sift-carousel-prev"
+            aria-label="Previous screenshot"
+          >
+            &lsaquo;
+          </button>
+          <button
+            class="sift-carousel-btn sift-carousel-next"
+            aria-label="Next screenshot"
+          >
+            &rsaquo;
+          </button>
+          <div class="sift-carousel-dots"></div>
         </div>
-      </div>
+      </section>
 
-      <div class="sift-carousel" aria-label="SoldIt! app screenshots">
-        <div class="sift-carousel-track">
-          <div class="sift-carousel-slide"><img src="images/soldit/IMG_6416.PNG" alt="SoldIt! - dashboard with today's sales and activity feed"></div>
-          <div class="sift-carousel-slide"><img src="images/soldit/IMG_6417.PNG" alt="SoldIt! - 30-day sales trend chart"></div>
-          <div class="sift-carousel-slide"><img src="images/soldit/IMG_6418.PNG" alt="SoldIt! - app management and webhook setup"></div>
-          <div class="sift-carousel-slide"><img src="images/soldit/Settings.PNG" alt="SoldIt! - settings and account management"></div>
+      <!-- Features -->
+      <section class="sift-features">
+        <div class="sift-feature">
+          <div class="feature-icon">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
+              <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+            </svg>
+          </div>
+          <h2>The "Kaching!" Moment, Real-Time</h2>
+          <p>
+            App Store Connect reports are slow and clunky. SoldIt! uses official
+            App Store Server Notifications to give you the dopamine hit you
+            deserve, exactly when it happens. Whether it's your first sale or
+            your thousandth renewal, you'll be the first to know.
+          </p>
         </div>
-        <button class="sift-carousel-btn sift-carousel-prev" aria-label="Previous screenshot">&lsaquo;</button>
-        <button class="sift-carousel-btn sift-carousel-next" aria-label="Next screenshot">&rsaquo;</button>
-        <div class="sift-carousel-dots"></div>
-      </div>
-    </section>
-
-    <!-- Features -->
-    <section class="sift-features">
-      <div class="sift-feature">
-        <div class="feature-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        <div class="sift-feature">
+          <div class="feature-icon">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="5" y="2" width="14" height="20" rx="2" />
+              <path d="M12 18h.01" />
+            </svg>
+          </div>
+          <h2>Live Activities & Lock Screen</h2>
+          <p>
+            Keep your finger on the pulse without even unlocking your iPhone.
+            Track your daily revenue and sales count right on your Lock Screen
+            or in the Dynamic Island. Watch your progress grow in real-time
+            throughout the day.
+          </p>
+          <img
+            class="feature-image"
+            src="images/soldit/LiveActivities.png"
+            alt="SoldIt! Live Activities on Lock Screen"
+          />
         </div>
-        <h2>Instant Push Notifications</h2>
-        <p>Get notified the moment someone purchases, subscribes, renews, or refunds - right on your iPhone. No polling, no delay.</p>
-      </div>
-      <div class="sift-feature">
-        <div class="feature-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+        <div class="sift-feature">
+          <div class="feature-icon">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+              <circle cx="12" cy="12" r="3" />
+            </svg>
+          </div>
+          <h2>Full Visibility on Every Event</h2>
+          <p>
+            New subscriptions, renewals, plan upgrades and downgrades, refunds
+            and revocations, one-time In-App Purchases, billing grace periods
+            and recoveries - every transaction type covered.
+          </p>
         </div>
-        <h2>Dashboard at a Glance</h2>
-        <p>Today's sales count, 30-day trend chart, activity feed with latest events, and status indicators for each connected app.</p>
-      </div>
-      <div class="sift-feature">
-        <div class="feature-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+        <div class="sift-feature">
+          <div class="feature-icon">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          </div>
+          <h2>Built for Privacy & Security</h2>
+          <ul class="feature-list">
+            <li>
+              No SDK required - keep your app binary clean and lightweight
+            </li>
+            <li>No credentials needed to get started</li>
+            <li>Sign in with Apple - no personal data stored</li>
+            <li>
+              All data flows through cryptographically unique, IP-restricted
+              endpoints
+            </li>
+          </ul>
         </div>
-        <h2>Multi-Device Support</h2>
-        <p>Register all your devices and get notifications on every one simultaneously. Your iPhone, your iPad - never miss a sale.</p>
-      </div>
-      <div class="sift-feature">
-        <div class="feature-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div class="sift-feature">
+          <div class="feature-icon">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8" />
+              <path d="M12 18V6" />
+            </svg>
+          </div>
+          <h2>Simple Pricing</h2>
+          <div class="pricing-tiers">
+            <div class="pricing-tier">
+              <span class="tier-name">Solo</span>
+              <span class="tier-price">$1.99<span>/mo</span></span>
+              <span class="tier-detail"
+                >Up to 3 apps - perfect for the side-hustle</span
+              >
+            </div>
+            <div class="pricing-tier">
+              <span class="tier-name">Studio</span>
+              <span class="tier-price">$4.99<span>/mo</span></span>
+              <span class="tier-detail"
+                >Up to 10 apps - for the serious indie builder</span
+              >
+            </div>
+          </div>
+          <p class="pricing-note">No hidden fees.</p>
         </div>
-        <h2>Privacy First</h2>
-        <p>Sign in with Apple - no email, no password, no personal data stored. Unique cryptographic webhook tokens. No third-party SDKs, no tracking, no ads.</p>
-      </div>
-      <div class="sift-feature">
-        <div class="feature-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
+      </section>
+
+      <!-- CTA -->
+      <section class="sift-cta">
+        <h2>Never Miss a Milestone Again</h2>
+        <p>
+          Turn your sales into a live feed. Built for indie developers and small
+          studios who want real-time visibility into their App Store revenue.
+        </p>
+        <div class="actions actions-center">
+          <a
+            class="app-store-badge"
+            href="https://apps.apple.com/us/app/soldit/id6761266197"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83"
+              alt="Download on the App Store"
+            />
+          </a>
         </div>
-        <h2>Simple Pricing</h2>
-        <p>Solo plan at $1.99/month for up to 3 apps. Studio plan at $4.99/month for up to 10 apps. No hidden fees.</p>
-      </div>
-    </section>
+      </section>
 
-    <!-- CTA -->
-    <section class="sift-cta">
-      <h2>Never Miss a Sale</h2>
-      <p>Built for indie developers and small studios who want real-time visibility into their App Store revenue.</p>
-      <div class="actions actions-center">
-        <a class="button" href="https://apps.apple.com/us/app/soldit/id6761266197" target="_blank" rel="noopener noreferrer">Get SoldIt! on the App Store</a>
-      </div>
-    </section>
+      <!-- Privacy link -->
+      <footer class="sift-footer">
+        <a href="soldit-privacy.html">Privacy Policy</a>
+      </footer>
+    </main>
 
-    <!-- Privacy link -->
-    <footer class="sift-footer">
-      <a href="soldit-privacy.html">Privacy Policy</a>
-    </footer>
-  </main>
+    <script>
+      (function () {
+        const track = document.querySelector(".sift-carousel-track");
+        const slides = Array.from(track.children);
+        const prevBtn = document.querySelector(".sift-carousel-prev");
+        const nextBtn = document.querySelector(".sift-carousel-next");
+        const dotsContainer = document.querySelector(".sift-carousel-dots");
+        let current = 0;
 
-  <script>
-    (function () {
-      const track = document.querySelector('.sift-carousel-track');
-      const slides = Array.from(track.children);
-      const prevBtn = document.querySelector('.sift-carousel-prev');
-      const nextBtn = document.querySelector('.sift-carousel-next');
-      const dotsContainer = document.querySelector('.sift-carousel-dots');
-      let current = 0;
+        slides.forEach(function (_, i) {
+          const dot = document.createElement("button");
+          dot.className = "sift-carousel-dot" + (i === 0 ? " active" : "");
+          dot.setAttribute("aria-label", "Go to screenshot " + (i + 1));
+          dot.addEventListener("click", function () {
+            goTo(i);
+          });
+          dotsContainer.appendChild(dot);
+        });
 
-      slides.forEach(function (_, i) {
-        const dot = document.createElement('button');
-        dot.className = 'sift-carousel-dot' + (i === 0 ? ' active' : '');
-        dot.setAttribute('aria-label', 'Go to screenshot ' + (i + 1));
-        dot.addEventListener('click', function () { goTo(i); });
-        dotsContainer.appendChild(dot);
-      });
+        var dots = Array.from(dotsContainer.children);
 
-      var dots = Array.from(dotsContainer.children);
+        function goTo(index) {
+          current = (index + slides.length) % slides.length;
+          track.style.transform = "translateX(-" + current * 100 + "%)";
+          dots.forEach(function (d, i) {
+            d.classList.toggle("active", i === current);
+          });
+        }
 
-      function goTo(index) {
-        current = (index + slides.length) % slides.length;
-        track.style.transform = 'translateX(-' + current * 100 + '%)';
-        dots.forEach(function (d, i) { d.classList.toggle('active', i === current); });
-      }
+        prevBtn.addEventListener("click", function () {
+          goTo(current - 1);
+        });
+        nextBtn.addEventListener("click", function () {
+          goTo(current + 1);
+        });
 
-      prevBtn.addEventListener('click', function () { goTo(current - 1); });
-      nextBtn.addEventListener('click', function () { goTo(current + 1); });
-
-      /* Touch swipe support */
-      var startX = 0;
-      var dx = 0;
-      track.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
-      track.addEventListener('touchmove', function (e) { dx = e.touches[0].clientX - startX; }, { passive: true });
-      track.addEventListener('touchend', function () {
-        if (Math.abs(dx) > 40) goTo(current + (dx < 0 ? 1 : -1));
-        dx = 0;
-      });
-    })();
-  </script>
-</body>
+        /* Touch swipe support */
+        var startX = 0;
+        var dx = 0;
+        track.addEventListener(
+          "touchstart",
+          function (e) {
+            startX = e.touches[0].clientX;
+          },
+          { passive: true },
+        );
+        track.addEventListener(
+          "touchmove",
+          function (e) {
+            dx = e.touches[0].clientX - startX;
+          },
+          { passive: true },
+        );
+        track.addEventListener("touchend", function () {
+          if (Math.abs(dx) > 40) goTo(current + (dx < 0 ? 1 : -1));
+          dx = 0;
+        });
+      })();
+    </script>
+  </body>
 </html>
