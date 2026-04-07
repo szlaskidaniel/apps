@@ -964,7 +964,7 @@ h2 {
 .feature-list {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0.5rem 0 0;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -984,6 +984,10 @@ h2 {
   left: 0;
   color: var(--accent);
   font-weight: 700;
+}
+
+.feature-list-compact {
+  gap: 0.3rem;
 }
 
 .pricing-tiers {
