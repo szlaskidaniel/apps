@@ -1214,3 +1214,238 @@ h2 {
     grid-template-columns: 1fr;
   }
 }
+
+/* ── Tool page ── */
+
+.tool-banner {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: clamp(0.8rem, 1.8vw, 1.2rem);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.tool-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  max-height: 340px;
+}
+
+.tool-banner-fade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 30%,
+    rgba(7, 13, 19, 0.45) 70%,
+    rgba(7, 13, 19, 0.8) 100%
+  );
+  pointer-events: none;
+}
+
+.tool-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.85rem;
+}
+
+.tool-hero-actions .button {
+  font-size: 0.92rem;
+  padding: 0.55rem 1rem;
+}
+
+.tool-section {
+  margin-top: clamp(1.8rem, 4vw, 3rem);
+}
+
+.tool-section-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+  margin: 0 0 1rem;
+  color: var(--text);
+}
+
+.tool-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: clamp(1rem, 2vw, 1.6rem);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+.tool-code {
+  display: block;
+  overflow-x: auto;
+  background: rgba(8, 14, 19, 0.82);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  font-family: "SF Mono", "Fira Code", "Cascadia Code", monospace;
+  font-size: 0.84rem;
+  line-height: 1.7;
+  color: var(--paragraph);
+  white-space: pre;
+  tab-size: 2;
+}
+
+.tool-code .code-comment {
+  color: var(--muted);
+  opacity: 0.6;
+}
+
+.tool-code .code-cmd {
+  color: var(--accent-strong);
+}
+
+.tool-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tool-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.tool-table th {
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--tag);
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.tool-table td {
+  padding: 0.55rem 0.8rem;
+  color: var(--paragraph);
+  border-bottom: 1px solid rgba(159, 209, 194, 0.08);
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.tool-table tr:last-child td {
+  border-bottom: none;
+}
+
+.tool-table code {
+  font-family: "SF Mono", "Fira Code", "Cascadia Code", monospace;
+  font-size: 0.82rem;
+  background: rgba(73, 207, 167, 0.1);
+  border: 1px solid rgba(73, 207, 167, 0.15);
+  border-radius: 5px;
+  padding: 0.15rem 0.4rem;
+  color: var(--accent-strong);
+  white-space: nowrap;
+}
+
+.tool-subsection-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  color: var(--accent);
+  margin: 1.4rem 0 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+}
+
+.tool-subsection-title:first-child {
+  margin-top: 0;
+}
+
+.tool-workflow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.tool-workflow-msg {
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-width: 85%;
+}
+
+.tool-workflow-msg.user {
+  background: rgba(73, 207, 167, 0.1);
+  border: 1px solid rgba(73, 207, 167, 0.2);
+  align-self: flex-end;
+  color: var(--text);
+}
+
+.tool-workflow-msg.assistant {
+  background: rgba(89, 196, 224, 0.08);
+  border: 1px solid rgba(89, 196, 224, 0.15);
+  align-self: flex-start;
+  color: var(--paragraph);
+}
+
+.tool-workflow-msg strong {
+  display: block;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.25rem;
+  color: var(--accent);
+}
+
+.tool-scoring {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.8rem;
+}
+
+.tool-scoring-item {
+  padding: 0.8rem;
+  background: rgba(8, 14, 19, 0.5);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.tool-scoring-item h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1rem;
+  margin: 0 0 0.3rem;
+  color: var(--accent-strong);
+}
+
+.tool-scoring-item p {
+  font-size: 0.85rem;
+  color: var(--paragraph);
+  margin: 0;
+  line-height: 1.55;
+}
+
+.tool-notes {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.tool-notes li {
+  color: var(--paragraph);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  padding-left: 1.4rem;
+  position: relative;
+}
+
+.tool-notes li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}

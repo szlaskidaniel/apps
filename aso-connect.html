@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ASO Connect - App Store Optimization for Claude Code</title>
+    <meta
+      name="description"
+      content="Free, open-source ASO toolkit for Claude Code - keyword scoring, competitor analysis, and App Store Connect metadata management from your terminal."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-bg"></div>
+    <header class="site-header">
+      <a class="brand" href="index.html">Developer</a>
+      <nav aria-label="Main">
+        <a href="index.html">Back to Home</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main class="subpage sift-page">
+      <!-- Banner -->
+      <div class="tool-banner">
+        <img
+          src="images/aso-connect/Banner.jpeg"
+          alt="ASO Connect - ASO keyword analysis and App Store Connect API MCP server for Claude Code"
+        />
+        <div class="tool-banner-fade"></div>
+      </div>
+
+      <!-- Hero -->
+      <section class="sift-top">
+        <div class="sift-left">
+          <div class="sift-hero">
+            <div class="sift-hero-icon">
+              <img src="images/aso-connect/Icon.png" alt="ASO Connect icon" />
+            </div>
+            <div class="sift-hero-copy">
+              <p class="eyebrow">Open Source Tool</p>
+              <div class="hero-title-row">
+                <h1>ASO Connect</h1>
+              </div>
+              <p class="lead">
+                App Store Optimization toolkit for Claude Code - keyword
+                research, competitor analysis, and metadata management through
+                App Store Connect, all from your terminal.
+              </p>
+              <div class="tool-hero-actions">
+                <a
+                  class="button"
+                  href="https://github.com/szlaskidaniel/aso-connect"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View on GitHub
+                </a>
+                <a
+                  class="button button-ghost"
+                  href="https://modelcontextprotocol.io/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  What is MCP?
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="sift-tagline">
+            <p class="tagline-highlight">
+              Stop paying $50-200/month for ASO tools.
+            </p>
+            <p>
+              Most ASO tools lock you into a web UI and still require manual
+              copy-pasting into App Store Connect. ASO Connect gives you free
+              keyword scoring, direct App Store Connect integration, and an
+              AI-native workflow where Claude analyzes, suggests, validates, and
+              pushes changes in one conversation.
+            </p>
+          </div>
+        </div>
+
+        <!-- Quick start code block instead of carousel -->
+        <div
+          class="tool-card"
+          style="
+            align-self: stretch;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1.2rem;
+          "
+        >
+          <h2 class="tool-section-title" style="margin: 0">Quick Start</h2>
+          <code class="tool-code"
+            ><span class="code-comment"># Clone and install</span>
+            <span class="code-cmd">git clone</span>
+            https://github.com/szlaskidaniel/aso-connect.git
+            <span class="code-cmd">cd</span> aso-connect
+            <span class="code-cmd">npm install</span>
+
+            <span class="code-comment"># Register with Claude Code</span>
+            <span class="code-cmd">claude mcp add</span> aso-connect -- \ node
+            $(pwd)/mcp-server.js</code
+          >
+          <p
+            style="
+              color: var(--paragraph);
+              font-size: 0.9rem;
+              margin: 0;
+              line-height: 1.6;
+            "
+          >
+            That's it - you can now ask Claude to score keywords and analyze
+            competitors. No credentials needed for ASO analysis tools.
+          </p>
+        </div>
+      </section>
+
+      <!-- Why section - feature cards -->
+      <section class="sift-features">
+        <div class="sift-feature">
+          <div class="feature-icon">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <path d="M21 21l-4.35-4.35" />
+            </svg>
+          </div>
+          <h2>Free Keyword Scoring</h2>
+          <p>
+            Popularity, difficulty, and opportunity scores powered by iTunes
+            Search API data. No subscription, no paywall.
+          </p>
+          <ul class="feature-list">
+            <li>
+              6-signal popularity model (result count, leader strength, market
+              depth, and more)
+            </li>
+            <li>
+              7-factor difficulty analysis (rating volume, dominant players,
+              publisher diversity)
+            </li>
+            <li>Opportunity score = popularity x (100 - difficulty) / 100</li>
+          </ul>
+        </div>
+
+        <div class="sift-feature">
+          <div class="feature-icon">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          </div>
+          <h2>App Store Connect Integration</h2>
+          <p>
+            Read and update titles, subtitles, keywords, and descriptions
+            directly - no browser, no copy-paste.
+          </p>
+          <ul class="feature-list">
+            <li>Lookup apps by bundle ID</li>
+            <li>Manage versions and localizations</li>
+            <li>Update metadata and push to App Store Connect</li>
+          </ul>
+        </div>
+
+        <div class="sift-feature">
+          <div class="feature-icon">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+              />
+            </svg>
+          </div>
+          <h2>AI-Native Workflow</h2>
+          <p>
+            Claude analyzes your keywords, suggests improvements, validates
+            constraints, and pushes changes - all in one conversation.
+          </p>
+          <ul class="feature-list">
+            <li>Built as an MCP server for Claude Code</li>
+            <li>Includes /aso-optimize slash command for full pipeline</li>
+            <li>
+              Multi-locale support - country-specific keywords, not just
+              translations
+            </li>
+          </ul>
+        </div>
+
+        <div class="sift-feature">
+          <div class="feature-icon">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+              <path d="M1 10h22" />
+            </svg>
+          </div>
+          <h2>Zero Cost</h2>
+          <p>
+            Open source, MIT licensed. Uses the free iTunes Search API for
+            keyword data. App Store Connect API is free with any Apple Developer
+            account.
+          </p>
+        </div>
+
+        <div class="sift-feature">
+          <div class="feature-icon">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="16 18 22 12 16 6" />
+              <polyline points="8 6 2 12 8 18" />
+            </svg>
+          </div>
+          <h2>14 Tools Built In</h2>
+          <p>
+            From quick keyword scoring to full metadata management - everything
+            you need for ASO in your terminal.
+          </p>
+          <ul class="feature-list">
+            <li>4 analysis tools (no credentials needed)</li>
+            <li>10 App Store Connect tools (API key required)</li>
+          </ul>
+        </div>
+
+        <div class="sift-feature">
+          <div class="feature-icon">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <path d="M2 12h20" />
+              <path
+                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+              />
+            </svg>
+          </div>
+          <h2>Multi-Locale Optimization</h2>
+          <p>
+            Optimize for multiple countries with language-specific keywords.
+            German users search in German, French users in French - not just
+            translated English keywords.
+          </p>
+        </div>
+      </section>
+
+      <!-- App Store Connect setup -->
+      <section class="tool-section">
+        <h2 class="tool-section-title">Adding App Store Connect Access</h2>
+        <div class="tool-card">
+          <p
+            style="
+              color: var(--paragraph);
+              font-size: 0.94rem;
+              line-height: 1.65;
+              margin: 0 0 1rem;
+            "
+          >
+            To read and write metadata directly from App Store Connect:
+          </p>
+          <div class="setup-steps" style="margin-bottom: 1.2rem">
+            <div class="setup-step">
+              <span class="step-number">1</span>
+              <span
+                >Go to App Store Connect > Users and Access > Integrations >
+                API</span
+              >
+            </div>
+            <div class="setup-step">
+              <span class="step-number">2</span>
+              <span>Generate a key with App Manager role</span>
+            </div>
+            <div class="setup-step">
+              <span class="step-number">3</span>
+              <span>Download the .p8 file, note the Key ID and Issuer ID</span>
+            </div>
+            <div class="setup-step">
+              <span class="step-number">4</span>
+              <span>Re-register with credentials</span>
+            </div>
+          </div>
+          <code class="tool-code"
+            ><span class="code-cmd">claude mcp remove</span> aso-connect
+            <span class="code-cmd">claude mcp add</span> aso-connect \ -e
+            ASC_KEY_ID=YOUR_KEY_ID \ -e ASC_ISSUER_ID=YOUR_ISSUER_ID \ -e
+            ASC_PRIVATE_KEY_PATH=/path/to/AuthKey.p8 \ -- node
+            /path/to/aso-connect/mcp-server.js</code
+          >
+        </div>
+      </section>
+
+      <!-- Tools tables -->
+      <section class="tool-section">
+        <h2 class="tool-section-title">Available Tools</h2>
+        <div
+          class="tool-card"
+          style="display: flex; flex-direction: column; gap: 1.4rem"
+        >
+          <div>
+            <p class="tool-subsection-title">
+              ASO Analysis (no credentials needed)
+            </p>
+            <div class="tool-table-wrap">
+              <table class="tool-table">
+                <thead>
+                  <tr>
+                    <th>Tool</th>
+                    <th>What it does</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>score_keyword</code></td>
+                    <td>
+                      Score a single keyword - popularity, difficulty,
+                      opportunity
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>score_keywords_batch</code></td>
+                    <td>
+                      Score up to 15 keywords at once, ranked by opportunity
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>validate_metadata</code></td>
+                    <td>
+                      Check title/subtitle/keywords against App Store
+                      constraints
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>get_competitors</code></td>
+                    <td>Pull competitor data from iTunes Search API</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div>
+            <p class="tool-subsection-title">
+              App Store Connect (requires API key)
+            </p>
+            <div class="tool-table-wrap">
+              <table class="tool-table">
+                <thead>
+                  <tr>
+                    <th>Tool</th>
+                    <th>What it does</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>asc_lookup_app</code></td>
+                    <td>Find your app by bundle ID</td>
+                  </tr>
+                  <tr>
+                    <td><code>asc_get_versions</code></td>
+                    <td>List versions, filter by state</td>
+                  </tr>
+                  <tr>
+                    <td><code>asc_create_version</code></td>
+                    <td>Create a new version (PREPARE_FOR_SUBMISSION)</td>
+                  </tr>
+                  <tr>
+                    <td><code>asc_get_version_localizations</code></td>
+                    <td>Get keywords/description/whatsNew per locale</td>
+                  </tr>
+                  <tr>
+                    <td><code>asc_create_version_localization</code></td>
+                    <td>Add a new locale to a version</td>
+                  </tr>
+                  <tr>
+                    <td><code>asc_update_version_localization</code></td>
+                    <td>
+                      Update keywords, description, whatsNew, promotionalText
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>asc_get_app_info_localizations</code></td>
+                    <td>Get name/subtitle per locale</td>
+                  </tr>
+                  <tr>
+                    <td><code>asc_create_app_info_localization</code></td>
+                    <td>Add a new locale for app info</td>
+                  </tr>
+                  <tr>
+                    <td><code>asc_update_app_info_localization</code></td>
+                    <td>Update name and/or subtitle</td>
+                  </tr>
+                  <tr>
+                    <td><code>asc_get_current_metadata</code></td>
+                    <td>
+                      Fetch all current metadata for a bundle ID in one call
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slash command -->
+      <section class="tool-section">
+        <h2 class="tool-section-title">Claude Code Skill</h2>
+        <div class="tool-card">
+          <p
+            style="
+              color: var(--paragraph);
+              font-size: 0.94rem;
+              line-height: 1.65;
+              margin: 0 0 1rem;
+            "
+          >
+            ASO Connect includes a
+            <code
+              style="
+                font-family:
+                  &quot;SF Mono&quot;, &quot;Fira Code&quot;, monospace;
+                font-size: 0.85rem;
+                background: rgba(73, 207, 167, 0.1);
+                border: 1px solid rgba(73, 207, 167, 0.15);
+                border-radius: 5px;
+                padding: 0.12rem 0.35rem;
+                color: var(--accent-strong);
+              "
+              >/aso-optimize</code
+            >
+            slash command that runs a full optimization pipeline - fetches your
+            current metadata, scores keywords, finds better alternatives,
+            optimizes title/subtitle/keywords, and pushes changes to App Store
+            Connect after confirmation.
+          </p>
+          <code class="tool-code"
+            ><span class="code-cmd">/aso-optimize</span> com.example.myapp
+            <span class="code-cmd">/aso-optimize</span> com.example.myapp de
+            <span class="code-cmd">/aso-optimize</span> com.example.myapp
+            us,de,fr</code
+          >
+          <p
+            style="
+              color: var(--paragraph);
+              font-size: 0.88rem;
+              line-height: 1.6;
+              margin: 0.8rem 0 0;
+            "
+          >
+            When optimizing for multiple countries, the skill runs the full
+            pipeline for each locale separately with language-specific keywords.
+          </p>
+        </div>
+      </section>
+
+      <!-- Example workflow -->
+      <section class="tool-section">
+        <h2 class="tool-section-title">Example Workflow</h2>
+        <div class="tool-card">
+          <div class="tool-workflow">
+            <div class="tool-workflow-msg user">
+              <strong>You</strong>
+              Score my current keywords: "habit tracker, daily routine, goals"
+            </div>
+            <div class="tool-workflow-msg assistant">
+              <strong>Claude</strong>
+              "habit tracker" has high competition (difficulty: 78). "daily
+              routine" is a sweet spot - decent traffic, low competition. Want
+              me to find alternatives for the competitive ones?
+            </div>
+            <div class="tool-workflow-msg user">
+              <strong>You</strong>
+              Yes, find better keywords for a habit tracking app
+            </div>
+            <div class="tool-workflow-msg assistant">
+              <strong>Claude</strong>
+              Found some opportunities:<br />
+              - "habit streaks" (pop: 42, diff: 22) - Sweet Spot<br />
+              - "routine planner" (pop: 35, diff: 18) - Hidden Gem
+            </div>
+            <div class="tool-workflow-msg user">
+              <strong>You</strong>
+              Update my keywords with those
+            </div>
+            <div class="tool-workflow-msg assistant">
+              <strong>Claude</strong>
+              Done - keywords updated in App Store Connect.
+            </div>
+            <div class="tool-workflow-msg user">
+              <strong>You</strong>
+              Update what's new section for all localizations (in their
+              languages) "Minor corrections"
+            </div>
+            <div class="tool-workflow-msg assistant">
+              <strong>Claude</strong>
+              Done. "What's New" updated for all three locales:<br />
+              - en-US: Minor corrections.<br />
+              - pl: Drobne poprawki.<br />
+              - de-DE: Kleinere Korrekturen.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How scoring works -->
+      <section class="tool-section">
+        <h2 class="tool-section-title">How Scoring Works</h2>
+        <div class="tool-scoring">
+          <div class="tool-scoring-item">
+            <h3>Popularity (1-100)</h3>
+            <p>
+              6-signal composite model: result count, leader strength (top app
+              ratings), title match density, market depth, specificity penalty,
+              exact phrase bonus.
+            </p>
+          </div>
+          <div class="tool-scoring-item">
+            <h3>Difficulty (1-100)</h3>
+            <p>
+              7 weighted factors: rating volume (30%), dominant players (20%),
+              rating quality (10%), market maturity (10%), publisher diversity
+              (10%), app count (10%), content relevance (10%).
+            </p>
+          </div>
+          <div class="tool-scoring-item">
+            <h3>Opportunity</h3>
+            <p>
+              popularity x (100 - difficulty) / 100. Keywords are classified as:
+              Sweet Spot, Hidden Gem, Good Target, Moderate, High Competition,
+              or Low Volume.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Notes -->
+      <section class="tool-section">
+        <h2 class="tool-section-title">Notes</h2>
+        <div class="tool-card">
+          <ul class="tool-notes">
+            <li>
+              Promotional text can be updated on live versions without review
+            </li>
+            <li>Name/subtitle changes always require Apple review</li>
+            <li>
+              iTunes API rate limit: 1 req/sec (built into the batch tool)
+            </li>
+            <li>JWT tokens auto-refresh (15-min lifetime)</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="sift-cta">
+        <h2>Start Optimizing Your App Store Presence</h2>
+        <p>
+          Free, open source, and built for indie developers who want
+          professional ASO without the subscription fee.
+        </p>
+        <div class="actions actions-center">
+          <a
+            class="button"
+            href="https://github.com/szlaskidaniel/aso-connect"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View on GitHub
+          </a>
+        </div>
+        <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--muted)">
+          MIT License - Built with Claude Code and the
+          <a
+            href="https://modelcontextprotocol.io/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="color: var(--accent); text-decoration: none"
+            >Model Context Protocol</a
+          >.
+        </p>
+      </section>
+
+      <footer class="sift-footer">
+        <a href="privacy-terms.html">Privacy</a>
+      </footer>
+    </main>
+  </body>
+</html>
