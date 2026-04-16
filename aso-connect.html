@@ -327,19 +327,19 @@
             </div>
             <div class="setup-step">
               <span class="step-number">3</span>
-              <span>Download the .p8 file, note the Key ID and Issuer ID</span>
+              <span>Download the .p8 file to the aso-connect folder</span>
             </div>
             <div class="setup-step">
               <span class="step-number">4</span>
-              <span>Re-register with credentials</span>
+              <span
+                >Run the setup script - it auto-detects the .p8 file and
+                extracts the Key ID from the filename. You only need to enter
+                the Issuer ID</span
+              >
             </div>
           </div>
           <code class="tool-code"
-            ><span class="code-cmd">claude mcp remove</span> aso-connect
-            <span class="code-cmd">claude mcp add</span> aso-connect \ -e
-            ASC_KEY_ID=YOUR_KEY_ID \ -e ASC_ISSUER_ID=YOUR_ISSUER_ID \ -e
-            ASC_PRIVATE_KEY_PATH=/path/to/AuthKey.p8 \ -- node
-            /path/to/aso-connect/mcp-server.js</code
+            ><span class="code-cmd">node</span> setup.js</code
           >
         </div>
       </section>
@@ -489,10 +489,11 @@
             Connect after confirmation.
           </p>
           <code class="tool-code"
-            ><span class="code-cmd">/aso-optimize</span> com.example.myapp
-            <span class="code-cmd">/aso-optimize</span> com.example.myapp de
-            <span class="code-cmd">/aso-optimize</span> com.example.myapp
-            us,de,fr</code
+            ><span class="code-comment"># Single country (default: US)</span>
+<span class="code-cmd">/aso-optimize</span> com.example.myapp
+
+<span class="code-comment"># Multiple countries</span>
+<span class="code-cmd">/aso-optimize</span> com.example.myapp us,de,fr</code
           >
           <p
             style="
