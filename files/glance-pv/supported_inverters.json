@@ -1,0 +1,346 @@
+{
+  "version": 1,
+  "profiles": [
+    {
+      "brandId": "solis",
+      "brandName": "Solis",
+      "modelId": "rhi-s6-hybrid",
+      "modelName": "Solis RHI / S6 Hybrid (battery)",
+      "unitId": 1,
+      "polling": {
+        "maxBlockSize": 70,
+        "gapTolerance": 35
+      },
+      "fields": {
+        "powerKW": {
+          "fc": 4,
+          "addr": 33057,
+          "count": 2,
+          "signed": true,
+          "scale": 0.001,
+          "min": -200,
+          "max": 200
+        },
+        "batteryPercent": {
+          "fc": 4,
+          "addr": 33139,
+          "count": 1,
+          "signed": false,
+          "scale": 1.0,
+          "min": 0,
+          "max": 100
+        },
+        "familyLoadPowerKW": {
+          "fc": 4,
+          "addr": 33147,
+          "count": 1,
+          "signed": false,
+          "scale": 0.001,
+          "min": 0,
+          "max": 200
+        },
+        "batteryPowerKW": {
+          "fc": 4,
+          "addr": 33149,
+          "count": 2,
+          "signed": true,
+          "scale": 0.001,
+          "min": -200,
+          "max": 200
+        },
+        "dayEnergyKWh": {
+          "fc": 4,
+          "addr": 33035,
+          "count": 1,
+          "signed": false,
+          "scale": 0.1,
+          "min": 0,
+          "max": 500
+        },
+        "monthEnergy": {
+          "fc": 4,
+          "addr": 33032,
+          "count": 1,
+          "signed": false,
+          "scale": 1.0,
+          "min": 0,
+          "max": 100000
+        },
+        "gridImportTodayKWh": {
+          "fc": 4,
+          "addr": 33171,
+          "count": 1,
+          "signed": false,
+          "scale": 0.1,
+          "min": 0,
+          "max": 500
+        },
+        "gridExportTodayKWh": {
+          "fc": 4,
+          "addr": 33175,
+          "count": 1,
+          "signed": false,
+          "scale": 0.1,
+          "min": 0,
+          "max": 500
+        },
+        "gridExportThisMonthKWh": {
+          "presence": "unsupported"
+        },
+        "homeLoadTodayKWh": {
+          "fc": 4,
+          "addr": 33179,
+          "count": 1,
+          "signed": false,
+          "scale": 0.1,
+          "min": 0,
+          "max": 500
+        },
+        "batteryDischargeTodayKWh": {
+          "fc": 4,
+          "addr": 33167,
+          "count": 1,
+          "signed": false,
+          "scale": 0.1,
+          "min": 0,
+          "max": 500
+        },
+        "gridConnectedFlag": {
+          "fc": 4,
+          "addr": 33094,
+          "count": 1,
+          "signed": false,
+          "scale": 1.0,
+          "min": 0,
+          "max": 65535
+        },
+        "plantState": {
+          "presence": "computed"
+        },
+        "backupTodayEnergyKWh": {
+          "presence": "computed"
+        },
+        "statusWord": {
+          "presence": "unsupported"
+        },
+        "bypassLoadPowerKW": {
+          "presence": "unsupported"
+        },
+        "homeGridTodayKWh": {
+          "presence": "unsupported"
+        },
+        "dayIncome": {
+          "presence": "unsupported"
+        },
+        "sunriseLocal": {
+          "presence": "unsupported"
+        },
+        "sunsetLocal": {
+          "presence": "unsupported"
+        }
+      },
+      "alarms": []
+    },
+    {
+      "brandId": "solis",
+      "brandName": "Solis",
+      "modelId": "s5-s6-string",
+      "modelName": "Solis S5 / S6 String (no battery)",
+      "unitId": 1,
+      "polling": {
+        "maxBlockSize": 50,
+        "gapTolerance": 20
+      },
+      "fields": {
+        "powerKW": {
+          "fc": 3,
+          "addr": 3057,
+          "count": 2,
+          "signed": false,
+          "scale": 0.001,
+          "min": 0,
+          "max": 200
+        },
+        "dayEnergyKWh": {
+          "fc": 3,
+          "addr": 3022,
+          "count": 2,
+          "signed": false,
+          "scale": 0.01,
+          "min": 0,
+          "max": 500
+        },
+        "monthEnergy": {
+          "fc": 3,
+          "addr": 3041,
+          "count": 2,
+          "signed": false,
+          "scale": 1.0,
+          "min": 0,
+          "max": 100000
+        },
+        "plantState": {
+          "presence": "computed"
+        },
+        "batteryPercent": {
+          "presence": "unsupported"
+        },
+        "batteryPowerKW": {
+          "presence": "unsupported"
+        },
+        "familyLoadPowerKW": {
+          "presence": "unsupported"
+        },
+        "bypassLoadPowerKW": {
+          "presence": "unsupported"
+        },
+        "gridImportTodayKWh": {
+          "presence": "unsupported"
+        },
+        "gridExportTodayKWh": {
+          "presence": "unsupported"
+        },
+        "homeLoadTodayKWh": {
+          "presence": "unsupported"
+        },
+        "batteryDischargeTodayKWh": {
+          "presence": "unsupported"
+        },
+        "backupTodayEnergyKWh": {
+          "presence": "unsupported"
+        },
+        "homeGridTodayKWh": {
+          "presence": "unsupported"
+        },
+        "dayIncome": {
+          "presence": "unsupported"
+        },
+        "sunriseLocal": {
+          "presence": "unsupported"
+        },
+        "sunsetLocal": {
+          "presence": "unsupported"
+        }
+      },
+      "alarms": []
+    },
+    {
+      "brandId": "sofar",
+      "brandName": "Sofar Solar",
+      "modelId": "hyd-storage",
+      "modelName": "Sofar HYD Hybrid (battery)",
+      "unitId": 1,
+      "fields": {
+        "powerKW": {
+          "fc": 3,
+          "addr": 533,
+          "count": 1,
+          "signed": false,
+          "scale": 0.01,
+          "min": 0,
+          "max": 200
+        },
+        "batteryPercent": {
+          "fc": 3,
+          "addr": 528,
+          "count": 1,
+          "signed": false,
+          "scale": 1.0,
+          "min": 0,
+          "max": 100
+        },
+        "familyLoadPowerKW": {
+          "fc": 3,
+          "addr": 531,
+          "count": 1,
+          "signed": false,
+          "scale": 0.01,
+          "min": 0,
+          "max": 200
+        },
+        "batteryPowerKW": {
+          "fc": 3,
+          "addr": 525,
+          "count": 1,
+          "signed": true,
+          "scale": 0.01,
+          "min": -200,
+          "max": 200
+        },
+        "dayEnergyKWh": {
+          "fc": 3,
+          "addr": 536,
+          "count": 1,
+          "signed": false,
+          "scale": 0.01,
+          "min": 0,
+          "max": 500
+        },
+        "gridImportTodayKWh": {
+          "fc": 3,
+          "addr": 538,
+          "count": 1,
+          "signed": false,
+          "scale": 0.01,
+          "min": 0,
+          "max": 500
+        },
+        "gridExportTodayKWh": {
+          "fc": 3,
+          "addr": 537,
+          "count": 1,
+          "signed": false,
+          "scale": 0.01,
+          "min": 0,
+          "max": 500
+        },
+        "homeLoadTodayKWh": {
+          "fc": 3,
+          "addr": 539,
+          "count": 1,
+          "signed": false,
+          "scale": 0.01,
+          "min": 0,
+          "max": 500
+        },
+        "plantState": {
+          "presence": "computed"
+        },
+        "monthEnergy": {
+          "presence": "unsupported"
+        },
+        "gridExportThisMonthKWh": {
+          "presence": "unsupported"
+        },
+        "backupTodayEnergyKWh": {
+          "presence": "unsupported"
+        },
+        "statusWord": {
+          "presence": "unsupported"
+        },
+        "gridConnectedFlag": {
+          "presence": "unsupported"
+        },
+        "bypassLoadPowerKW": {
+          "presence": "unsupported"
+        },
+        "batteryDischargeTodayKWh": {
+          "presence": "unsupported"
+        },
+        "homeGridTodayKWh": {
+          "presence": "unsupported"
+        },
+        "dayIncome": {
+          "presence": "unsupported"
+        },
+        "sunriseLocal": {
+          "presence": "unsupported"
+        },
+        "sunsetLocal": {
+          "presence": "unsupported"
+        }
+      },
+      "alarms": []
+    }
+  ]
+}
