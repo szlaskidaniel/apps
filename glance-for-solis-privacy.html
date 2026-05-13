@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Privacy Policy - Glance for Solis</title>
-  <meta name="description" content="Privacy policy for Glance for Solis - live SolisCloud widgets for iPhone, iPad, and Mac.">
+  <title>Privacy Policy - Glance for PV</title>
+  <meta name="description" content="Privacy policy for Glance for PV - live SolisCloud and Modbus TCP widgets for iPhone, iPad, and Mac.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
@@ -15,53 +15,57 @@
   <header class="site-header">
     <a class="brand" href="index.html">Developer</a>
     <nav aria-label="Main">
-      <a href="glance-for-solis.html">Return to Glance for Solis</a>
+      <a href="glance-for-solis.html">Return to Glance for PV</a>
       <a href="index.html">Home</a>
     </nav>
   </header>
 
   <main class="legal">
-    <h1>Glance for Solis - Privacy Policy</h1>
-    <p><strong>Last Updated: April 23, 2026</strong></p>
+    <h1>Glance for PV - Privacy Policy</h1>
+    <p><strong>Last Updated: May 13, 2026</strong></p>
 
     <section>
       <p>
-        This Privacy Policy describes how the mobile application <strong>Glance for Solis</strong> ("the App"),
+        This Privacy Policy describes how the mobile application <strong>Glance for PV</strong> ("the App"),
         developed by Daniel Szlaski ("we", "us", or "our"), handles information when you use the App.
-        Glance for Solis is distributed exclusively through the Apple App Store for iPhone, iPad, and Mac.
+        Glance for PV is distributed exclusively through the Apple App Store for iPhone, iPad, and Mac.
       </p>
       <p>
-        Glance for Solis is an unofficial third-party companion app for SolisCloud users. It is not
-        affiliated with, endorsed by, or associated with Ginlong Technologies or Solis.
+        Glance for PV is an unofficial third-party companion app. It is not affiliated with, endorsed
+        by, or associated with Ginlong Technologies, Solis, Sofar Solar, SolaX Power, Growatt, or
+        GoodWe.
       </p>
 
       <h2>1. Information We Collect</h2>
       <p>
-        <strong>Glance for Solis does not collect, store, or transmit any personal information to us or to any third party.</strong>
+        <strong>Glance for PV does not collect, store, or transmit any personal information to us or to any third party.</strong>
         The App has no accounts, no sign-up, no analytics, no advertising, and no tracking of any kind.
         Everything you enter stays on your device.
       </p>
 
-      <h2>2. SolisCloud Credentials</h2>
+      <h2>2. Credentials and Connection Details</h2>
       <p>
-        To display data from your solar system, the App requires SolisCloud credentials (such as your
-        SolisCloud API key and secret). These credentials are stored exclusively on your device using
-        the iOS Keychain and are never transmitted to us or to any third party. The App communicates
-        directly with the SolisCloud API from your iPhone, iPad, or Mac - there is no middle server
-        operated by us. SolisCloud's handling of your data is governed by Ginlong's own privacy policy.
+        To display data from your solar system, the App requires either SolisCloud credentials (such
+        as your SolisCloud API key and secret) or local Modbus TCP connection details (such as the IP
+        address and port of your inverter on your home network). These credentials and connection
+        details are stored exclusively on your device using the iOS Keychain and on-device storage,
+        and are never transmitted to us or to any third party. The App communicates directly with the
+        SolisCloud API from your iPhone, iPad, or Mac, or speaks Modbus TCP directly to your inverter
+        on your local network - there is no middle server operated by us. SolisCloud's handling of
+        your data is governed by Ginlong's own privacy policy.
       </p>
 
       <h2>3. Widgets</h2>
       <p>
-        Home Screen and Lock Screen widgets read live PV output and battery state-of-charge directly
-        from SolisCloud using the credentials stored on your device. Widget data is rendered on your
-        device and is not transmitted to us. Last-update timestamps shown on widgets reflect when your
-        device last fetched data from SolisCloud.
+        Home Screen and Lock Screen widgets read live PV output and battery state of charge directly
+        from SolisCloud or from your inverter over Modbus TCP, using the credentials and connection
+        details stored on your device. Widget data is rendered on your device and is not transmitted
+        to us. Last-update timestamps shown on widgets reflect when your device last fetched data.
       </p>
 
       <h2>4. In-App Purchases</h2>
       <p>
-        Glance for Solis offers a single <strong>one-time in-app purchase</strong> that unlocks live
+        Glance for PV offers a single <strong>one-time in-app purchase</strong> that unlocks live
         auto-refresh across every widget size. Without this purchase, widgets still install and display
         your system, but data remains frozen at the point it was first loaded.
       </p>
@@ -76,29 +80,30 @@
 
       <h2>5. Third-Party Services</h2>
       <p>
-        Glance for Solis does not use any third-party analytics, advertising, or tracking SDKs. The App
-        is built entirely with native Apple frameworks. The only external service the App communicates
-        with is the official SolisCloud API, using the credentials you provide, to fetch your own solar
-        system data.
+        Glance for PV does not use any third-party analytics, advertising, or tracking SDKs. The App
+        is built entirely with native Apple frameworks. The only external services the App communicates
+        with are the official SolisCloud API (when configured for cloud access) and your own inverter
+        on your local network over Modbus TCP (when configured for local access), using the credentials
+        and connection details you provide, to fetch your own solar system data.
       </p>
 
       <h2>6. Data Sharing</h2>
       <p>
         We do not sell, share, or transfer your data to any third parties, because we do not receive
-        any of your data in the first place. All information processed by Glance for Solis stays on
+        any of your data in the first place. All information processed by Glance for PV stays on
         your device.
       </p>
 
       <h2>7. Data Retention</h2>
       <p>
-        SolisCloud credentials and app preferences are stored on your device for as long as the App is
-        installed. Deleting the App removes this data. In-app purchase entitlements are managed by
-        Apple and restored through your Apple ID.
+        SolisCloud credentials, Modbus TCP connection details, and app preferences are stored on your
+        device for as long as the App is installed. Deleting the App removes this data. In-app
+        purchase entitlements are managed by Apple and restored through your Apple ID.
       </p>
 
       <h2>8. Children's Privacy</h2>
       <p>
-        Glance for Solis does not knowingly collect information from anyone, including children. The
+        Glance for PV does not knowingly collect information from anyone, including children. The
         App collects no personal data at all.
       </p>
 

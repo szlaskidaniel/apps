@@ -514,6 +514,75 @@ h1 {
   color: #ffcc80;
 }
 
+.badge-new {
+  background: linear-gradient(
+    135deg,
+    rgba(73, 207, 167, 0.28),
+    rgba(73, 207, 167, 0.16)
+  );
+  border: 1px solid rgba(73, 207, 167, 0.55);
+  color: #8ee6c5;
+}
+
+.whats-new-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 14px;
+  background: linear-gradient(
+    135deg,
+    rgba(73, 207, 167, 0.14),
+    rgba(73, 207, 167, 0.06)
+  );
+  border: 1px solid rgba(73, 207, 167, 0.45);
+}
+
+.whats-new-tag {
+  flex-shrink: 0;
+  display: inline-block;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.22rem 0.58rem;
+  border-radius: 999px;
+  background: rgba(73, 207, 167, 0.25);
+  border: 1px solid rgba(73, 207, 167, 0.6);
+  color: #8ee6c5;
+  margin-top: 0.15rem;
+}
+
+.whats-new-copy {
+  color: var(--paragraph);
+  line-height: 1.55;
+  font-size: 0.94rem;
+}
+
+.whats-new-copy strong {
+  color: var(--heading);
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+.sift-feature-highlight {
+  border-color: rgba(73, 207, 167, 0.55);
+  background: linear-gradient(
+    135deg,
+    rgba(73, 207, 167, 0.10),
+    var(--surface)
+  );
+  position: relative;
+}
+
+.sift-feature-highlight .badge-new {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
 .card .badge {
   position: absolute;
   top: 0.65rem;

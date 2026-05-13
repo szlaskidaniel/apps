@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Glance for Solis - Live SolisCloud Widgets for iPhone, iPad, Mac | iOS</title>
+    <title>Glance for PV - Live Solar Widgets for iPhone, iPad, Mac | SolisCloud + Modbus TCP</title>
     <meta
       name="description"
-      content="Live PV power and battery state-of-charge widgets for SolisCloud users. Home Screen and Lock Screen widgets on iPhone, iPad, and Mac. Credentials stay on-device."
+      content="Live PV power and battery state-of-charge widgets via SolisCloud or local Modbus TCP. Works with Solis, Sofar, SolaX, Growatt, and GoodWe inverters. Home Screen and Lock Screen widgets on iPhone, iPad, and Mac."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -32,12 +32,12 @@
         <div class="sift-left">
           <div class="sift-hero">
             <div class="sift-hero-icon">
-              <img src="images/glance-for-solis/Icon_white.jpg" alt="Glance for Solis app icon" />
+              <img src="images/glance-for-solis/Icon_white.jpg" alt="Glance for PV app icon" />
             </div>
             <div class="sift-hero-copy">
               <p class="eyebrow">iOS Application</p>
               <div class="hero-title-row">
-                <h1>Glance for Solis</h1>
+                <h1>Glance for PV</h1>
                 <a
                   class="app-store-badge"
                   href="https://apps.apple.com/us/app/glance-for-solis/id6763310365"
@@ -51,12 +51,20 @@
                 </a>
               </div>
               <p class="lead">
-                See your solar system at a glance. Glance for Solis puts live
-                PV generation and battery state-of-charge on your Home Screen
+                See your solar system at a glance. Glance for PV puts live
+                PV generation and battery state of charge on your Home Screen
                 and Lock Screen, so you always know what your panels are
                 producing and how full your battery is - without opening an
                 app.
               </p>
+              <div class="whats-new-banner">
+                <span class="whats-new-tag">New</span>
+                <div class="whats-new-copy">
+                  <strong>Local Modbus TCP support - no cloud required.</strong>
+                  Talk to your inverter directly on your home network. Now
+                  works with Solis, Sofar, SolaX, Growatt, and GoodWe.
+                </div>
+              </div>
             </div>
           </div>
           <div class="sift-tagline">
@@ -66,7 +74,7 @@
             <div class="setup-steps">
               <div class="setup-step">
                 <span class="step-number">1</span>
-                <span>Sign in with your SolisCloud credentials</span>
+                <span>Connect via SolisCloud or local Modbus TCP</span>
               </div>
               <div class="setup-step">
                 <span class="step-number">2</span>
@@ -78,36 +86,42 @@
               </div>
             </div>
             <p>
-              Unofficial companion for SolisCloud users. Not affiliated with
-              Ginlong or Solis.
+              Unofficial companion app. Not affiliated with Ginlong, Solis,
+              Sofar Solar, SolaX Power, Growatt, or GoodWe.
             </p>
           </div>
         </div>
 
-        <div class="sift-carousel" aria-label="Glance for Solis app screenshots">
+        <div class="sift-carousel" aria-label="Glance for PV app screenshots">
           <div class="sift-carousel-track">
             <div class="sift-carousel-slide">
               <img
-                src="images/glance-for-solis/img3.png"
-                alt="Glance for Solis - Lock Screen widgets"
+                src="images/glance-for-solis/Home0.jpeg"
+                alt="Glance for PV - Home Screen overview"
               />
             </div>
             <div class="sift-carousel-slide">
               <img
-                src="images/glance-for-solis/img1.png"
-                alt="Glance for Solis - Home Screen widget showing live PV output"
+                src="images/glance-for-solis/img3.jpeg"
+                alt="Glance for PV - Lock Screen widgets"
               />
             </div>
             <div class="sift-carousel-slide">
               <img
-                src="images/glance-for-solis/img2.png"
-                alt="Glance for Solis - battery state of charge widget"
+                src="images/glance-for-solis/img1.jpeg"
+                alt="Glance for PV - Home Screen widget showing live PV output"
+              />
+            </div>
+            <div class="sift-carousel-slide">
+              <img
+                src="images/glance-for-solis/img2.jpeg"
+                alt="Glance for PV - battery state of charge widget"
               />
             </div>
             <div class="sift-carousel-slide">
               <img
                 src="images/glance-for-solis/img4.png"
-                alt="Glance for Solis - widget sizes and layouts"
+                alt="Glance for PV - widget sizes and layouts"
               />
             </div>
           </div>
@@ -129,6 +143,42 @@
 
       <!-- Features -->
       <section class="sift-features">
+        <div class="sift-feature sift-feature-highlight">
+          <div class="feature-icon">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 12h6" />
+              <path d="M14 12h6" />
+              <circle cx="12" cy="12" r="2" />
+              <path d="M2 8v8" />
+              <path d="M22 8v8" />
+            </svg>
+          </div>
+          <span class="badge badge-new">New</span>
+          <h2>Two Ways to Connect</h2>
+          <ul class="feature-list">
+            <li>
+              <strong>SolisCloud (cloud):</strong> sign in with your SolisCloud
+              API keys and read your system from anywhere
+            </li>
+            <li>
+              <strong>Modbus TCP (local):</strong> talk to your inverter
+              directly on your home network, no cloud account required
+            </li>
+            <li>
+              Works with <strong>Solis, Sofar, SolaX, Growatt, and GoodWe</strong>
+              inverters
+            </li>
+          </ul>
+        </div>
         <div class="sift-feature">
           <div class="feature-icon">
             <svg
@@ -151,7 +201,8 @@
           <ul class="feature-list">
             <li>Home Screen widgets in small, medium, and large sizes</li>
             <li>Lock Screen widgets (circular and rectangular) for instant battery and power readouts</li>
-            <li>Compatible with iPhone, iPad, and Mac</li>
+            <li>Apple Watch complications and widgets, right on your wrist</li>
+            <li>Compatible with iPhone, iPad, Mac, and Apple Watch</li>
           </ul>
         </div>
         <div class="sift-feature">
@@ -177,37 +228,16 @@
               <path d="m17.66 6.34 1.41-1.41" />
             </svg>
           </div>
-          <h2>Real-Time PV Power</h2>
-          <p>
-            See what your panels are producing right now. Live PV output in
-            kilowatts, refreshed directly from your SolisCloud account, so a
-            glance at your Home Screen tells you whether the sun is working
-            for you.
-          </p>
-        </div>
-        <div class="sift-feature">
-          <div class="feature-icon">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <rect x="2" y="7" width="18" height="10" rx="2" ry="2" />
-              <line x1="22" y1="11" x2="22" y2="13" />
-              <rect x="4" y="9" width="10" height="6" rx="1" fill="currentColor" stroke="none" />
-            </svg>
-          </div>
-          <h2>Battery State of Charge</h2>
-          <p>
-            Know exactly how full your battery is, with color-coded indicators
-            that make status readable at a glance. Green when you're full,
-            warmer tones as it drains - no mental arithmetic required.
-          </p>
+          <h2>Everything You Need at a Glance</h2>
+          <ul class="feature-list">
+            <li>Real-time PV power output in kW</li>
+            <li>Battery state of charge with color-coded indicators</li>
+            <li>Today and monthly PV generation</li>
+            <li>kWh imported and exported</li>
+            <li>Self-sufficiency %</li>
+            <li>How long the battery will last (power outage or overnight)</li>
+            <li>Last update timestamp, so you know the data is fresh</li>
+          </ul>
         </div>
         <div class="sift-feature">
           <div class="feature-icon">
@@ -245,36 +275,17 @@
               stroke-linecap="round"
               stroke-linejoin="round"
             >
-              <circle cx="12" cy="12" r="10" />
-              <polyline points="12 6 12 12 16 14" />
-            </svg>
-          </div>
-          <h2>Last-Update Timestamp</h2>
-          <p>
-            Every widget shows when its data was last fetched, so you always
-            know whether you're looking at fresh numbers or the last reading
-            your device could pull.
-          </p>
-        </div>
-        <div class="sift-feature">
-          <div class="feature-icon">
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
             </svg>
           </div>
           <h2>Private and Direct</h2>
           <ul class="feature-list">
-            <li>Your SolisCloud credentials stay on-device</li>
-            <li>Glance talks to SolisCloud directly from your iPhone, iPad, or Mac</li>
+            <li>Your credentials stay on-device</li>
+            <li>
+              Glance talks to SolisCloud directly from your iPhone, iPad, Mac,
+              or Apple Watch - or speaks Modbus TCP straight to your inverter
+              on your local network
+            </li>
             <li>No middle server, no account signup, no tracking, no analytics, no ads</li>
           </ul>
         </div>
@@ -297,9 +308,10 @@
           </div>
           <h2>Unofficial Companion</h2>
           <p>
-            Not affiliated with Ginlong or Solis. Glance for Solis is an
-            unofficial third-party companion app for SolisCloud users. You'll
-              need a SolisCloud account and API access to use it.
+            Not affiliated with Ginlong, Solis, Sofar Solar, SolaX Power,
+            Growatt, or GoodWe. Glance for PV is an unofficial third-party
+            companion app. Use it with a SolisCloud account or any supported
+            inverter reachable over Modbus TCP on your local network.
           </p>
         </div>
         <div class="sift-feature">
@@ -320,8 +332,12 @@
           </div>
           <h2>Requirements</h2>
           <ul class="feature-list">
-            <li>iPhone, iPad, or Mac</li>
-            <li>A SolisCloud account with API access</li>
+            <li>iPhone, iPad, Mac, or Apple Watch</li>
+            <li>
+              A SolisCloud account with API access - or a supported inverter
+              (Solis, Sofar, SolaX, Growatt, GoodWe) reachable over Modbus TCP
+              on your local network
+            </li>
             <li>One-time in-app purchase for live auto-refresh (optional)</li>
           </ul>
         </div>
