@@ -1,0 +1,17 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "27E8998HNH.szlaski.Gapline"
+        ],
+        "components": [
+          {
+            "/": "/join/*",
+            "comment": "PaceLinkGo trip invitation links"
+          }
+        ]
+      }
+    ]
+  }
+}
