@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy - PaceLink Go</title>
+  <meta name="description" content="Privacy policy for PaceLink Go - temporary group location sharing, trip summaries, purchases, and data retention.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-bg"></div>
+  <header class="site-header">
+    <a class="brand" href="index.html">Developer</a>
+    <nav aria-label="Main">
+      <a href="pacelink-go.html">Return to PaceLink Go</a>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <main class="legal pacelink-legal">
+    <h1>PaceLink Go - Privacy Policy</h1>
+    <p><strong>Last Updated: September 3, 2026</strong></p>
+    <section>
+      <p>PaceLink Go is a group travel companion for iPhone, developed by Daniel Szlaski
+        ("we", "us", or "our"), the controller of the personal data described here.
+        It shows distance and time gaps between people who choose to join the same trip.</p>
+      <p><strong>No account is required, but the App does process personal data:</strong>
+        your chosen display name, precise location during a trip, temporary identifiers,
+        and certain purchase and diagnostic information. We do not use advertising SDKs,
+        advertising identifiers, or cross-app tracking, and we do not sell your personal data.
+        We do collect aggregate daily usage counts.</p>
+
+      <h2>1. Information Used During a Trip</h2>
+      <ul>
+        <li><strong>Display name:</strong> a name or nickname you enter, remembered on your
+          phone and sent to our service when you create or join a trip. You do not need to
+          provide your legal name, email address, telephone number, or contacts.</li>
+        <li><strong>Precise location:</strong> latitude, longitude, timestamp, accuracy,
+          speed, and direction of travel. Recent location samples are sent to our service
+          to calculate relative positions, distance gaps, and estimated time gaps.</li>
+        <li><strong>Trip and participant information:</strong> randomly generated trip
+          and participant IDs, invitation links and codes, host status, join/leave times,
+          trip start/end/expiry times, and session credentials used to control access.</li>
+        <li><strong>Live Activity information:</strong> Apple push tokens and the most recent
+          activity state, including participant names, IDs, relative positions, gaps, and
+          speed information, so updates can reach your devices.</li>
+      </ul>
+      <p>Location collection runs during an active trip, including in the background when
+        permitted. A host waiting alone for the first guest does not start live location
+        sharing. You can leave a trip, end it as the host, or revoke location access in
+        iOS Settings. Disabling access prevents the location features from working.</p>
+
+      <h2>2. Who Can See Your Trip Information</h2>
+      <p>Other participants in the same trip receive your display name and live trip
+        information. The trip service also makes current locations and recent location
+        trails available to authenticated participants. An invitation link or valid code
+        lets someone join, subject to the trip's capacity and expiry. Share invitations
+        only with people you trust.</p>
+      <p>Live Activities can show trip information on the Lock Screen, Dynamic Island,
+        and supported connected displays such as CarPlay. People who can see those displays
+        may see that information. We cannot erase screenshots or copies made by other
+        participants, including the companion details in their local trip summaries.</p>
+
+      <h2 id="retention">3. Storage, Retention, and Deletion</h2>
+      <p><strong>Temporary GPS data:</strong> each server location record is assigned an
+        expiry time no later than 45 minutes after its sample timestamp, capped at the
+        trip's scheduled expiry. Ending a trip requests deletion of its GPS records;
+        leaving requests deletion of that participant's GPS records. These are cleanup
+        requests, not a guarantee that every copy is erased instantly.</p>
+      <p>If a request fails, the phone is offline, a write is already in progress, or
+        database cleanup is incomplete, records can remain pending automatic deletion.
+        Database expiry is asynchronous: physical removal can take a few days after the
+        expiry timestamp, as described in
+        <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html" target="_blank" rel="noopener noreferrer">AWS's expiry documentation</a>.
+        The service rejects live location access once the trip has ended or expired,
+        and rejects a participant's access once their departure is recorded by the server.</p>
+      <p><strong>Trip metadata:</strong> names, membership records, credentials, push tokens,
+        and cached activity state are not all deleted when the host taps End. Most temporary
+        trip records are assigned expiry at the scheduled trip end plus five minutes,
+        followed by the database's deletion delay. Extending a trip extends the relevant
+        records' expiry. Invitation-code lookups have a shorter expiry; ending a trip
+        also requests deletion of its invitation lookups.</p>
+      <p><strong>Local trip history:</strong> the App clears its in-memory GPS trail when a
+        trip stops. It saves summaries on your phone containing dates, duration, distance,
+        moving/stopped time, speed statistics, participant count, companion names and
+        participant IDs, and aggregate/final gaps. These summaries contain no coordinates
+        or route history and are not uploaded as a history archive. They have no automatic
+        expiry or in-app deletion control in the current version. Deleting the App
+        (rather than offloading it) removes its local app data; device backups may retain
+        copies according to your Apple settings.</p>
+      <p><strong>Other local storage:</strong> your display name and welcome-trip counter
+        are saved in app preferences. An active host credential is kept in the device's
+        Keychain to recover the trip. It is cleared on a confirmed end or expiry; a failed
+        end request may leave it available for recovery. Keychain items may survive
+        uninstalling the App.</p>
+      <p><strong>Longer-lived data:</strong> the purchase records and daily usage counters
+        described below have no automatic expiry. Configured server diagnostic logs have
+        a 14-day retention period. If you contact us, we receive your email address and
+        message and retain the correspondence as needed to resolve the request and meet
+        applicable obligations.</p>
+
+      <h2>4. Purchases</h2>
+      <p>Optional Trip Pass purchases use Apple's App Store and StoreKit. The App sends a
+        signed Apple transaction to our backend for verification. We retain the transaction
+        ID, product ID, purchase time, consumption time, and associated trip ID to prevent
+        a purchase from being reused. These records currently have no automatic deletion
+        date and remain after the trip ends; they contain no GPS coordinates. We do not
+        receive your payment-card details from Apple.</p>
+
+      <h2>5. Usage Counts and Diagnostics</h2>
+      <p>We keep daily totals of events such as trips created, repeat hosting, invitations
+        shared, guests joining, trip-duration milestones, host-ended trips, paywall views,
+        and purchases after the welcome allowance. The statistics table stores daily
+        integer counters, not individual event histories, names, coordinates, device IDs,
+        participant IDs, trip IDs, or IP addresses. The host's previous-trip count is sent
+        when creating a trip to apply the welcome allowance and calculate aggregate counts.</p>
+      <p>Operational logs are separate from these counters. They can contain error messages,
+        request-route information, temporary participant IDs, and reasons a location sample
+        was rejected. The code does not intentionally log GPS coordinates or payment-card
+        details. Our hosting providers necessarily process network information, including
+        IP addresses, to deliver and protect the service. iOS also maintains local system
+        diagnostics; its handling and sharing depend on your Apple settings.</p>
+
+      <h2>6. Service Providers and Security</h2>
+      <p>Our backend uses Amazon Web Services, with trip databases configured in the
+        Frankfurt, Germany region. Connections use HTTPS and the databases use encryption
+        at rest. Session credentials restrict trip access. These measures reduce risk
+        but cannot guarantee absolute security.</p>
+      <p>Apple processes App Store purchases and delivers Live Activity updates through
+        Apple Push Notification service. Push payloads contain activity information such
+        as names, speed, and relative gaps, rather than raw GPS coordinates. Apple's
+        services and provider operations may involve processing outside your country.
+        See <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple's Privacy Policy</a>
+        and <a href="https://aws.amazon.com/privacy/" target="_blank" rel="noopener noreferrer">AWS's Privacy Notice</a>
+        for their handling of information. Your separate navigation app handles data under
+        its own policy; PaceLink Go does not need access to its saved destinations.</p>
+
+      <h2>7. Purposes, Choices, and Your Rights</h2>
+      <p>We process the trip information needed to provide the service you request.
+        Location sharing is optional and controlled by your participation and iOS
+        permissions. We use necessary diagnostic and purchase-verification information
+        for our legitimate interests in operating, securing, and preventing misuse of
+        the service, and retain information where required by law. We do not use your
+        data for advertising profiles or automated decisions with legal or similarly
+        significant effects.</p>
+      <p>Depending on applicable law, you may request access, correction, deletion,
+        restriction, or portability of your personal data, object to processing based
+        on legitimate interests, or withdraw consent where processing relies on consent.
+        You may complain to your local data-protection authority, including Poland's
+        President of the Personal Data Protection Office (UODO).
+        <a href="https://commission.europa.eu/law/law-topic/data-protection/information-individuals_en" target="_blank" rel="noopener noreferrer">Learn more about EU data rights</a>.</p>
+      <p>Contact us below to exercise your rights. Since the App has no account directory,
+        we may need enough information to locate the relevant trip or purchase. Do not
+        send session tokens or precise location history by email. We cannot retrieve
+        already-deleted GPS records or identify you from aggregate daily counters.</p>
+
+      <h2>8. Children and Updates</h2>
+      <p>The App is a travel companion, not a child-monitoring service. If you believe
+        a child has provided personal data without appropriate authorization, contact us
+        so we can address it. We may update this policy as the App changes and will show
+        the revision date above.</p>
+      <h2>9. Contact</h2>
+<p>Daniel Szlaski<br>Pileckiego 9, 05-250 Radzymin, Poland<br>
+        Email: <a href="mailto:apps@danielszlaski.com">apps@danielszlaski.com</a><br>VAT ID (NIP): PL1251270430</p>
+    </section>
+    <footer class="sift-footer">
+      <a href="pacelink-go.html">PaceLink Go</a>
+      <a href="pacelink-go-privacy.html">Privacy Policy</a>
+      <a href="pacelink-go-terms.html">Terms of Use</a>
+    </footer>
+  </main>
+</body>
+</html>
