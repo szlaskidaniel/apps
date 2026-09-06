@@ -1,6 +1,6 @@
 # PaceLink Go data-handling review
 
-Reviewed September 3, 2026 against the local `gapline` checkout. This is a source/configuration review, not an inspection of deployed AWS tables, logs, backups, App Store disclosures, provider contracts, or actual deletion timings. No PaceLink Go app/backend code was changed.
+Reviewed September 4, 2026 against the local `gapline` checkout. This is a source/configuration review, not an inspection of deployed AWS tables, logs, backups, App Store disclosures, provider contracts, or actual deletion timings. No PaceLink Go app/backend code was changed.
 
 ## Findings reflected in the website
 
@@ -24,10 +24,47 @@ Reviewed September 3, 2026 against the local `gapline` checkout. This is a sourc
 
 ## Publication and app-disclosure follow-ups
 
-The supplied gallery artwork is preserved unchanged. “No shared personal info” and “then discarded” are too broad without qualification: display names and live positions are shared, cleanup can lag, and the records above remain. The page provides the full retention explanation through its feature copy and footer privacy link. Revise the same claims in app/store artwork and in-app copy before treating them as an unconditional promise.
+The outdated privacy gallery slide is no longer displayed on the app page; its image file is preserved. “No shared personal info” and “then discarded” are too broad without qualification: display names and live positions are shared, cleanup can lag, and the records above remain. The page provides the full retention explanation through its feature copy and footer privacy link. Revise the same claims in app/store artwork and in-app copy before treating them as an unconditional promise.
 
-The privacy manifest currently declares UserDefaults API use only. Complete/verify the separate App Store Connect App Privacy disclosure against actual data flows, including precise location, identifiers, purchases, and usage/diagnostic data; a required-reason API entry is not a data-collection inventory.
+The privacy manifest now declares device ID and product interaction collection alongside UserDefaults API use. Complete/verify the separate App Store Connect App Privacy disclosure against actual data flows, including precise location, identifiers, purchases, and usage/diagnostic data; a required-reason API entry is not a data-collection inventory.
 
 Confirm deployed TTL/log settings, any additional backup/logging configuration, international-transfer arrangements, support correspondence retention, and the appropriate legal bases before publication. Source code alone cannot establish those operational/legal facts.
 
 The App Store link uses ID `6807346681` from `ios/APP_STORE_CONNECT.md`; public listing availability was not confirmed. The page therefore says “View on the App Store” without a release-date claim. This site remains in its existing static GitHub Pages structure; publishing/commit/push was not part of this edit.
+
+
+## September 4 device-allowance update
+
+The three PaceLink Go pages now describe the new device-verification release. Publish
+with the corresponding production backend/client rollout; configuring dev alone does
+not make this behavior live for existing production clients. No publish or push was performed.
+
+Verified against `backend/src/lib/devices.ts`, `welcome.ts`, `dynamo.ts`,
+`backend/serverless.yml`, and `ios/Gapline/Monetization/DeviceAllowanceClient.swift`:
+
+- Random app identity and recovery secret are transmitted over HTTPS; the server
+  persists HMAC identity and secret hash, not their raw values. It stores public key,
+  key ID, attestation fingerprint, replay counter, allocation status and granted/used credits.
+- App Attest keys have permanent ownership records. Allowance/authentication records
+  have no TTL. Issuance recovery may retain a ledger reference until resolved.
+- DeviceCheck tokens go to Apple to query/set the developer-scoped allocated marker;
+  raw tokens and full proofs are not persisted in the device database.
+- Device usage counts (verified free/paid creates and first-guest activations) are
+  separate from daily aggregates and expire 730 days after the last usage write.
+  Temporary trip metadata links to the device record, so no anonymity claim is made.
+- Challenges expire after five minutes. Database deletion is asynchronous. Device
+  table configuration enables point-in-time recovery; backup erasure is not immediate.
+- App preferences contain the installation marker and legacy telemetry counter;
+  ThisDeviceOnly Keychain contains persistent credentials and pending-create recovery.
+  Credential loss can break statistical continuity and recovery of unused credits.
+- Creating an invitation spends a credit. A failed verification is not zero balance.
+  Reinstall does not reset Apple’s allocation marker or the retained allowance.
+
+Before publication, review the proportionality of indefinite allowance/authentication
+retention and purchase retention, the legitimate-interest basis for per-device analytics,
+any applicable device-storage consent requirements, international-transfer safeguards,
+and a workable identity-verification/deletion/used-device support procedure. The website
+states the actual current lack of automatic expiry and self-service deletion; it does
+not claim these code choices alone establish legal compliance. Transparency requirements:
+[GDPR, particularly Articles 5, 6, 11, 13, 17 and 21](https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng).
+The removed artwork should also be revised wherever it appears in App Store materials.

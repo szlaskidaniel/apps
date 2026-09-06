@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy - PaceLink Go</title>
-  <meta name="description" content="Privacy policy for PaceLink Go - temporary group location sharing, trip summaries, purchases, and data retention.">
+  <meta name="description" content="Privacy policy for PaceLink Go - temporary location sharing, device verification, free-trip limits, usage counts, purchases, and retention.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
@@ -22,16 +22,18 @@
 
   <main class="legal pacelink-legal">
     <h1>PaceLink Go - Privacy Policy</h1>
-    <p><strong>Last Updated: September 3, 2026</strong></p>
+    <p><strong>Last Updated: September 4, 2026</strong></p>
     <section>
       <p>PaceLink Go is a group travel companion for iPhone, developed by Daniel Szlaski
         ("we", "us", or "our"), the controller of the personal data described here.
         It shows distance and time gaps between people who choose to join the same trip.</p>
       <p><strong>No account is required, but the App does process personal data:</strong>
-        your chosen display name, precise location during a trip, temporary identifiers,
-        and certain purchase and diagnostic information. We do not use advertising SDKs,
+        your chosen display name, precise location during a trip, temporary trip identifiers,
+        a persistent pseudonymous device record, and purchase, usage, and diagnostic information. We do not use advertising SDKs,
         advertising identifiers, or cross-app tracking, and we do not sell your personal data.
-        We do collect aggregate daily usage counts.</p>
+        We keep both aggregate daily usage counts and separate trip counts associated with
+        a verified device record. Pseudonymous means associated with a code instead of your
+        name; it does not mean anonymous.</p>
 
       <h2>1. Information Used During a Trip</h2>
       <ul>
@@ -91,12 +93,29 @@
         expiry or in-app deletion control in the current version. Deleting the App
         (rather than offloading it) removes its local app data; device backups may retain
         copies according to your Apple settings.</p>
-      <p><strong>Other local storage:</strong> your display name and welcome-trip counter
-        are saved in app preferences. An active host credential is kept in the device's
+      <p><strong>Other local storage:</strong> your display name, a legacy hosting counter
+        used for aggregate statistics, and an installation marker are saved in app preferences.
+        The server determines your free-trip balance; resetting preferences does not reset it.
+        Random device credentials and a recovery secret are kept in this device's Keychain,
+        together with verification state and any unfinished free-trip request (including
+        its display name and retry identifier). These allow secure re-registration and
+        recovery after an interrupted request. They are not synchronized through iCloud
+        Keychain and may survive uninstalling the App. An active host credential is kept in the device's
         Keychain to recover the trip. It is cleared on a confirmed end or expiry; a failed
-        end request may leave it available for recovery. Keychain items may survive
-        uninstalling the App.</p>
-      <p><strong>Longer-lived data:</strong> the purchase records and daily usage counters
+        end request may leave it available for recovery.</p>
+      <p><strong>Device records:</strong> the pseudonymous identity, free-trip allocation
+        and used-credit counts, and verification/recovery records described below currently
+        have no automatic expiry. They remain after trips end and after uninstalling so
+        the same allowance cannot be claimed repeatedly. This includes records associating
+        verification keys with the same device identity. Separate per-device usage counts
+        are assigned expiry 730 days after the last recorded creation or activation;
+        physical deletion follows the database's asynchronous cleanup. Verification challenges
+        expire after five minutes and are consumed on use or queued for automatic deletion.</p>
+      <p>The device database uses recovery backups, so deleting a live record does not
+        immediately remove it from existing backups. Apple's DeviceCheck marker is held
+        by Apple separately; deleting local app data or our database record does not itself
+        clear that marker. Contact us about deletion or a device you acquired from someone else.</p>
+      <p><strong>Other longer-lived data:</strong> the purchase records and daily usage counters
         described below have no automatic expiry. Configured server diagnostic logs have
         a 14-day retention period. If you contact us, we receive your email address and
         message and retain the correspondence as needed to resolve the request and meet
@@ -110,26 +129,73 @@
         date and remain after the trip ends; they contain no GPS coordinates. We do not
         receive your payment-card details from Apple.</p>
 
-      <h2>5. Usage Counts and Diagnostics</h2>
+      <h2 id="device-data">5. Device Verification and Free Trips</h2>
+      <p>The two welcome trips are an allowance per recognized device, not per installation
+        or account. We verify eligibility and keep the used balance on our server to prevent
+        repeated claims, tampered requests, and duplicate spending. Creating a free-trip
+        invitation uses a credit even if nobody joins. Reinstalling does not grant a new allowance.</p>
+      <ul>
+        <li><strong>What the App sends to us:</strong> an app-generated random identifier,
+          a recovery secret, Apple's App Attest key identifier and cryptographic proofs,
+          and an Apple DeviceCheck token when checking the allowance. They are sent over
+          HTTPS to verify the App and authorize requests. We do not collect an advertising
+          ID, hardware serial number, or IMEI for this purpose.</li>
+        <li><strong>What we retain:</strong> a keyed hash of that random identifier (HMAC),
+          a hash of the recovery secret, platform, verification key identifier and public key,
+          proof fingerprint and replay-prevention counter, allocation status, and credits
+          granted and used. We do not retain the raw random identifier, recovery secret,
+          DeviceCheck token, or full attestation proof in the device database. Private
+          App Attest signing keys remain on the device.</li>
+        <li><strong>What Apple processes:</strong> App Attest verifies an app-generated
+          key on your device. We send the DeviceCheck token to Apple to check and record
+          a yes/no marker that the welcome allowance has already been allocated. That marker
+          can survive reinstall and is scoped to our Apple developer account. It is used
+          for allowance protection, not to send Apple your route or per-device trip counts.
+          Apple does not give us a universal hardware identifier through these services.</li>
+      </ul>
+      <p>The persistent device record contains no display name, coordinates, route history,
+        or IP address. However, temporary hosted-trip metadata links to it for usage counting;
+        while that metadata exists, it can associate the record with that trip and its host.
+        It is therefore not anonymous. Other participants are not given your device credentials
+        or persistent device identifier.</p>
+      <p>If recovery credentials survive reinstall, the App can reconnect to the same record.
+        If they are lost, Apple's marker may still prevent another allowance, but we may be
+        unable to recover unused credits or connect the replacement identity to the old one.
+        A device record is not a reliable count of unique people or a complete lifetime device history.</p>
+      <p>If verification is unavailable, the App cannot confirm or allocate free trips.
+        Joining and independently verified paid hosting remain available. Contact support
+        if you believe eligibility is incorrect, including after buying a used device.</p>
+
+      <h2>6. Usage Counts and Diagnostics</h2>
       <p>We keep daily totals of events such as trips created, repeat hosting, invitations
         shared, guests joining, trip-duration milestones, host-ended trips, paywall views,
         and purchases after the welcome allowance. The statistics table stores daily
         integer counters, not individual event histories, names, coordinates, device IDs,
         participant IDs, trip IDs, or IP addresses. The host's previous-trip count is sent
-        when creating a trip to apply the welcome allowance and calculate aggregate counts.</p>
+        when creating a trip only to calculate legacy aggregate counts; it does not authorize free trips.</p>
+      <p><strong>Separate per-device counts:</strong> for hosting requests associated with a
+        verified device record, we count free trips created, paid trips created, and trips
+        activated when the first guest joins. We use these counts to understand hosting
+        usage and operate the service. They are linked to the pseudonymous identifier,
+        not stored as a list of routes or individual location events. Paid hosting without
+        device verification is not attributed to a device record. These counts are separate
+        from the aggregate statistics table and have the retention period in section 3.</p>
       <p>Operational logs are separate from these counters. They can contain error messages,
         request-route information, temporary participant IDs, and reasons a location sample
         was rejected. The code does not intentionally log GPS coordinates or payment-card
-        details. Our hosting providers necessarily process network information, including
+        details, device recovery secrets, DeviceCheck tokens, or request proofs. Our hosting
+        providers necessarily process network information, including
         IP addresses, to deliver and protect the service. iOS also maintains local system
         diagnostics; its handling and sharing depend on your Apple settings.</p>
 
-      <h2>6. Service Providers and Security</h2>
+      <h2>7. Service Providers and Security</h2>
       <p>Our backend uses Amazon Web Services, with trip databases configured in the
-        Frankfurt, Germany region. Connections use HTTPS and the databases use encryption
+        Frankfurt, Germany region, along with the device and usage databases. Connections
+        use HTTPS and the databases use encryption
         at rest. Session credentials restrict trip access. These measures reduce risk
         but cannot guarantee absolute security.</p>
-      <p>Apple processes App Store purchases and delivers Live Activity updates through
+      <p>Apple provides DeviceCheck and App Attest for device verification, processes App Store
+        purchases, and delivers Live Activity updates through
         Apple Push Notification service. Push payloads contain activity information such
         as names, speed, and relative gaps, rather than raw GPS coordinates. Apple's
         services and provider operations may involve processing outside your country.
@@ -138,12 +204,15 @@
         for their handling of information. Your separate navigation app handles data under
         its own policy; PaceLink Go does not need access to its saved destinations.</p>
 
-      <h2>7. Purposes, Choices, and Your Rights</h2>
-      <p>We process the trip information needed to provide the service you request.
-        Location sharing is optional and controlled by your participation and iOS
-        permissions. We use necessary diagnostic and purchase-verification information
-        for our legitimate interests in operating, securing, and preventing misuse of
-        the service, and retain information where required by law. We do not use your
+      <h2>8. Purposes, Choices, and Your Rights</h2>
+      <p>We process trip and purchase information necessary to deliver the service you request.
+        Location sharing is optional and controlled by your participation and iOS permissions.
+        We use device verification, allowance records, and necessary diagnostics for our
+        legitimate interests in securing the service and preventing repeated free claims
+        or purchase reuse. We use aggregate and pseudonymous device usage counts for our
+        legitimate interest in understanding service usage and improving its operation.
+        You may object to processing based on legitimate interests by contacting us.
+        We retain information where required by law. We do not use your
         data for advertising profiles or automated decisions with legal or similarly
         significant effects.</p>
       <p>Depending on applicable law, you may request access, correction, deletion,
@@ -153,16 +222,20 @@
         President of the Personal Data Protection Office (UODO).
         <a href="https://commission.europa.eu/law/law-topic/data-protection/information-individuals_en" target="_blank" rel="noopener noreferrer">Learn more about EU data rights</a>.</p>
       <p>Contact us below to exercise your rights. Since the App has no account directory,
-        we may need enough information to locate the relevant trip or purchase. Do not
-        send session tokens or precise location history by email. We cannot retrieve
+        we may need enough information to locate the relevant device record, trip, or purchase
+        and verify the request. The current App has no self-service device-record deletion
+        control; contact us for assistance. We will explain any lawful need to retain
+        limited records for fraud prevention or other obligations. Deletion is not a promise
+        of a renewed free allowance. Do not send private keys, recovery secrets, session
+        tokens, or precise location history by email. We cannot retrieve
         already-deleted GPS records or identify you from aggregate daily counters.</p>
 
-      <h2>8. Children and Updates</h2>
+      <h2>9. Children and Updates</h2>
       <p>The App is a travel companion, not a child-monitoring service. If you believe
         a child has provided personal data without appropriate authorization, contact us
         so we can address it. We may update this policy as the App changes and will show
         the revision date above.</p>
-      <h2>9. Contact</h2>
+      <h2>10. Contact</h2>
 <p>Daniel Szlaski<br>Pileckiego 9, 05-250 Radzymin, Poland<br>
         Email: <a href="mailto:apps@danielszlaski.com">apps@danielszlaski.com</a><br>VAT ID (NIP): PL1251270430</p>
     </section>
