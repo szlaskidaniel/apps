@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "profiles": [
     {
       "brandId": "solis",
@@ -8,8 +8,8 @@
       "modelName": "Solis RHI / S6 Hybrid (battery)",
       "unitId": 1,
       "polling": {
-        "maxBlockSize": 70,
-        "gapTolerance": 35
+        "maxBlockSize": 30,
+        "gapTolerance": 22
       },
       "fields": {
         "powerKW":                 { "fc": 4, "addr": 33057, "count": 2, "signed": true,  "scale": 0.001, "min": -200, "max": 200 },
@@ -23,6 +23,7 @@
         "gridExportTodayKWh":      { "fc": 4, "addr": 33175, "count": 1, "signed": false, "scale": 0.1,   "min": 0,    "max": 500 },
         "gridExportThisMonthKWh":  { "presence": "unsupported" },
         "homeLoadTodayKWh":        { "fc": 4, "addr": 33179, "count": 1, "signed": false, "scale": 0.1,   "min": 0,    "max": 500 },
+        "batteryChargeTodayKWh":   { "fc": 4, "addr": 33163, "count": 1, "signed": false, "scale": 0.1,   "min": 0,    "max": 500 },
         "batteryDischargeTodayKWh":{ "fc": 4, "addr": 33167, "count": 1, "signed": false, "scale": 0.1,   "min": 0,    "max": 500 },
         "gridConnectedFlag":       { "fc": 4, "addr": 33095, "count": 1, "signed": false, "scale": 1.0,   "min": 0,    "max": 65535 },
         "plantState":              { "presence": "computed" },
@@ -120,6 +121,7 @@
         "gridExportTodayKWh":      { "presence": "unsupported" },
         "gridExportThisMonthKWh":  { "presence": "unsupported" },
         "homeLoadTodayKWh":        { "presence": "unsupported" },
+        "batteryChargeTodayKWh":   { "presence": "unsupported" },
         "batteryDischargeTodayKWh":{ "presence": "unsupported" },
         "backupTodayEnergyKWh":    { "presence": "unsupported" },
         "statusWord":              { "presence": "unsupported" },
@@ -186,6 +188,7 @@
       "modelId": "hyd-es-legacy",
       "modelName": "Sofar HYD ES (legacy 1-phase, register 0x20D-0x21B)",
       "unitId": 1,
+      "notes": "Legacy 1-phase HYD ES family (HYD 3000-6000 ES). If you have a newer 3-phase HYD KTL inverter, pick the Sofar HYD KTL-3PH profile instead - the register maps are completely different.",
       "fields": {
         "powerKW":                 { "fc": 3, "addr": 533, "count": 1, "signed": false, "scale": 0.01,  "min": 0,    "max": 200 },
         "batteryPercent":          { "fc": 3, "addr": 528, "count": 1, "signed": false, "scale": 1.0,   "min": 0,    "max": 100 },
@@ -202,6 +205,7 @@
         "statusWord":              { "presence": "unsupported" },
         "gridConnectedFlag":       { "presence": "unsupported" },
         "bypassLoadPowerKW":       { "presence": "unsupported" },
+        "batteryChargeTodayKWh":   { "presence": "unsupported" },
         "batteryDischargeTodayKWh":{ "presence": "unsupported" },
         "homeGridTodayKWh":        { "presence": "unsupported" },
         "dayIncome":               { "presence": "unsupported" },
@@ -229,6 +233,7 @@
         "gridImportTodayKWh":      { "fc": 3, "addr": 1676, "count": 2, "signed": false, "scale": 0.01,  "min": 0,    "max": 500 },
         "gridExportTodayKWh":      { "fc": 3, "addr": 1680, "count": 2, "signed": false, "scale": 0.01,  "min": 0,    "max": 500 },
         "homeLoadTodayKWh":        { "fc": 3, "addr": 1672, "count": 2, "signed": false, "scale": 0.01,  "min": 0,    "max": 500 },
+        "batteryChargeTodayKWh":   { "fc": 3, "addr": 1684, "count": 2, "signed": false, "scale": 0.01,  "min": 0,    "max": 500 },
         "batteryDischargeTodayKWh":{ "fc": 3, "addr": 1688, "count": 2, "signed": false, "scale": 0.01,  "min": 0,    "max": 500 },
         "plantState":              { "presence": "computed" },
         "monthEnergy":             { "presence": "unsupported" },
@@ -250,10 +255,7 @@
       "modelId": "x1-x3-hybrid-g3-g4",
       "modelName": "SolaX X1 / X3 Hybrid Gen3 / Gen4 (battery)",
       "unitId": 1,
-      "polling": {
-        "maxBlockSize": 50,
-        "gapTolerance": 30
-      },
+      "notes": "Live house-load and outage detection aren't wired up yet on SolaX - the inverter derives them rather than exposing direct registers. PV power, battery SOC, battery power and daily energy totals work normally. SolaX uses Pocket WiFi / Pocket LAN sticks; the LAN stick exposes Modbus TCP on port 502 by default.",
       "fields": {
         "powerKW":                 { "fc": 4, "addr": 2,   "count": 1, "signed": true,  "scale": 0.001, "min": -200, "max": 200 },
         "batteryPercent":          { "fc": 4, "addr": 28,  "count": 1, "signed": false, "scale": 1.0,   "min": 0,    "max": 100 },
@@ -261,6 +263,7 @@
         "dayEnergyKWh":            { "fc": 4, "addr": 80,  "count": 1, "signed": false, "scale": 0.1,   "min": 0,    "max": 500 },
         "gridImportTodayKWh":      { "fc": 4, "addr": 154, "count": 2, "signed": false, "scale": 0.01,  "min": 0,    "max": 500 },
         "gridExportTodayKWh":      { "fc": 4, "addr": 152, "count": 2, "signed": false, "scale": 0.01,  "min": 0,    "max": 500 },
+        "batteryChargeTodayKWh":   { "fc": 4, "addr": 35,  "count": 1, "signed": false, "scale": 0.1,   "min": 0,    "max": 500 },
         "batteryDischargeTodayKWh":{ "fc": 4, "addr": 32,  "count": 1, "signed": false, "scale": 0.1,   "min": 0,    "max": 500 },
         "plantState":              { "presence": "computed" },
         "familyLoadPowerKW":       { "presence": "unsupported" },
@@ -284,10 +287,7 @@
       "modelId": "x1-x3-mic-string-g1",
       "modelName": "SolaX X1 Air/Boost/Mini & X3 MIC (string, Gen1)",
       "unitId": 1,
-      "polling": {
-        "maxBlockSize": 50,
-        "gapTolerance": 30
-      },
+      "notes": "Profile targets the older Gen1 MIC/Air/Boost/Mini family. If your inverter is a newer Gen2 unit (typically post-2020), the today's-energy scale differs and readings will be wrong - use the Modbus scanner to verify, or report so a Gen2 profile can be added.",
       "fields": {
         "powerKW":                 { "fc": 4, "addr": 1038, "count": 1, "signed": false, "scale": 0.001, "min": 0, "max": 200 },
         "dayEnergyKWh":            { "fc": 4, "addr": 1061, "count": 2, "signed": false, "scale": 0.001, "min": 0, "max": 500 },
@@ -298,6 +298,7 @@
         "batteryPowerKW":          { "presence": "unsupported" },
         "familyLoadPowerKW":       { "presence": "unsupported" },
         "homeLoadTodayKWh":        { "presence": "unsupported" },
+        "batteryChargeTodayKWh":   { "presence": "unsupported" },
         "batteryDischargeTodayKWh":{ "presence": "unsupported" },
         "monthEnergy":             { "presence": "unsupported" },
         "gridExportThisMonthKWh":  { "presence": "unsupported" },
@@ -318,10 +319,7 @@
       "modelId": "sph-tl-bh",
       "modelName": "Growatt SPH TL-BH (hybrid, Gen3)",
       "unitId": 1,
-      "polling": {
-        "maxBlockSize": 50,
-        "gapTolerance": 30
-      },
+      "notes": "Live battery charge/discharge direction isn't shown - Growatt splits the two into separate registers and the widget doesn't combine them yet. Battery SOC and daily charge/discharge energy still report normally. The default Growatt WiFi stick (ShineWiFi) does not expose Modbus TCP - you'll need a ShineLink or a wired RS485-to-TCP gateway.",
       "fields": {
         "powerKW":                 { "fc": 4, "addr": 1,    "count": 2, "signed": false, "scale": 0.0001, "min": 0, "max": 200 },
         "batteryPercent":          { "fc": 4, "addr": 1014, "count": 1, "signed": false, "scale": 1.0,    "min": 0, "max": 100 },
@@ -330,6 +328,7 @@
         "gridImportTodayKWh":      { "fc": 4, "addr": 1044, "count": 2, "signed": false, "scale": 0.1,    "min": 0, "max": 500 },
         "gridExportTodayKWh":      { "fc": 4, "addr": 1048, "count": 2, "signed": false, "scale": 0.1,    "min": 0, "max": 500 },
         "homeLoadTodayKWh":        { "fc": 4, "addr": 1060, "count": 2, "signed": false, "scale": 0.1,    "min": 0, "max": 500 },
+        "batteryChargeTodayKWh":   { "fc": 4, "addr": 1056, "count": 2, "signed": false, "scale": 0.1,    "min": 0, "max": 500 },
         "batteryDischargeTodayKWh":{ "fc": 4, "addr": 1052, "count": 2, "signed": false, "scale": 0.1,    "min": 0, "max": 500 },
         "plantState":              { "presence": "computed" },
         "batteryPowerKW":          { "presence": "unsupported" },
@@ -352,10 +351,7 @@
       "modelId": "min-tl-x-string",
       "modelName": "Growatt MIN / MIC TL-X (string, Gen1)",
       "unitId": 1,
-      "polling": {
-        "maxBlockSize": 50,
-        "gapTolerance": 25
-      },
+      "notes": "String-only profile - exposes PV power and daily generation. Daily grid import/export and house load aren't on Modbus for this family unless a Smart Meter is paired; pick the SPH profile if you have a battery system. The default ShineWiFi stick does not expose Modbus TCP - you'll need a ShineLink or RS485-to-TCP gateway.",
       "fields": {
         "powerKW":                 { "fc": 4, "addr": 1,  "count": 2, "signed": false, "scale": 0.0001, "min": 0, "max": 200 },
         "dayEnergyKWh":            { "fc": 4, "addr": 26, "count": 2, "signed": false, "scale": 0.1,    "min": 0, "max": 500 },
@@ -366,6 +362,7 @@
         "gridImportTodayKWh":      { "presence": "unsupported" },
         "gridExportTodayKWh":      { "presence": "unsupported" },
         "homeLoadTodayKWh":        { "presence": "unsupported" },
+        "batteryChargeTodayKWh":   { "presence": "unsupported" },
         "batteryDischargeTodayKWh":{ "presence": "unsupported" },
         "monthEnergy":             { "presence": "unsupported" },
         "gridExportThisMonthKWh":  { "presence": "unsupported" },
@@ -386,6 +383,7 @@
       "modelId": "et-eh-hybrid",
       "modelName": "GoodWe ET / EH / BT / BH (hybrid)",
       "unitId": 247,
+      "notes": "GoodWe's default Wi-Fi stick uses a proprietary UDP protocol, not Modbus TCP. To use this profile you need a stick or LAN module set to Modbus TCP mode - typically the Ezlink 3000 in Modbus mode, an EzLogger Pro, or a wired RS485-to-TCP gateway. The default Modbus unit ID for GoodWe ET/EH is 247.",
       "polling": {
         "maxBlockSize": 80,
         "gapTolerance": 20
@@ -399,6 +397,7 @@
         "gridExportTodayKWh":      { "fc": 3, "addr": 35199, "count": 1, "signed": false, "scale": 0.1,   "min": 0,    "max": 500 },
         "gridImportTodayKWh":      { "fc": 3, "addr": 35202, "count": 1, "signed": false, "scale": 0.1,   "min": 0,    "max": 500 },
         "homeLoadTodayKWh":        { "fc": 3, "addr": 35205, "count": 1, "signed": false, "scale": 0.1,   "min": 0,    "max": 500 },
+        "batteryChargeTodayKWh":   { "presence": "unsupported" },
         "batteryDischargeTodayKWh":{ "fc": 3, "addr": 35211, "count": 1, "signed": false, "scale": 0.1,   "min": 0,    "max": 500 },
         "plantState":              { "presence": "computed" },
         "monthEnergy":             { "presence": "unsupported" },
@@ -420,6 +419,7 @@
       "modelId": "dt-ns-string",
       "modelName": "GoodWe DT / NS / MS / XS (string)",
       "unitId": 247,
+      "notes": "String-only profile - exposes PV power and daily generation. Like the GoodWe hybrid profile, the default Wi-Fi stick uses a proprietary protocol; you'll need a stick or LAN module set to Modbus TCP mode. Daily grid import/export and house load aren't available on Modbus for the DT family unless a Smart Meter is paired.",
       "polling": {
         "maxBlockSize": 60,
         "gapTolerance": 20
@@ -434,6 +434,7 @@
         "gridImportTodayKWh":      { "presence": "unsupported" },
         "gridExportTodayKWh":      { "presence": "unsupported" },
         "homeLoadTodayKWh":        { "presence": "unsupported" },
+        "batteryChargeTodayKWh":   { "presence": "unsupported" },
         "batteryDischargeTodayKWh":{ "presence": "unsupported" },
         "monthEnergy":             { "presence": "unsupported" },
         "gridExportThisMonthKWh":  { "presence": "unsupported" },
