@@ -22,9 +22,9 @@
 
   <main class="legal pacelink-legal">
     <h1>PaceLink Go - Privacy Policy</h1>
-    <p><strong>Last Updated: September 4, 2026</strong></p>
+    <p><strong>Last Updated: September 9, 2026</strong></p>
     <section>
-      <p>PaceLink Go is a group travel companion for iPhone, developed by Daniel Szlaski
+      <p>PaceLink Go is a group travel companion for iPhone and Android, developed by Daniel Szlaski
         ("we", "us", or "our"), the controller of the personal data described here.
         It shows distance and time gaps between people who choose to join the same trip.</p>
       <p><strong>No account is required, but the App does process personal data:</strong>
@@ -46,14 +46,14 @@
         <li><strong>Trip and participant information:</strong> randomly generated trip
           and participant IDs, invitation links and codes, host status, join/leave times,
           trip start/end/expiry times, and session credentials used to control access.</li>
-        <li><strong>Live Activity information:</strong> Apple push tokens and the most recent
+        <li><strong>iOS Live Activity information:</strong> Apple push tokens and the most recent
           activity state, including participant names, IDs, relative positions, gaps, and
           speed information, so updates can reach your devices.</li>
       </ul>
       <p>Location collection runs during an active trip, including in the background when
         permitted. A host waiting alone for the first guest does not start live location
         sharing. You can leave a trip, end it as the host, or revoke location access in
-        iOS Settings. Disabling access prevents the location features from working.</p>
+        your phone’s Settings. Disabling access prevents the location features from working.</p>
 
       <h2>2. Who Can See Your Trip Information</h2>
       <p>Other participants in the same trip receive your display name and live trip
@@ -61,7 +61,8 @@
         trails available to authenticated participants. An invitation link or valid code
         lets someone join, subject to the trip's capacity and expiry. Share invitations
         only with people you trust.</p>
-      <p>Live Activities can show trip information on the Lock Screen, Dynamic Island,
+      <p>On Android, ongoing trip notifications can show participant names, speed, and relative gaps on the Lock Screen and notification shade. These notifications are generated on the phone from trip updates fetched from our backend; the Android app does not register Apple push tokens.</p>
+      <p>On iOS, Live Activities can show trip information on the Lock Screen, Dynamic Island,
         and supported connected displays such as CarPlay. People who can see those displays
         may see that information. We cannot erase screenshots or copies made by other
         participants, including the companion details in their local trip summaries.</p>
@@ -90,10 +91,10 @@
         moving/stopped time, speed statistics, participant count, companion names and
         participant IDs, and aggregate/final gaps. These summaries contain no coordinates
         or route history and are not uploaded as a history archive. They have no automatic
-        expiry or in-app deletion control in the current version. Deleting the App
+        expiry. Android includes Delete summary and Clear history controls; the current iOS version has no in-app history deletion control. Deleting the App
         (rather than offloading it) removes its local app data; device backups may retain
-        copies according to your Apple settings.</p>
-      <p><strong>Other local storage:</strong> your display name, a legacy hosting counter
+        copies according to your device settings. Android excludes its encrypted trip journal from app backup.</p>
+      <p><strong>iOS local storage:</strong> your display name, a legacy hosting counter
         used for aggregate statistics, and an installation marker are saved in app preferences.
         The server determines your free-trip balance; resetting preferences does not reset it.
         Random device credentials and a recovery secret are kept in this device's Keychain,
@@ -103,6 +104,7 @@
         Keychain and may survive uninstalling the App. An active host credential is kept in the device's
         Keychain to recover the trip. It is cleared on a confirmed end or expiry; a failed
         end request may leave it available for recovery.</p>
+      <p><strong>Android local storage:</strong> an encrypted, app-private journal stores your display name, active session credentials, local summaries, unfinished trip requests, and purchase tokens awaiting verification or consumption. Its encryption key stays in Android Keystore. The journal is excluded from Android backup and is removed when app data is cleared or the app is uninstalled. We do not save GPS coordinates in this journal. Clearing local data can lose an active session or unfinished request; it does not reset the server-side free-trip count for the same recognized Android device identity.</p>
       <p><strong>Device records:</strong> the pseudonymous identity, free-trip allocation
         and used-credit counts, and verification/recovery records described below currently
         have no automatic expiry. They remain after trips end and after uninstalling so
@@ -122,12 +124,14 @@
         applicable obligations.</p>
 
       <h2>4. Purchases</h2>
-      <p>Optional Trip Pass purchases use Apple's App Store and StoreKit. The App sends a
+      <p>On iOS, optional Trip Pass purchases use Apple's App Store and StoreKit. The App sends a
         signed Apple transaction to our backend for verification. We retain the transaction
         ID, product ID, purchase time, consumption time, and associated trip ID to prevent
         a purchase from being reused. These records currently have no automatic deletion
         date and remain after the trip ends; they contain no GPS coordinates. We do not
         receive your payment-card details from Apple.</p>
+
+      <p>On Android, Trip Pass purchases use Google Play Billing. The App sends the purchase token, package name, and product ID to our backend, which checks the purchase with Google Play. Our purchase ledger retains a hash derived from the package and purchase token, product ID, purchase time, use time, and associated trip ID to prevent reuse and recover interrupted requests. These records have no automatic expiry and contain no GPS coordinates. The raw token is processed for verification and kept temporarily on the phone until the verified purchase is saved and consumed. We do not receive payment-card details from Google.</p>
 
       <h2 id="device-data">5. Device Verification and Free Trips</h2>
       <p>The two welcome trips are an allowance per recognized device, not per installation
@@ -135,12 +139,12 @@
         repeated claims, tampered requests, and duplicate spending. Creating a free-trip
         invitation uses a credit even if nobody joins. Reinstalling does not grant a new allowance.</p>
       <ul>
-        <li><strong>What the App sends to us:</strong> an app-generated random identifier,
+        <li><strong>What the iOS App sends to us:</strong> an app-generated random identifier,
           a recovery secret, Apple's App Attest key identifier and cryptographic proofs,
           and an Apple DeviceCheck token when checking the allowance. They are sent over
           HTTPS to verify the App and authorize requests. We do not collect an advertising
           ID, hardware serial number, or IMEI for this purpose.</li>
-        <li><strong>What we retain:</strong> a keyed hash of that random identifier (HMAC),
+        <li><strong>What we retain for iOS:</strong> a keyed hash of that random identifier (HMAC),
           a hash of the recovery secret, platform, verification key identifier and public key,
           proof fingerprint and replay-prevention counter, allocation status, and credits
           granted and used. We do not retain the raw random identifier, recovery secret,
@@ -153,12 +157,14 @@
           for allowance protection, not to send Apple your route or per-device trip counts.
           Apple does not give us a universal hardware identifier through these services.</li>
       </ul>
+      <p><strong>Android verification:</strong> the App reads Android’s app-scoped device ID, which is scoped to the device, Android user, and app signing key. It sends a SHA-256 hash of that ID with a purpose-specific prefix, a short-lived server challenge, and a Google Play Integrity token. We ask Google to decode the token and check app recognition, signing certificate, Play licensing, device integrity, freshness, and a hash binding the token to the exact request. Google processes device and app integrity information under its own terms; we do not send Google your route or display name in plain text for this check.</p>
+      <p>For Android, our server retains a keyed hash (HMAC) of the submitted identity, platform, a stable ledger identifier, two allocated credits, and the number used. Enrollment and retries do not reset an existing balance. We do not retain the raw Android ID or the full Integrity token in the device ledger. Ordinary reinstall normally preserves this identity; a factory reset, another Android user, or a change in signing identity can change it. This is a practical allowance limit, not a universal hardware identity. Google device recall is not used.</p>
       <p>The persistent device record contains no display name, coordinates, route history,
         or IP address. However, temporary hosted-trip metadata links to it for usage counting;
         while that metadata exists, it can associate the record with that trip and its host.
         It is therefore not anonymous. Other participants are not given your device credentials
         or persistent device identifier.</p>
-      <p>If recovery credentials survive reinstall, the App can reconnect to the same record.
+      <p>On iOS, if recovery credentials survive reinstall, the App can reconnect to the same record.
         If they are lost, Apple's marker may still prevent another allowance, but we may be
         unable to recover unused credits or connect the replacement identity to the old one.
         A device record is not a reliable count of unique people or a complete lifetime device history.</p>
@@ -185,8 +191,8 @@
         was rejected. The code does not intentionally log GPS coordinates or payment-card
         details, device recovery secrets, DeviceCheck tokens, or request proofs. Our hosting
         providers necessarily process network information, including
-        IP addresses, to deliver and protect the service. iOS also maintains local system
-        diagnostics; its handling and sharing depend on your Apple settings.</p>
+        IP addresses, to deliver and protect the service. Both iOS and Android maintain local system
+        diagnostics; their handling and sharing depend on your device settings.</p>
 
       <h2>7. Service Providers and Security</h2>
       <p>Our backend uses Amazon Web Services, with trip databases configured in the
@@ -204,9 +210,11 @@
         for their handling of information. Your separate navigation app handles data under
         its own policy; PaceLink Go does not need access to its saved destinations.</p>
 
+      <p>Google provides Play Billing and Play Integrity for Android purchase and device verification. These services may process information outside your country. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google’s Privacy Policy</a>. Android location sharing uses our AWS trip service and local ongoing notifications.</p>
+
       <h2>8. Purposes, Choices, and Your Rights</h2>
       <p>We process trip and purchase information necessary to deliver the service you request.
-        Location sharing is optional and controlled by your participation and iOS permissions.
+        Location sharing is optional and controlled by your participation and phone permissions.
         We use device verification, allowance records, and necessary diagnostics for our
         legitimate interests in securing the service and preventing repeated free claims
         or purchase reuse. We use aggregate and pseudonymous device usage counts for our
