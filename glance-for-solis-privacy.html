@@ -57,7 +57,7 @@
         Modbus TCP and Apple Watch features do not apply to this Android version.</p>
 
       <h2>3. Optional Solar Forecasts and Location</h2>
-      <p>When you configure forecasts, the App sends your site's latitude and longitude
+      <p>When forecasts are enabled, the App sends your site's latitude and longitude
         and panel tilt/direction directly to the selected provider, Open-Meteo or Forecast.Solar.
         Forecast.Solar also receives configured panel capacity. These providers receive your
         IP address as part of the request. Coordinates may identify a home or other property.
@@ -67,7 +67,15 @@
         the site coordinates; it does not continuously track your movements. Revoke location
         permission in system Settings to stop further device-location access. Previously
         saved site coordinates can still be used for forecasts until you change the
-        configuration or stop using that feature.</p>
+        configuration or stop using that feature. In Android version 1.0.0 build 3 and later (pending release), forecasts are
+        off until you accept the in-app transfer disclosure and choose “Agree and enable”
+        in Settings → Solar Forecast. This applies to manually entered coordinates too.
+        Changing providers requires consent again. Disable “Enable forecasts” to stop future
+        transfers for that plant; revoking device-location permission alone does not do this.
+        Enabled forecasts may send saved coordinates during background widget or Green energy
+        updates while the app is closed. The developer does not operate a forecast relay,
+        but direct transfers to these providers are still off-device data collection.</p>
+      <p>Older Android builds may lack this forecast switch; update the app to use these controls.</p>
       <p>The providers' processing and retention are described by
         <a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener noreferrer">Open-Meteo's terms and privacy information</a>
         and <a href="https://forecast.solar/" target="_blank" rel="noopener noreferrer">Forecast.Solar</a>.</p>
