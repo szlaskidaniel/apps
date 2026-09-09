@@ -15,8 +15,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="pacelink-go.css" />
   </head>
-  <body>
+  <body class="pacelink-theme">
     <div class="page-bg"></div>
     <header class="site-header">
       <a class="brand" href="index.html">Developer</a>
@@ -27,6 +28,11 @@
     </header>
 
     <main class="subpage sift-page pacelink-page">
+      <div class="pacelink-feature-art">
+        <img src="images/pacelink-go/feature-graphic.png"
+          alt="PaceLink Go. Keep your navigation. See your people. A mountain road at dusk with a cyan and amber route connecting three people."
+          width="1024" height="500" fetchpriority="high" />
+      </div>
       <section class="sift-top" aria-label="PaceLink Go">
         <div class="sift-left">
           <div class="sift-hero">
@@ -34,13 +40,19 @@
               <img src="images/pacelink-go/app-icon.png" alt="PaceLink Go app icon" width="1024" height="1024" />
             </div>
             <div class="sift-hero-copy">
-              <p class="eyebrow">iOS Application</p>
-              <div class="hero-title-row"><h1>PaceLink Go</h1></div>
+              <p class="eyebrow">Stay connected on the road</p>
+              <div class="hero-title-row"><h1>PaceLink <span>Go</span></h1></div>
               <p class="lead">Keep your navigation. See your people.</p>
               <p>Travelling together in separate cars? See who is ahead, who is behind,
                 and how far apart you are, while everyone keeps using their favourite navigation app.</p>
-              <div class="actions">
-                <a class="button" href="https://apps.apple.com/us/app/pacelink-go/id6807346681" target="_blank" rel="noopener noreferrer">View on the App Store</a>
+              <div class="actions pacelink-store-actions">
+                <a class="pacelink-store-badge" href="https://apps.apple.com/us/app/pacelink-go/id6807346681" target="_blank" rel="noopener noreferrer" aria-label="Download PaceLink Go on the App Store">
+                  <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" width="156" height="52" alt="Download on the App Store" />
+                </a>
+                <div class="pacelink-google-store" aria-label="PaceLink Go on Google Play — coming soon">
+                  <div class="pacelink-google-badge"><img src="images/pacelink-go/google-play-badge.png" width="646" height="250" alt="Get it on Google Play" /></div>
+                  <span class="pacelink-store-note">Coming soon</span>
+                </div>
               </div>
             </div>
           </div>
@@ -109,24 +121,17 @@
         </div>
       </section>
 
-      <section class="sift-tagline" aria-labelledby="privacy-overview">
-        <h2 id="privacy-overview">Clear About Your Data</h2>
-        <p>No account needed. We use device records to manage free trips and understand
-          app usage. We don't sell your personal data.
-          <a href="pacelink-go-privacy.html">Read our Privacy Policy.</a></p>
-      </section>
-
       <section class="sift-cta">
         <h2>Stay in Sync, Wherever the Road Takes You</h2>
         <p>Requires an iPhone with iOS 26 or later, location permission, and an internet
           connection. Allow background location to keep sharing while using navigation.
           Set up your trip before driving and check the app only when safe.</p>
         <div class="actions actions-center">
-          <a class="button" href="https://apps.apple.com/us/app/pacelink-go/id6807346681" target="_blank" rel="noopener noreferrer">View on the App Store</a>
+          <a class="pacelink-store-badge" href="https://apps.apple.com/us/app/pacelink-go/id6807346681" target="_blank" rel="noopener noreferrer" aria-label="Download PaceLink Go on the App Store">
+                  <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" width="156" height="52" alt="Download on the App Store" />
+                </a>
         </div>
       </section>
-      <p class="sift-tagline">The Android version is awaiting Google Play approval.
-        The Privacy Policy and Terms of Use below cover both Apple and Android versions.</p>
       <footer class="sift-footer">
         <a href="pacelink-go-privacy.html">Privacy Policy</a>
         <a href="pacelink-go-terms.html">Terms of Use</a>
