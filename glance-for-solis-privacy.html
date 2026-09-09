@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy - Glance for PV</title>
-  <meta name="description" content="Privacy policy for Glance for PV - live SolisCloud and Modbus TCP widgets for iPhone, iPad, and Mac.">
+  <meta name="description" content="Privacy policy for Glance for PV - solar monitoring, forecasts, storage, and purchases on Apple devices and Android.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
@@ -22,110 +22,123 @@
 
   <main class="legal">
     <h1>Glance for PV - Privacy Policy</h1>
-    <p><strong>Last Updated: May 13, 2026</strong></p>
-
+    <p><strong>Last Updated: September 9, 2026</strong></p>
     <section>
-      <p>
-        This Privacy Policy describes how the mobile application <strong>Glance for PV</strong> ("the App"),
-        developed by Daniel Szlaski ("we", "us", or "our"), handles information when you use the App.
-        Glance for PV is distributed exclusively through the Apple App Store for iPhone, iPad, and Mac.
-      </p>
-      <p>
-        Glance for PV is an unofficial third-party companion app. It is not affiliated with, endorsed
-        by, or associated with Ginlong Technologies, Solis, Sofar Solar, SolaX Power, Growatt, or
-        GoodWe.
-      </p>
+      <p>This Privacy Policy describes how Glance for PV ("the App"), developed by Daniel
+        Szlaski ("we", "us", or "our"), handles information on Apple devices and Android.
+        Shared practices apply to both versions; platform-specific features are labelled below.</p>
+      <p>Glance for PV is an unofficial third-party companion, not affiliated with or endorsed
+        by Ginlong Technologies, Solis, Sofar Solar, SolaX Power, Growatt, or GoodWe.</p>
 
-      <h2>1. Information We Collect</h2>
-      <p>
-        <strong>Glance for PV does not collect, store, or transmit any personal information to us or to any third party.</strong>
-        The App has no accounts, no sign-up, no analytics, no advertising, and no tracking of any kind.
-        Everything you enter stays on your device.
-      </p>
+      <h2>1. Information the App Uses</h2>
+      <p>No Glance for PV account is required. We do not operate a server that receives your
+        solar credentials, site coordinates, or energy readings. The App uses credentials,
+        connection settings, station identifiers and names, energy/battery readings, site
+        configuration, cached history, preferences, and purchase entitlement information
+        to provide its features. It has no advertising or cross-app tracking SDKs.</p>
+      <p>Some information is sent directly to the services you use, as explained below.
+        This includes SolisCloud, optional forecast providers, and platform services;
+        it would be incorrect to describe all processing as staying on your device.</p>
 
-      <h2>2. Credentials and Connection Details</h2>
-      <p>
-        To display data from your solar system, the App requires either SolisCloud credentials (such
-        as your SolisCloud API key and secret) or local Modbus TCP connection details (such as the IP
-        address and port of your inverter on your home network). These credentials and connection
-        details are stored exclusively on your device using the iOS Keychain and on-device storage,
-        and are never transmitted to us or to any third party. The App communicates directly with the
-        SolisCloud API from your iPhone, iPad, or Mac, or speaks Modbus TCP directly to your inverter
-        on your local network - there is no middle server operated by us. SolisCloud's handling of
-        your data is governed by Ginlong's own privacy policy.
-      </p>
+      <h2>2. Solar Connections and Local Storage</h2>
+      <p>For SolisCloud access, the App communicates directly with SolisCloud over HTTPS
+        using your API credentials and station information to request solar-system data.
+        SolisCloud receives authenticated requests and network information such as your IP
+        address. Its handling of data is governed by Ginlong's privacy policy available
+        through SolisCloud. We do not receive your API keys or readings.</p>
+      <p><strong>Apple:</strong> credentials use Keychain and settings/caches use on-device
+        storage. Supported Apple versions can also connect directly to an inverter using
+        its local IP address and port over Modbus TCP. This local protocol does not provide
+        the same transport encryption as HTTPS; use it on a trusted local network.</p>
+      <p><strong>Android:</strong> the current version connects through SolisCloud. API
+        credentials are encrypted locally with a key held in Android Keystore; settings,
+        site coordinates, cached readings and history are held in private app storage.
+        Android cloud backup is disabled in the app configuration. The Apple version's
+        Modbus TCP and Apple Watch features do not apply to this Android version.</p>
 
-      <h2>3. Widgets</h2>
-      <p>
-        Home Screen and Lock Screen widgets read live PV output and battery state of charge directly
-        from SolisCloud or from your inverter over Modbus TCP, using the credentials and connection
-        details stored on your device. Widget data is rendered on your device and is not transmitted
-        to us. Last-update timestamps shown on widgets reflect when your device last fetched data.
-      </p>
+      <h2>3. Optional Solar Forecasts and Location</h2>
+      <p>When you configure forecasts, the App sends your site's latitude and longitude
+        and panel tilt/direction directly to the selected provider, Open-Meteo or Forecast.Solar.
+        Forecast.Solar also receives configured panel capacity. These providers receive your
+        IP address as part of the request. Coordinates may identify a home or other property.
+        Requests use HTTPS; your SolisCloud API credentials are not included.</p>
+      <p>You can enter site coordinates manually or use the location feature with your
+        permission. On Android, “Use my current location” obtains a location fix to populate
+        the site coordinates; it does not continuously track your movements. Revoke location
+        permission in system Settings to stop further device-location access. Previously
+        saved site coordinates can still be used for forecasts until you change the
+        configuration or stop using that feature.</p>
+      <p>The providers' processing and retention are described by
+        <a href="https://open-meteo.com/en/terms" target="_blank" rel="noopener noreferrer">Open-Meteo's terms and privacy information</a>
+        and <a href="https://forecast.solar/" target="_blank" rel="noopener noreferrer">Forecast.Solar</a>.</p>
 
-      <h2>4. In-App Purchases</h2>
-      <p>
-        Glance for PV offers a single <strong>one-time in-app purchase</strong> that unlocks live
-        auto-refresh across every widget size. Without this purchase, widgets still install and display
-        your system, but data remains frozen at the point it was first loaded.
-      </p>
-      <p>
-        The in-app purchase is processed entirely by <strong>Apple</strong> through the App Store
-        in-app purchase system. We do not collect or store any payment information such as credit card
-        numbers or billing addresses. Apple handles all billing and payment processing, and we receive
-        only the transaction identifier and entitlement status needed to unlock the live-refresh feature
-        on your device. Apple's handling of payment data is governed by
-        <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple's Privacy Policy</a>.
-      </p>
+      <h2>4. Widgets, Notifications, and Apple Services</h2>
+      <p>Widgets and energy notifications display cached or newly fetched solar information.
+        On Android, energy notifications are generated locally when enabled and permitted.
+        People who can see your widgets or Lock Screen may see that information. Background
+        refresh timing depends on your operating system, permissions, network, and battery settings.</p>
+      <p><strong>Apple only:</strong> solar snapshots can sync through Apple's iCloud key-value
+        storage to support companion displays, including Apple Watch. Optional Game Center
+        participation sends solar scores, achievements, and system context such as inverter
+        type and array size to Apple; leaderboard information can be visible with your Game
+        Center profile. Manage participation in the App and your Apple settings. These Apple
+        integrations are not used by the Android version.</p>
 
-      <h2>5. Third-Party Services</h2>
-      <p>
-        Glance for PV does not use any third-party analytics, advertising, or tracking SDKs. The App
-        is built entirely with native Apple frameworks. The only external services the App communicates
-        with are the official SolisCloud API (when configured for cloud access) and your own inverter
-        on your local network over Modbus TCP (when configured for local access), using the credentials
-        and connection details you provide, to fetch your own solar system data.
-      </p>
+      <h2>5. Purchases</h2>
+      <p>The App offers a one-time purchase for its live features, with the included features
+        and price shown before purchase. Apple processes purchases through the App Store;
+        Android purchases use Google Play Billing. The App processes receipts, transaction
+        or purchase-token information, and entitlement status to verify and unlock access.
+        Android receipt signature verification is performed locally, without a purchase
+        verification server operated by us. We do not receive your payment-card details.</p>
+      <p>The stores retain purchase records under their own policies:
+        <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple's Privacy Policy</a>
+        and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.
+        These also explain their platform services and diagnostics, which depend on your
+        device settings and may involve processing outside your country.</p>
 
-      <h2>6. Data Sharing</h2>
-      <p>
-        We do not sell, share, or transfer your data to any third parties, because we do not receive
-        any of your data in the first place. All information processed by Glance for PV stays on
-        your device.
-      </p>
+      <h2 id="retention">6. Retention and Deletion</h2>
+      <p>Local settings, credentials, caches and history remain until replaced or removed;
+        there is no single automatic expiry for all local data. Disconnecting stops use of
+        the saved solar connection, but should not be treated as erasing all historical
+        settings and caches. On Android, clear the App's storage in Settings or uninstall
+        it to remove local app data. This does not delete your SolisCloud account or store purchases.</p>
+      <p>On Apple devices, deleting the App removes its ordinary local app data, but Keychain
+        items, iCloud data, and device backups may remain. Manage those through the relevant
+        Apple settings. Turning off Game Center participation stops future reporting; it does
+        not itself erase previously submitted scores. Provider-held records, including
+        forecasts and purchases, follow each provider's retention and deletion procedures.</p>
+      <p>If you contact us, we receive your email address and message. We retain correspondence
+        as needed to answer your request and meet applicable obligations. We do not sell
+        your personal data or use support messages for advertising.</p>
 
-      <h2>7. Data Retention</h2>
-      <p>
-        SolisCloud credentials, Modbus TCP connection details, and app preferences are stored on your
-        device for as long as the App is installed. Deleting the App removes this data. In-app
-        purchase entitlements are managed by Apple and restored through your Apple ID.
-      </p>
+      <h2 id="deletion">7. Your Choices and Rights</h2>
+      <p>Use system Settings to manage location and notification permissions. You can choose
+        whether to use forecasts or optional Game Center features. We process support
+        correspondence to respond to requests and for our legitimate interest in supporting
+        the App; we retain it where legally required.</p>
+      <p>Depending on applicable law, you may request access, correction, deletion, restriction
+        or portability, object to processing based on legitimate interests, and withdraw
+        consent where applicable. Email <a href="mailto:apps@danielszlaski.com?subject=Glance%20for%20PV%20data%20deletion">apps@danielszlaski.com</a>
+        for a data-deletion request or privacy question, naming Glance for PV and your platform.
+        Do not send API secrets. We cannot erase data held only on your device or independently
+        by another provider. You may complain to your local data-protection authority,
+        including Poland's President of the Personal Data Protection Office (UODO).</p>
 
-      <h2>8. Children's Privacy</h2>
-      <p>
-        Glance for PV does not knowingly collect information from anyone, including children. The
-        App collects no personal data at all.
-      </p>
+      <h2>8. Children and Policy Updates</h2>
+      <p>We do not knowingly collect children's personal information through support. Contact
+        us if you believe a child has provided information that should be removed. Changes
+        to this policy will be shown here with an updated date.</p>
 
-      <h2>9. Changes to This Policy</h2>
-      <p>
-        We may update this Privacy Policy from time to time. Any changes will be reflected on this page
-        with an updated "Last Updated" date. Continued use of the App after changes constitutes
-        acceptance of the revised policy.
-      </p>
-
-      <h2>10. Contact</h2>
-      <p>
-        If you have questions or concerns about this Privacy Policy, please contact us at:
-      </p>
-      <p>
-        Daniel Szlaski<br>
-        Email: <a href="mailto:apps@danielszlaski.com" aria-label="Send email">Send Request</a><br>
-        Address: Pileckiego 9, 05-250 Radzymin<br>
-        VAT ID (NIP): PL1251270430
-      </p>
+      <h2>9. Contact</h2>
+<p>Daniel Szlaski<br>Pileckiego 9, 05-250 Radzymin, Poland<br>
+        Email: <a href="mailto:apps@danielszlaski.com">apps@danielszlaski.com</a><br>VAT ID (NIP): PL1251270430</p>
     </section>
+    <footer class="sift-footer">
+      <a href="glance-for-solis.html">Glance for PV</a>
+      <a href="glance-for-solis-privacy.html">Privacy Policy</a>
+      <a href="glance-for-solis-terms.html">Terms of Use</a>
+    </footer>
   </main>
-
 </body>
 </html>

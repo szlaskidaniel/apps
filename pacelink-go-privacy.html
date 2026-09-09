@@ -22,11 +22,12 @@
 
   <main class="legal pacelink-legal">
     <h1>PaceLink Go - Privacy Policy</h1>
-    <p><strong>Last Updated: September 4, 2026</strong></p>
+    <p><strong>Last Updated: September 9, 2026</strong></p>
     <section>
-      <p>PaceLink Go is a group travel companion for iPhone, developed by Daniel Szlaski
+      <p>PaceLink Go is a group travel companion for iPhone and Android, developed by Daniel Szlaski
         ("we", "us", or "our"), the controller of the personal data described here.
-        It shows distance and time gaps between people who choose to join the same trip.</p>
+        It shows distance and time gaps between people who choose to join the same trip.
+        This policy covers both platforms; platform-specific processing is labelled below.</p>
       <p><strong>No account is required, but the App does process personal data:</strong>
         your chosen display name, precise location during a trip, temporary trip identifiers,
         a persistent pseudonymous device record, and purchase, usage, and diagnostic information. We do not use advertising SDKs,
@@ -46,14 +47,21 @@
         <li><strong>Trip and participant information:</strong> randomly generated trip
           and participant IDs, invitation links and codes, host status, join/leave times,
           trip start/end/expiry times, and session credentials used to control access.</li>
-        <li><strong>Live Activity information:</strong> Apple push tokens and the most recent
+        <li><strong>iOS Live Activity information:</strong> Apple push tokens and the most recent
           activity state, including participant names, IDs, relative positions, gaps, and
           speed information, so updates can reach your devices.</li>
       </ul>
       <p>Location collection runs during an active trip, including in the background when
         permitted. A host waiting alone for the first guest does not start live location
         sharing. You can leave a trip, end it as the host, or revoke location access in
-        iOS Settings. Disabling access prevents the location features from working.</p>
+        your phone’s Settings. Disabling access prevents the location features from working.</p>
+
+      <p><strong>Android:</strong> during an active trip, a location foreground service sends
+        precise location to our backend so participants can see relative positions and gaps,
+        including while you use another app or the screen is off. An ongoing trip notification
+        accompanies this service. Leaving or ending the trip stops local location sharing;
+        an offline departure request is saved for retry. You can also revoke location permission
+        in Android Settings. Notification and battery settings can affect updates.</p>
 
       <h2>2. Who Can See Your Trip Information</h2>
       <p>Other participants in the same trip receive your display name and live trip
@@ -61,9 +69,10 @@
         trails available to authenticated participants. An invitation link or valid code
         lets someone join, subject to the trip's capacity and expiry. Share invitations
         only with people you trust.</p>
-      <p>Live Activities can show trip information on the Lock Screen, Dynamic Island,
+      <p>On iOS, Live Activities can show trip information on the Lock Screen, Dynamic Island,
         and supported connected displays such as CarPlay. People who can see those displays
-        may see that information. We cannot erase screenshots or copies made by other
+        may see that information. On Android, ongoing notifications and supported Live Updates
+        can show trip information, including on the Lock Screen depending on your settings. We cannot erase screenshots or copies made by other
         participants, including the companion details in their local trip summaries.</p>
 
       <h2 id="retention">3. Storage, Retention, and Deletion</h2>
@@ -90,10 +99,12 @@
         moving/stopped time, speed statistics, participant count, companion names and
         participant IDs, and aggregate/final gaps. These summaries contain no coordinates
         or route history and are not uploaded as a history archive. They have no automatic
-        expiry or in-app deletion control in the current version. Deleting the App
+        expiry. On Android, use Delete summary or Clear history in Past trips to remove local
+        summaries. The iOS version has no in-app history deletion control. Deleting the App
         (rather than offloading it) removes its local app data; device backups may retain
-        copies according to your Apple settings.</p>
-      <p><strong>Other local storage:</strong> your display name, a legacy hosting counter
+        copies according to your Apple settings on iOS. Android trip storage is excluded from
+        cloud backup and device transfer.</p>
+      <p><strong>Other local storage on iOS:</strong> your display name, a legacy hosting counter
         used for aggregate statistics, and an installation marker are saved in app preferences.
         The server determines your free-trip balance; resetting preferences does not reset it.
         Random device credentials and a recovery secret are kept in this device's Keychain,
@@ -103,6 +114,11 @@
         Keychain and may survive uninstalling the App. An active host credential is kept in the device's
         Keychain to recover the trip. It is cleared on a confirmed end or expiry; a failed
         end request may leave it available for recovery.</p>
+      <p><strong>Other local storage on Android:</strong> your display name, session credentials,
+        pending trip/departure and purchase requests, and trip summaries are stored in an
+        encrypted local journal protected by Android Keystore. No coordinates are saved in
+        that journal. Clearing app storage or uninstalling removes this local data, but does
+        not delete our server records or reset the allowance for the same recognized device.</p>
       <p><strong>Device records:</strong> the pseudonymous identity, free-trip allocation
         and used-credit counts, and verification/recovery records described below currently
         have no automatic expiry. They remain after trips end and after uninstalling so
@@ -121,19 +137,33 @@
         message and retain the correspondence as needed to resolve the request and meet
         applicable obligations.</p>
 
+      <p><strong>Security records:</strong> rate limiting uses a hash of the request IP address,
+        route, and minute with a short expiry (approximately two minutes), followed by
+        asynchronous deletion. Failed GPS cleanup jobs retain trip/participant references
+        until cleanup succeeds; they do not contain coordinates.</p>
+
       <h2>4. Purchases</h2>
-      <p>Optional Trip Pass purchases use Apple's App Store and StoreKit. The App sends a
+      <p>On iOS, optional Trip Pass purchases use Apple's App Store and StoreKit. The App sends a
         signed Apple transaction to our backend for verification. We retain the transaction
         ID, product ID, purchase time, consumption time, and associated trip ID to prevent
         a purchase from being reused. These records currently have no automatic deletion
         date and remain after the trip ends; they contain no GPS coordinates. We do not
         receive your payment-card details from Apple.</p>
 
+      <p><strong>Android purchases:</strong> Google Play Billing processes Trip Pass payments.
+        The App sends the purchase token, product ID, and package name to our backend, which
+        verifies the purchase with Google. Our consumed-purchase record uses a hash derived
+        from the token and package name as its transaction identifier, together with the
+        product, purchase and consumption times, and trip ID. It has the same retention
+        described above. Pending purchase tokens may be kept in the encrypted local journal
+        to finish a purchase. We do not receive payment-card details from Google.</p>
+
       <h2 id="device-data">5. Device Verification and Free Trips</h2>
       <p>The two welcome trips are an allowance per recognized device, not per installation
         or account. We verify eligibility and keep the used balance on our server to prevent
         repeated claims, tampered requests, and duplicate spending. Creating a free-trip
         invitation uses a credit even if nobody joins. Reinstalling does not grant a new allowance.</p>
+      <h3>iOS: App Attest and DeviceCheck</h3>
       <ul>
         <li><strong>What the App sends to us:</strong> an app-generated random identifier,
           a recovery secret, Apple's App Attest key identifier and cryptographic proofs,
@@ -153,12 +183,29 @@
           for allowance protection, not to send Apple your route or per-device trip counts.
           Apple does not give us a universal hardware identifier through these services.</li>
       </ul>
+      <h3>Android: Android ID and Play Integrity</h3>
+      <p>The App reads Android ID, which is scoped to the device, Android user, and app
+        signing key. It sends a SHA-256-derived value, not the raw Android ID, together with
+        a one-use challenge and Google Play Integrity token to our backend over HTTPS.
+        We store a further keyed hash as the pseudonymous device identifier, platform,
+        verification identifier, allowance status, and granted/used counts. The Android
+        allowance record does not store the raw Android ID or full Integrity token.</p>
+      <p>Google processes app and device integrity information to produce the token; our
+        backend asks Google to verify it and checks app recognition, licensing, device
+        integrity, and its binding to the request. Play Integrity verifies the app/request;
+        it does not provide us with a universal hardware identity. The request binding uses
+        hashes, rather than sending Google your trip’s raw location history.</p>
+      <p>The derived Android identifier normally remains the same after reinstalling under
+        the same Android user and signing key, so the server can recover the allowance.
+        A factory reset, different Android user, or signing-key change can change it.
+        Android does not use Apple's DeviceCheck marker or iOS recovery-secret mechanism.
+        We do not collect an advertising ID, hardware serial number, or IMEI for this purpose.</p>
       <p>The persistent device record contains no display name, coordinates, route history,
         or IP address. However, temporary hosted-trip metadata links to it for usage counting;
         while that metadata exists, it can associate the record with that trip and its host.
         It is therefore not anonymous. Other participants are not given your device credentials
         or persistent device identifier.</p>
-      <p>If recovery credentials survive reinstall, the App can reconnect to the same record.
+      <p>On iOS, if recovery credentials survive reinstall, the App can reconnect to the same record.
         If they are lost, Apple's marker may still prevent another allowance, but we may be
         unable to recover unused credits or connect the replacement identity to the old one.
         A device record is not a reliable count of unique people or a complete lifetime device history.</p>
@@ -185,8 +232,8 @@
         was rejected. The code does not intentionally log GPS coordinates or payment-card
         details, device recovery secrets, DeviceCheck tokens, or request proofs. Our hosting
         providers necessarily process network information, including
-        IP addresses, to deliver and protect the service. iOS also maintains local system
-        diagnostics; its handling and sharing depend on your Apple settings.</p>
+        IP addresses, to deliver and protect the service. Android and iOS also maintain system
+        diagnostics; their handling and sharing depend on your operating-system settings.</p>
 
       <h2>7. Service Providers and Security</h2>
       <p>Our backend uses Amazon Web Services, with trip databases configured in the
@@ -194,7 +241,7 @@
         use HTTPS and the databases use encryption
         at rest. Session credentials restrict trip access. These measures reduce risk
         but cannot guarantee absolute security.</p>
-      <p>Apple provides DeviceCheck and App Attest for device verification, processes App Store
+      <p>On iOS, Apple provides DeviceCheck and App Attest for device verification, processes App Store
         purchases, and delivers Live Activity updates through
         Apple Push Notification service. Push payloads contain activity information such
         as names, speed, and relative gaps, rather than raw GPS coordinates. Apple's
@@ -204,9 +251,14 @@
         for their handling of information. Your separate navigation app handles data under
         its own policy; PaceLink Go does not need access to its saved destinations.</p>
 
+      <p>On Android, Google provides Play Integrity and Google Play Billing. Android trip
+        notifications are generated on the device from trip updates, rather than delivered
+        through Apple's push service. Google’s services may process information outside your
+        country; see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google's Privacy Policy</a>.</p>
+
       <h2>8. Purposes, Choices, and Your Rights</h2>
       <p>We process trip and purchase information necessary to deliver the service you request.
-        Location sharing is optional and controlled by your participation and iOS permissions.
+        Location sharing is optional and controlled by your participation and your phone’s permissions.
         We use device verification, allowance records, and necessary diagnostics for our
         legitimate interests in securing the service and preventing repeated free claims
         or purchase reuse. We use aggregate and pseudonymous device usage counts for our
@@ -221,7 +273,10 @@
         You may complain to your local data-protection authority, including Poland's
         President of the Personal Data Protection Office (UODO).
         <a href="https://commission.europa.eu/law/law-topic/data-protection/information-individuals_en" target="_blank" rel="noopener noreferrer">Learn more about EU data rights</a>.</p>
-      <p>Contact us below to exercise your rights. Since the App has no account directory,
+      <h3 id="deletion">Request deletion of your data</h3>
+      <p>Email <a href="mailto:apps@danielszlaski.com?subject=PaceLink%20Go%20data%20deletion">apps@danielszlaski.com</a>
+        with the subject “PaceLink Go data deletion” and tell us whether you use Android or iOS.
+        No PaceLink Go account needs to be created or deleted. Contact us here to exercise your rights. Since the App has no account directory,
         we may need enough information to locate the relevant device record, trip, or purchase
         and verify the request. The current App has no self-service device-record deletion
         control; contact us for assistance. We will explain any lawful need to retain
