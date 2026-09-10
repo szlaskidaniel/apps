@@ -1,0 +1,11 @@
+/* The contact page uses the same open, centered layout as the app heroes. */
+.contact-theme main { min-height: calc(100vh - 72px); padding: 96px 0; }
+.contact-content { max-width: 720px; margin: 0 auto; text-align: center; }
+.contact-content .eyebrow { margin: 0 0 20px; color: var(--muted); }
+.contact-content h1 { margin: 0 0 28px; }
+.contact-content > p:not(.eyebrow) { max-width: 560px; margin: 0 auto; font-size: 20px; line-height: 1.5; color: var(--muted); text-wrap: pretty; }
+.contact-content .actions { margin-top: 32px; }
+@media (max-width: 600px) {
+  .contact-theme main { padding: 64px 0; }
+  .contact-content > p:not(.eyebrow) { font-size: 18px; }
+}

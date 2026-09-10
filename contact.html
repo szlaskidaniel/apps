@@ -5,13 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact | Developer Portfolio</title>
   <meta name="description" content="Contact page for project and collaboration requests.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="light-theme.css?v=2" />
+  <link rel="stylesheet" href="contact.css" />
+  <meta name="theme-color" content="#ffffff" />
 </head>
-<body>
-  <div class="page-bg"></div>
+<body class="site-light contact-theme">
   <header class="site-header">
     <a class="brand" href="index.html">Developer</a>
     <nav aria-label="Main">
@@ -21,9 +20,9 @@
   </header>
 
   <main class="subpage">
-    <section class="about about-page centered-card">
+    <section class="contact-content" aria-labelledby="contact-title">
       <p class="eyebrow">Contact</p>
-      <h1>Send a Request</h1>
+      <h1 id="contact-title">Let’s talk.</h1>
       <p>
         For project inquiries, partnerships, or support requests, send me an email and include a short summary
         of what you need.
@@ -32,7 +31,7 @@
         <a
           class="button"
           href="mailto:apps@danielszlaski.com?subject=Project%20Request&body=Hi%20Daniel%2C%0A%0AI%20would%20like%20to%20discuss%3A%0A%0ATimeline%3A%0ABudget%3A%0A%0AThank%20you."
-        >Send Request</a>
+        >Send an email</a>
       </div>
     </section>
   </main>

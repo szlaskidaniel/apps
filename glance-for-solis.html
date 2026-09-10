@@ -8,71 +8,48 @@
       name="description"
       content="Live PV power and battery state-of-charge widgets via SolisCloud or local Modbus TCP. Game Center leaderboards normalized by system size, Siri and Shortcuts support, and Spotlight integration. Works with Solis, Sofar, SolaX, Growatt, and GoodWe inverters on iPhone, iPad, Mac, and Apple Watch."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
-      rel="stylesheet"
-    />
+    <meta name="theme-color" content="#ffffff" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="light-theme.css" />
+    <link rel="stylesheet" href="glance-for-solis.css" />
+    <link rel="stylesheet" href="app-header.css" />
   </head>
-  <body>
-    <div class="page-bg"></div>
-    <header class="site-header">
-      <a class="brand" href="index.html">Developer</a>
+  <body class="glance-theme site-light">
+    <header class="site-header app-site-header">
+      <a class="brand app-brand" href="glance-for-solis.html" aria-current="page"><img class="brand-icon" src="images/glance-for-solis/Icon_white.jpg" alt="" width="40" height="40" /><span>Glance for PV</span></a>
       <nav aria-label="Main">
         <a href="index.html">Back to Home</a>
         <a href="contact.html">Contact</a>
       </nav>
     </header>
 
-    <main class="subpage sift-page">
-      <!-- Hero + Carousel row -->
-      <section class="sift-top">
-        <div class="sift-left">
-          <div class="sift-hero">
-            <div class="sift-hero-icon">
-              <img src="images/glance-for-solis/Icon_white.jpg" alt="Glance for PV app icon" />
-            </div>
-            <div class="sift-hero-copy">
-              <p class="eyebrow">iOS Application</p>
-              <div class="hero-title-row">
-                <h1>Glance for PV</h1>
-                <a
-                  class="app-store-badge"
-                  href="https://apps.apple.com/us/app/glance-for-solis/id6763310365"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83"
-                    alt="Download on the App Store"
-                  />
-                </a>
-              </div>
-              <p class="lead">
-                See your solar system at a glance. Glance for PV puts live
-                PV generation and battery state of charge on your Home Screen
-                and Lock Screen, so you always know what your panels are
-                producing and how full your battery is - without opening an
-                app.
-              </p>
-              <div class="whats-new-banner">
-                <span class="whats-new-tag">New</span>
-                <div class="whats-new-copy">
-                  <strong>Solar Hub, Siri &amp; Shortcuts, and local Modbus TCP.</strong>
-                  Compete on Game Center leaderboards that normalize for
-                  system size, ask Siri what your panels are making right
-                  now, and talk to your inverter directly on your home
-                  network - no cloud required.
-                </div>
-              </div>
-            </div>
+    <main class="subpage sift-page glance-page">
+      <section class="sift-hero" aria-labelledby="product-title">
+        <div class="sift-hero-copy">
+          <p class="eyebrow">Glance for PV</p>
+          <div class="hero-title-row"><h1 id="product-title">Your solar system.<br /><span>At a glance.</span></h1></div>
+          <p>Live widgets keep your solar generation and battery levels up to date on your Home Screen and Lock Screen. See your energy at a glance, without opening the app.</p>
+          <div class="actions actions-center">
+            <a class="glance-store-badge" href="https://apps.apple.com/us/app/glance-for-solis/id6763310365" target="_blank" rel="noopener noreferrer" aria-label="Download Glance for PV on the App Store">
+              <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" width="156" height="52" alt="Download on the App Store" />
+            </a>
           </div>
+          <p class="platform-note">For iPhone, iPad, Mac, and Apple Watch.</p>
+        </div>
+      </section>
+      <figure class="glance-product-art">
+        <img src="images/glance-for-solis/product-live-widget-v2.png" alt="Glance for PV in light mode beside its live Home Screen widget, showing 2.6 kW solar generation, 98% battery charge, and daily and monthly totals" width="1536" height="1024" fetchpriority="high" />
+      <figcaption>Live updates. Right on your Home Screen and Lock Screen.</figcaption>
+      </figure>
+      <aside class="glance-update" aria-label="Latest features">
+        <p><strong>Solar Hub, Siri &amp; Shortcuts, and local Modbus TCP.</strong> Compare solar performance on leaderboards normalized for system size, ask Siri about your generation, or connect directly to your inverter at home.</p>
+      </aside>
+      <!-- Hero + Carousel row -->
+      <section class="sift-top" aria-labelledby="setup-title">
+        <div class="sift-left">
           <div class="sift-tagline">
-            <p class="tagline-highlight">
-              Live PV power and battery SoC. Right on your Home Screen.
-            </p>
+            <p class="eyebrow">A closer look at your energy</p>
+            <h2 class="tagline-highlight" id="setup-title">More insight.<br />Just one glance.</h2>
             <div class="setup-steps">
               <div class="setup-step">
                 <span class="step-number">1</span>
@@ -94,67 +71,58 @@
           </div>
         </div>
 
-        <div class="sift-carousel" aria-label="Glance for PV app screenshots">
+        <div class="sift-carousel" role="region" aria-roledescription="carousel" aria-label="Glance for PV app screenshots" tabindex="0">
           <div class="sift-carousel-track">
-            <div class="sift-carousel-slide">
+            <div class="sift-carousel-slide" role="group" aria-roledescription="slide" aria-label="1 of 4">
               <img
                 src="images/glance-for-solis/Home0.jpeg"
                 alt="Glance for PV - Home Screen overview"
-              />
+                width="589" height="1280" loading="lazy" />
             </div>
-            <div class="sift-carousel-slide">
+            <div class="sift-carousel-slide" role="group" aria-roledescription="slide" aria-label="2 of 4" aria-hidden="true">
               <img
                 src="images/glance-for-solis/GameCenter.jpeg"
                 alt="Glance for PV - Solar Hub with Game Center leaderboards and achievements"
-              />
+                width="1242" height="2688" loading="lazy" />
             </div>
-            <div class="sift-carousel-slide">
+            <div class="sift-carousel-slide" role="group" aria-roledescription="slide" aria-label="3 of 4" aria-hidden="true">
               <img
                 src="images/glance-for-solis/img3.jpeg"
                 alt="Glance for PV - Lock Screen widgets"
-              />
+                width="591" height="1280" loading="lazy" />
             </div>
-            <div class="sift-carousel-slide">
-              <img
-                src="images/glance-for-solis/img1.jpeg"
-                alt="Glance for PV - Home Screen widget showing live PV output"
-              />
-            </div>
-            <div class="sift-carousel-slide">
-              <img
-                src="images/glance-for-solis/img2.jpeg"
-                alt="Glance for PV - battery state of charge widget"
-              />
-            </div>
-            <div class="sift-carousel-slide">
+            <div class="sift-carousel-slide" role="group" aria-roledescription="slide" aria-label="4 of 4" aria-hidden="true">
               <img
                 src="images/glance-for-solis/img4.png"
                 alt="Glance for PV - widget sizes and layouts"
-              />
+                width="1242" height="2688" loading="lazy" />
             </div>
           </div>
           <button
-            class="sift-carousel-btn sift-carousel-prev"
+            type="button" class="sift-carousel-btn sift-carousel-prev"
             aria-label="Previous screenshot"
           >
             &lsaquo;
           </button>
           <button
-            class="sift-carousel-btn sift-carousel-next"
+            type="button" class="sift-carousel-btn sift-carousel-next"
             aria-label="Next screenshot"
           >
             &rsaquo;
           </button>
           <div class="sift-carousel-dots"></div>
+          <span class="glance-sr-only" aria-live="polite" aria-atomic="true" id="gallery-status"></span>
         </div>
       </section>
 
       <!-- Features -->
-      <section class="sift-features">
+      <section class="glance-details" aria-labelledby="features-title">
+        <h2 id="features-title" class="section-title">Your energy, understood.<br /><span>Every day.</span></h2>
+        <div class="sift-features">
         <div class="sift-feature sift-feature-highlight">
           <div class="feature-icon">
             <svg
-              width="24"
+                width="24"
               height="24"
               viewBox="0 0 24 24"
               fill="none"
@@ -190,7 +158,7 @@
         <div class="sift-feature">
           <div class="feature-icon">
             <svg
-              width="24"
+                width="24"
               height="24"
               viewBox="0 0 24 24"
               fill="none"
@@ -216,7 +184,7 @@
         <div class="sift-feature">
           <div class="feature-icon">
             <svg
-              width="24"
+                width="24"
               height="24"
               viewBox="0 0 24 24"
               fill="none"
@@ -250,7 +218,7 @@
         <div class="sift-feature sift-feature-highlight">
           <div class="feature-icon">
             <svg
-              width="24"
+                width="24"
               height="24"
               viewBox="0 0 24 24"
               fill="none"
@@ -300,7 +268,7 @@
         <div class="sift-feature sift-feature-highlight">
           <div class="feature-icon">
             <svg
-              width="24"
+                width="24"
               height="24"
               viewBox="0 0 24 24"
               fill="none"
@@ -340,7 +308,7 @@
         <div class="sift-feature">
           <div class="feature-icon">
             <svg
-              width="24"
+                width="24"
               height="24"
               viewBox="0 0 24 24"
               fill="none"
@@ -364,7 +332,7 @@
         <div class="sift-feature">
           <div class="feature-icon">
             <svg
-              width="24"
+                width="24"
               height="24"
               viewBox="0 0 24 24"
               fill="none"
@@ -390,7 +358,7 @@
         <div class="sift-feature">
           <div class="feature-icon">
             <svg
-              width="24"
+                width="24"
               height="24"
               viewBox="0 0 24 24"
               fill="none"
@@ -415,7 +383,7 @@
         <div class="sift-feature">
           <div class="feature-icon">
             <svg
-              width="24"
+                width="24"
               height="24"
               viewBox="0 0 24 24"
               fill="none"
@@ -439,6 +407,7 @@
             <li>One-time in-app purchase for live auto-refresh (optional)</li>
           </ul>
         </div>
+        </div>
       </section>
 
       <!-- CTA -->
@@ -452,7 +421,7 @@
         </p>
         <div class="actions actions-center">
           <a
-            class="app-store-badge"
+            class="glance-store-badge"
             href="https://apps.apple.com/us/app/glance-for-solis/id6763310365"
             target="_blank"
             rel="noopener noreferrer"
@@ -466,7 +435,7 @@
       </section>
 
       <!-- Privacy link -->
-      <p class="sift-tagline">The Android version is awaiting Google Play approval.
+      <p class="glance-availability">The Android version is awaiting Google Play approval.
         The Privacy Policy and Terms of Use below cover both Apple and Android versions.</p>
       <footer class="sift-footer">
         <a href="glance-for-solis-privacy.html">Privacy Policy</a>
@@ -476,61 +445,52 @@
 
     <script>
       (function () {
-        const track = document.querySelector(".sift-carousel-track");
+        const carousel = document.querySelector('.sift-carousel');
+        const track = carousel.querySelector('.sift-carousel-track');
         const slides = Array.from(track.children);
-        const prevBtn = document.querySelector(".sift-carousel-prev");
-        const nextBtn = document.querySelector(".sift-carousel-next");
-        const dotsContainer = document.querySelector(".sift-carousel-dots");
+        const dotsContainer = carousel.querySelector('.sift-carousel-dots');
+        const status = document.getElementById('gallery-status');
         let current = 0;
-
-        slides.forEach(function (_, i) {
-          const dot = document.createElement("button");
-          dot.className = "sift-carousel-dot" + (i === 0 ? " active" : "");
-          dot.setAttribute("aria-label", "Go to screenshot " + (i + 1));
-          dot.addEventListener("click", function () {
-            goTo(i);
-          });
+        const dots = slides.map(function (_, i) {
+          const dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'sift-carousel-dot';
+          dot.setAttribute('aria-label', 'Go to screenshot ' + (i + 1));
+          dot.addEventListener('click', function () { goTo(i); });
           dotsContainer.appendChild(dot);
+          return dot;
         });
-
-        var dots = Array.from(dotsContainer.children);
-
-        function goTo(index) {
+        function goTo(index, announce = true) {
           current = (index + slides.length) % slides.length;
-          track.style.transform = "translateX(-" + current * 100 + "%)";
-          dots.forEach(function (d, i) {
-            d.classList.toggle("active", i === current);
+          track.style.transform = 'translateX(-' + current * 100 + '%)';
+          slides.forEach(function (slide, i) { slide.setAttribute('aria-hidden', String(i !== current)); });
+          dots.forEach(function (dot, i) {
+            dot.classList.toggle('active', i === current);
+            dot.setAttribute('aria-current', String(i === current));
           });
+          if (announce) status.textContent = 'Screenshot ' + (current + 1) + ' of ' + slides.length;
         }
-
-        prevBtn.addEventListener("click", function () {
-          goTo(current - 1);
+        carousel.querySelector('.sift-carousel-prev').addEventListener('click', function () { goTo(current - 1); });
+        carousel.querySelector('.sift-carousel-next').addEventListener('click', function () { goTo(current + 1); });
+        carousel.addEventListener('keydown', function (event) {
+          if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+            event.preventDefault();
+            goTo(current + (event.key === 'ArrowRight' ? 1 : -1));
+          }
         });
-        nextBtn.addEventListener("click", function () {
-          goTo(current + 1);
-        });
-
-        /* Touch swipe support */
-        var startX = 0;
-        var dx = 0;
-        track.addEventListener(
-          "touchstart",
-          function (e) {
-            startX = e.touches[0].clientX;
-          },
-          { passive: true },
-        );
-        track.addEventListener(
-          "touchmove",
-          function (e) {
-            dx = e.touches[0].clientX - startX;
-          },
-          { passive: true },
-        );
-        track.addEventListener("touchend", function () {
-          if (Math.abs(dx) > 40) goTo(current + (dx < 0 ? 1 : -1));
-          dx = 0;
-        });
+        let start = null;
+        track.addEventListener('touchstart', function (event) {
+          start = event.touches.length === 1 ? { x: event.touches[0].clientX, y: event.touches[0].clientY } : null;
+        }, { passive: true });
+        track.addEventListener('touchend', function (event) {
+          if (!start || !event.changedTouches.length) return;
+          const dx = event.changedTouches[0].clientX - start.x;
+          const dy = event.changedTouches[0].clientY - start.y;
+          if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) goTo(current + (dx < 0 ? 1 : -1));
+          start = null;
+        }, { passive: true });
+        track.addEventListener('touchcancel', function () { start = null; }, { passive: true });
+        goTo(0, false);
       })();
     </script>
   </body>

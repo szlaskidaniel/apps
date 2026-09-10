@@ -8,19 +8,15 @@
       name="description"
       content="Live distance and time gaps for group trips. Keep your favourite navigation app, follow your group with Live Activities and CarPlay, and save trip summaries on your iPhone."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
-      rel="stylesheet"
-    />
+    <meta name="theme-color" content="#ffffff" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="pacelink-go.css" />
+    <link rel="stylesheet" href="light-theme.css" />
+    <link rel="stylesheet" href="pacelink-go.css?v=header-alignment-2" />
+    <link rel="stylesheet" href="app-header.css" />
   </head>
-  <body class="pacelink-theme">
-    <div class="page-bg"></div>
-    <header class="site-header">
-      <a class="brand" href="index.html">Developer</a>
+  <body class="pacelink-theme site-light">
+    <header class="site-header app-site-header">
+      <a class="brand app-brand" href="pacelink-go.html" aria-current="page"><img class="brand-icon" src="images/pacelink-go/app-icon-light.png" alt="" width="40" height="40" /><span>PaceLink Go</span></a>
       <nav aria-label="Main">
         <a href="index.html">Back to Home</a>
         <a href="contact.html">Contact</a>
@@ -28,21 +24,11 @@
     </header>
 
     <main class="subpage sift-page pacelink-page">
-      <div class="pacelink-feature-art">
-        <img src="images/pacelink-go/feature-graphic.png"
-          alt="PaceLink Go. Keep your navigation. See your people. A mountain road at dusk with a cyan and amber route connecting three people."
-          width="1024" height="500" fetchpriority="high" />
-      </div>
-      <section class="sift-top" aria-label="PaceLink Go">
-        <div class="sift-left">
-          <div class="sift-hero">
-            <div class="sift-hero-icon">
-              <img src="images/pacelink-go/app-icon.png" alt="PaceLink Go app icon" width="1024" height="1024" />
-            </div>
+          <section class="sift-hero" aria-labelledby="product-title">
             <div class="sift-hero-copy">
-              <p class="eyebrow">Stay connected on the road</p>
-              <div class="hero-title-row"><h1>PaceLink <span>Go</span></h1></div>
-              <p class="lead">Keep your navigation. See your people.</p>
+              <p class="eyebrow">PaceLink Go</p>
+              <div class="hero-title-row"><h1 id="product-title">Keep your navigation.<br /><span>See your people.</span></h1></div>
+
               <p>Travelling together in separate cars? See who is ahead, who is behind,
                 and how far apart you are, while everyone keeps using their favourite navigation app.</p>
               <div class="actions pacelink-store-actions">
@@ -55,9 +41,15 @@
                 </div>
               </div>
             </div>
-          </div>
+          </section>
+      <div class="pacelink-product-art">
+        <img src="images/pacelink-go/product-light.png" alt="PaceLink Go on iPhone, with group distance gaps and a Lock Screen Live Activity" width="1536" height="1024" fetchpriority="high" />
+      </div>
+      <section class="sift-top" aria-label="A shared trip, made simple">
+        <div class="sift-left">
           <div class="sift-tagline">
-            <p class="tagline-highlight">Your route. Your group. One shared trip.</p>
+            <p class="eyebrow">Together, from the start</p>
+            <h2 class="tagline-highlight">Your route. Your group.<br />One shared trip.</h2>
             <div class="setup-steps">
               <div class="setup-step"><span class="step-number">1</span><span>Choose a display name and start a trip</span></div>
               <div class="setup-step"><span class="step-number">2</span><span>Invite your people with a link or code</span></div>
@@ -69,10 +61,10 @@
         <div class="sift-carousel" role="region" aria-roledescription="carousel" aria-label="PaceLink Go gallery" tabindex="0">
           <div class="sift-carousel-track">
             <div class="sift-carousel-slide" role="group" aria-roledescription="slide" aria-label="1 of 2">
-              <img src="images/pacelink-go/01-keep-your-navigation.png" alt="PaceLink Go preview: group distance and time gaps beside your navigation, with a Lock Screen Live Activity" width="853" height="1844" />
+              <img src="images/pacelink-go/01-keep-your-navigation-light.png" alt="PaceLink Go preview: group distance and time gaps beside your navigation, with a Lock Screen Live Activity" width="853" height="1844" loading="lazy" />
             </div>
             <div class="sift-carousel-slide" role="group" aria-roledescription="slide" aria-label="2 of 2" aria-hidden="true">
-              <img src="images/pacelink-go/03-stay-in-sync.png" alt="PaceLink Go Live Activity previews on iPhone and a compatible CarPlay display alongside navigation" width="1284" height="2778" loading="lazy" />
+              <img src="images/pacelink-go/03-stay-in-sync-light.png" alt="PaceLink Go Live Activity previews on iPhone and a compatible CarPlay display alongside navigation" width="853" height="1844" loading="lazy" />
             </div>
           </div>
           <button type="button" class="sift-carousel-btn sift-carousel-prev" aria-label="Previous screenshot">&lsaquo;</button>
@@ -82,7 +74,9 @@
         </div>
       </section>
 
-      <section class="sift-features" aria-label="Features">
+      <section class="pacelink-details" aria-labelledby="features-title">
+      <h2 id="features-title" class="section-title">A little closer.<br /><span>Every kilometre.</span></h2>
+      <div class="sift-features">
         <div class="sift-feature">
           <h2>Keep Your Navigation</h2>
           <p>Keep using Apple Maps, Google Maps, Waze, or your preferred navigation app.
@@ -119,10 +113,11 @@
             Add another day when you need it. No subscription.
             <a href="pacelink-go-terms.html">See offer details.</a></p>
         </div>
+      </div>
       </section>
 
       <section class="sift-cta">
-        <h2>Stay in Sync, Wherever the Road Takes You</h2>
+        <h2>Ready when you are.</h2>
         <p>Requires an iPhone with iOS 26 or later, location permission, and an internet
           connection. Allow background location to keep sharing while using navigation.
           Set up your trip before driving and check the app only when safe.</p>

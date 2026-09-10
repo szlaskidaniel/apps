@@ -8,18 +8,14 @@
       name="description"
       content="Sift is a physics-based puzzle game for iPhone and iPad. Tilt your device, use real-world gravity to sift junk from diamonds. Available on the App Store."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="page-bg"></div>
-    <header class="site-header">
-      <a class="brand" href="index.html">Developer</a>
+    <link rel="stylesheet" href="light-theme.css" />
+    <link rel="stylesheet" href="app-header.css" />
+      <meta name="theme-color" content="#ffffff" />
+</head>
+  <body class="site-light light-product">
+    <header class="site-header app-site-header">
+      <a class="brand app-brand" href="sift.html" aria-current="page"><img class="brand-icon" src="images/sift/sift_icon.png" alt="" width="40" height="40" /><span>Sift</span></a>
       <nav aria-label="Main">
         <a href="index.html">Back to Home</a>
         <a href="contact.html">Contact</a>
@@ -27,21 +23,18 @@
     </header>
 
     <main class="subpage sift-page">
-      <!-- Hero + Carousel row -->
-      <section class="sift-top">
-        <div class="sift-left">
-          <div class="sift-hero">
-            <div class="sift-hero-icon">
-              <img
-                src="images/sift/sift_icon.png"
-                alt="Sift app icon - glass vessel filled with sparkling diamonds"
-              />
-            </div>
+      <section class="sift-hero product-intro">
             <div class="sift-hero-copy">
               <p class="eyebrow">iOS &amp; iPadOS Game</p>
               <div class="hero-title-row">
                 <h1>Sift</h1>
-                <a
+
+              </div>
+              <p class="lead">
+                Tilt. Sift. Save every gem. A physics puzzle where gravity is
+                your only tool - sort diamonds from junk before they spill.
+              </p>
+              <a
                   class="app-store-badge"
                   href="https://apps.apple.com/us/app/sift-game/id6760543611"
                   target="_blank"
@@ -52,13 +45,13 @@
                     alt="Download on the App Store"
                   />
                 </a>
-              </div>
-              <p class="lead">
-                Tilt. Sift. Save every gem. A physics puzzle where gravity is
-                your only tool - sort diamonds from junk before they spill.
-              </p>
             </div>
-          </div>
+          </section>
+
+      <!-- Hero + Carousel row -->
+      <section class="sift-top">
+        <div class="sift-left">
+
           <div class="sift-tagline">
             <p>
               A glass vessel full of precious diamonds - buried under junk.

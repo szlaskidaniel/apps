@@ -1,0 +1,78 @@
+/* Homepage styling, isolated from the individual app pages. */
+.home-theme {
+  color-scheme: light;
+  --text: #1d1d1f;
+  --heading: #1d1d1f;
+  --muted: #6e6e73;
+  --paragraph: #6e6e73;
+  --tag: #6e6e73;
+  --line: #d2d2d7;
+  --accent: #00718a;
+  --accent-strong: #005a70;
+  --surface: #f5f5f7;
+  --shadow: none;
+  --footer-line: #d2d2d7;
+  background: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.home-theme .site-header,
+.home-theme main,
+.home-theme .site-footer { width: min(1120px, calc(100% - 64px)); margin-left: auto; margin-right: auto; }
+.home-theme .site-header { min-height: 72px; padding: 14px 0; border-bottom: 1px solid #e8e8ed; }
+.home-theme .brand { font-family: inherit; font-size: 21px; letter-spacing: -0.04em; }
+.home-theme nav { border: 0; padding: 0; gap: 24px; background: none; box-shadow: none; }
+.home-theme nav a { font-size: 14px; font-weight: 400; padding: 10px 0; border-radius: 0; }
+.home-theme nav a[aria-current="page"] { color: var(--text); background: none; }
+.home-theme nav a:hover { color: var(--accent); background: none; }
+.home-theme main { padding: 0 0 80px; }
+.home-theme .hero { margin: 0; padding: 100px 0 110px; grid-template-columns: minmax(0, 1fr) 220px; align-items: center; gap: 64px; border: 0; border-radius: 0; background: none; backdrop-filter: none; }
+.home-theme .hero-copy { max-width: 760px; gap: 0; }
+.home-theme .eyebrow { font-size: 19px; font-weight: 600; text-transform: none; letter-spacing: -0.025em; color: var(--text); margin-bottom: 20px; }
+.home-theme h1 { font-family: inherit; font-size: clamp(42px, 5.7vw, 76px); font-weight: 650; line-height: 1.06; letter-spacing: -0.055em; max-width: none; margin: 0 0 28px; }
+.home-theme h1 span { color: var(--accent); }
+.home-theme .lead { font-size: 20px; line-height: 1.5; max-width: 560px; }
+.home-theme .hero-aside { align-self: center; }
+.home-theme .homepage-logo { display: block; width: 220px; max-width: 100%; height: auto; aspect-ratio: 1; border: 0; border-radius: 24%; box-shadow: none; }
+.home-theme .projects { margin: 0; }
+.home-theme .projects-head { max-width: none; margin: 0 0 36px; }
+.home-theme .projects-title { font-family: inherit; font-size: clamp(30px, 3.8vw, 46px); font-weight: 650; letter-spacing: -0.045em; line-height: 1.12; max-width: none; margin: 0; }
+.home-theme .projects-title span { color: #86868b; }
+.home-theme .cards { max-width: none; margin: 0; gap: 24px; }
+.home-theme .card { padding: 36px; border: 0; border-radius: 28px; backdrop-filter: none; transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease; }
+.home-theme .card::before { display: none; }
+.home-theme .card:hover,
+.home-theme .card:focus-visible { background: #f0f0f3; transform: translateY(-3px); box-shadow: 0 12px 32px #1d1d1f08; }
+.home-theme .card-row { grid-template-columns: 80px minmax(0, 1fr); gap: 24px; align-items: start; }
+.home-theme .card-image { width: 80px; height: 80px; border-radius: 19px; background: #fff; box-shadow: 0 3px 10px #00000008; }
+.home-theme .card-tag { font-size: 14px; line-height: 1.4; font-weight: 400; text-transform: none; letter-spacing: 0; margin: 0 0 8px; }
+.home-theme .card h2 { font-family: inherit; font-size: 28px; font-weight: 600; line-height: 1.12; letter-spacing: -0.035em; }
+.home-theme .card-description { font-size: 16px; line-height: 1.6; max-width: none; margin: 14px 0 0; }
+.home-theme #open-source { margin-top: 80px; }
+.home-theme #open-source .cards { grid-template-columns: 1fr; }
+.home-theme #open-source .card-description { max-width: 680px; }
+.home-theme .site-footer { border-top: 1px solid var(--line); padding: 24px 0 32px; gap: 28px; }
+.home-theme .site-footer a { color: var(--muted); font-size: 14px; }
+.home-theme :focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
+@media (max-width: 900px) {
+  .home-theme .hero { grid-template-columns: minmax(0, 1fr) 160px; gap: 32px; padding: 72px 0 80px; }
+  .home-theme .homepage-logo { width: 160px; }
+  .home-theme .card { padding: 28px; }
+  .home-theme .card-row { grid-template-columns: 1fr; gap: 24px; }
+}
+@media (max-width: 600px) {
+  .home-theme .site-header, .home-theme main, .home-theme .site-footer { width: calc(100% - 40px); }
+  .home-theme .hero { display: flex; flex-direction: column-reverse; align-items: flex-start; gap: 28px; padding: 48px 0 64px; }
+  .home-theme .hero-aside { align-self: flex-start; }
+  .home-theme .homepage-logo { width: 88px; }
+  .home-theme .eyebrow { font-size: 17px; margin-bottom: 16px; }
+  .home-theme .lead { font-size: 18px; }
+  .home-theme .projects-head { margin-bottom: 28px; }
+  .home-theme .cards { grid-template-columns: 1fr; gap: 16px; }
+  .home-theme .card h2 { font-size: 26px; }
+  .home-theme #open-source { margin-top: 56px; }
+  .home-theme main { padding-bottom: 56px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-theme *, .home-theme *::before { animation: none !important; transition: none !important; }
+}

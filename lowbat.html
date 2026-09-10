@@ -8,18 +8,14 @@
       name="description"
       content="The missing 'all batteries at a glance' view for your smart home. See every Philips Hue and HomeKit accessory battery level, sorted lowest first. Local, private, no accounts."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Space+Grotesk:wght@500;700&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="page-bg"></div>
-    <header class="site-header">
-      <a class="brand" href="index.html">Developer</a>
+    <link rel="stylesheet" href="light-theme.css" />
+    <link rel="stylesheet" href="app-header.css" />
+      <meta name="theme-color" content="#ffffff" />
+</head>
+  <body class="site-light light-product">
+    <header class="site-header app-site-header">
+      <a class="brand app-brand" href="lowbat.html" aria-current="page"><img class="brand-icon" src="images/lowbat/LowBat_Icon.jpg" alt="" width="40" height="40" /><span>LowBat</span></a>
       <nav aria-label="Main">
         <a href="index.html">Back to Home</a>
         <a href="contact.html">Contact</a>
@@ -27,18 +23,20 @@
     </header>
 
     <main class="subpage sift-page">
-      <!-- Hero + Carousel row -->
-      <section class="sift-top">
-        <div class="sift-left">
-          <div class="sift-hero">
-            <div class="sift-hero-icon">
-              <img src="images/lowbat/LowBat_Icon.jpg" alt="LowBat app icon" />
-            </div>
+      <section class="sift-hero product-intro">
             <div class="sift-hero-copy">
               <p class="eyebrow">iOS Application</p>
               <div class="hero-title-row">
                 <h1>LowBat</h1>
-                <a
+
+              </div>
+              <p class="lead">
+                The missing "all batteries at a glance" view for your smart
+                home. Neither the Philips Hue app nor Apple Home shows you a
+                single sorted list of which accessories are about to die.
+                LowBat does exactly that, and nothing else.
+              </p>
+              <a
                   class="app-store-badge"
                   href="https://apps.apple.com/us/app/lowbat-homekit-battery-widget/id6762797312"
                   target="_blank"
@@ -49,15 +47,13 @@
                     alt="Download on the App Store"
                   />
                 </a>
-              </div>
-              <p class="lead">
-                The missing "all batteries at a glance" view for your smart
-                home. Neither the Philips Hue app nor Apple Home shows you a
-                single sorted list of which accessories are about to die.
-                LowBat does exactly that, and nothing else.
-              </p>
             </div>
-          </div>
+          </section>
+
+      <!-- Hero + Carousel row -->
+      <section class="sift-top">
+        <div class="sift-left">
+
           <div class="sift-tagline">
             <p class="tagline-highlight">
               All your smart home batteries. One sorted list.

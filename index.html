@@ -8,16 +8,12 @@
       name="description"
       content="Developer building applications and iOS games with AWS, Postgres, AI, Node.js, and iOS technologies."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Space+Grotesk:wght@500;700&amp;display=swap"
-      rel="stylesheet"
-    />
+    <meta name="theme-color" content="#ffffff" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="light-theme.css" />
+    <link rel="stylesheet" href="home.css" />
   </head>
-  <body>
-    <div class="page-bg"></div>
+  <body class="home-theme site-light">
     <header class="site-header">
       <a class="brand" href="index.html">Developer</a>
       <nav aria-label="Main">
@@ -30,7 +26,7 @@
       <section class="hero hero-with-profile">
         <div class="hero-copy">
           <p class="eyebrow">Applications + Games</p>
-          <h1>Engineering Meets Creativity</h1>
+          <h1>Engineering.<br /><span>With imagination.</span></h1>
           <p class="lead">
             I build cloud-powered backends and polished iOS apps - clean code,
             thoughtful design, and ideas turned into products people enjoy.
@@ -38,38 +34,28 @@
         </div>
         <div class="hero-aside">
           <img
-            class="profile-image"
-            src="images/Me%20-%20anim.png"
-            alt="Developer profile photo"
+            class="homepage-logo"
+            src="images/pixel-shift-logo.png"
+            alt="Daniel Szlaski — Pixel Shift logo"
+            width="240" height="240"
           />
-          <!-- <ul class="hero-stack" aria-label="Core stack">
-            <li>PostgreSQL</li>
-            <li>Node.js</li>
-            <li>AI Features</li>
-            <li>iOS</li>
-            <li>TypeScript</li>
-            <li>REST / GraphQL APIs</li>
-            <li>Microservices</li>
-            <li>Serverless (Lambda, API Gateway)</li>
-            <li>Docker</li>
-            <li>System Design</li>
-          </ul> -->
+
         </div>
       </section>
 
       <section id="projects" class="projects" aria-label="Projects">
         <div class="projects-head">
-          <p class="projects-kicker">iOS Applications</p>
+          <h2 class="projects-title">Apps. Games. <span>Made with care.</span></h2>
         </div>
 
         <div class="cards">
           <a class="card" href="pacelink-go.html">
             <div class="card-row">
               <div class="card-image">
-                <img src="images/pacelink-go/app-icon.png" alt="PaceLink Go app icon" width="1024" height="1024" />
+                <img loading="lazy" src="images/pacelink-go/app-icon-light.png" alt="PaceLink Go app icon" width="1024" height="1024" />
               </div>
               <div class="card-copy">
-                <p class="card-tag">Application iOS</p>
+                <p class="card-tag">iOS App</p>
                 <h2>PaceLink Go</h2>
                 <p class="card-description">
                   Keep your navigation. See your people. Live distance and time
@@ -79,13 +65,31 @@
             </div>
           </a>
 
+          <a class="card" href="glance-for-solis.html">
+            <div class="card-row">
+              <div class="card-image">
+                <img loading="lazy" src="images/glance-for-solis/Icon_white.jpg" alt="Glance for PV app icon" />
+              </div>
+              <div class="card-copy">
+                <p class="card-tag">iOS App</p>
+                <h2>Glance for PV</h2>
+                <p class="card-description">
+                  Live PV generation and battery state of charge widgets via
+                  SolisCloud or local Modbus TCP, with Siri, Shortcuts, and
+                  size-normalized Game Center leaderboards - works with Solis,
+                  Sofar, SolaX, Growatt, and GoodWe inverters.
+                </p>
+              </div>
+            </div>
+          </a>
+
           <a class="card" href="soldit.html">
             <div class="card-row">
               <div class="card-image">
-                <img src="images/soldit/AppIcon.png" alt="SoldIt! app icon" />
+                <img loading="lazy" src="images/soldit/AppIcon.png" alt="SoldIt! app icon" />
               </div>
               <div class="card-copy">
-                <p class="card-tag">Application iOS</p>
+                <p class="card-tag">iOS App</p>
                 <h2>SoldIt!</h2>
                 <p class="card-description">
                   Real-time push notifications for every App Store sale -
@@ -98,10 +102,10 @@
           <a class="card" href="singularity-burn.html">
             <div class="card-row">
               <div class="card-image">
-                <img src="images/singularity-burn/Icon.jpg" alt="Singularity Burn app icon" />
+                <img loading="lazy" src="images/singularity-burn/Icon.jpg" alt="Singularity Burn app icon" />
               </div>
               <div class="card-copy">
-                <p class="card-tag">Application iOS</p>
+                <p class="card-tag">iOS App</p>
                 <h2>Singularity Burn</h2>
                 <p class="card-description">
                   An artistic, minimalist experience - permanently sacrifice
@@ -115,10 +119,10 @@
           <a class="card" href="lowbat.html">
             <div class="card-row">
               <div class="card-image">
-                <img src="images/lowbat/LowBat_Icon.jpg" alt="LowBat app icon" />
+                <img loading="lazy" src="images/lowbat/LowBat_Icon.jpg" alt="LowBat app icon" />
               </div>
               <div class="card-copy">
-                <p class="card-tag">Application iOS</p>
+                <p class="card-tag">iOS App</p>
                 <h2>LowBat</h2>
                 <p class="card-description">
                   Smart home batteries at a glance - every Philips Hue and
@@ -128,31 +132,14 @@
             </div>
           </a>
 
-          <a class="card" href="glance-for-solis.html">
-            <div class="card-row">
-              <div class="card-image">
-                <img src="images/glance-for-solis/Icon_white.jpg" alt="Glance for PV app icon" />
-              </div>
-              <div class="card-copy">
-                <p class="card-tag">Application iOS</p>
-                <h2>Glance for PV</h2>
-                <p class="card-description">
-                  Live PV generation and battery state of charge widgets via
-                  SolisCloud or local Modbus TCP, with Siri, Shortcuts, and
-                  size-normalized Game Center leaderboards - works with Solis,
-                  Sofar, SolaX, Growatt, and GoodWe inverters.
-                </p>
-              </div>
-            </div>
-          </a>
 
           <a class="card" href="sift.html">
             <div class="card-row">
               <div class="card-image">
-                <img src="images/sift/sift.png" alt="Sift game preview" />
+                <img loading="lazy" src="images/sift/sift.png" alt="Sift game preview" />
               </div>
               <div class="card-copy">
-                <p class="card-tag">Game iOS</p>
+                <p class="card-tag">iOS Game</p>
                 <h2>Sift</h2>
                 <p class="card-description">
                   A new iOS game focused on fast thinking and precision.
@@ -164,10 +151,10 @@
           <a class="card" href="pixeo.html">
             <div class="card-row">
               <div class="card-image">
-                <img src="images/pixeo/AppIcon.png" alt="PIXEO game icon" />
+                <img loading="lazy" src="images/pixeo/AppIcon.png" alt="PIXEO game icon" />
               </div>
               <div class="card-copy">
-                <p class="card-tag">Game iOS</p>
+                <p class="card-tag">iOS Game</p>
                 <h2>Pixeo</h2>
                 <p class="card-description">
                   A retro pixel art guessing game - watch images sharpen from
@@ -180,13 +167,13 @@
           <a class="card" href="swipeos.html">
             <div class="card-row">
               <div class="card-image">
-                <img
+                <img loading="lazy"
                   src="images/swipeos/LunchIcon.jpg"
                   alt="SwipeOS game icon"
                 />
               </div>
               <div class="card-copy">
-                <p class="card-tag">Game iOS</p>
+                <p class="card-tag">iOS Game</p>
                 <h2>SwipeOS</h2>
                 <p class="card-description">
                   A dark-humour strategy card game where you play as the OS of a
@@ -199,13 +186,13 @@
           <a class="card" href="plusminus.html">
             <div class="card-row">
               <div class="card-image">
-                <img
+                <img loading="lazy"
                   src="images/plusminus/icon.png"
                   alt="PlusMinus game icon"
                 />
               </div>
               <div class="card-copy">
-                <p class="card-tag">Game iOS</p>
+                <p class="card-tag">iOS Game</p>
                 <h2>PlusMinus</h2>
                 <p class="card-description">
                   A math puzzle game where kids drag number tiles into equations
@@ -219,13 +206,13 @@
           <a class="card" href="thebox.html">
             <div class="card-row">
               <div class="card-image">
-                <img
+                <img loading="lazy"
                   src="images/thebox/AppIcon.jpg"
                   alt="The Box - Gravity Maze game icon"
                 />
               </div>
               <div class="card-copy">
-                <p class="card-tag">Game iOS</p>
+                <p class="card-tag">iOS Game</p>
                 <h2>The Box - Gravity Maze</h2>
                 <p class="card-description">
                   Tilt your iPhone, feel the gravity shift, and escape through
@@ -239,14 +226,14 @@
 
       <section id="open-source" class="projects" aria-label="Open Source">
         <div class="projects-head">
-          <p class="projects-kicker">Open Source Tools</p>
+          <h2 class="projects-title">Open source. <span>Built to share.</span></h2>
         </div>
 
         <div class="cards">
           <a class="card" href="aso-connect.html">
             <div class="card-row">
               <div class="card-image">
-                <img src="images/aso-connect/Icon.png" alt="ASO Connect icon" />
+                <img loading="lazy" src="images/aso-connect/Icon.png" alt="ASO Connect icon" />
               </div>
               <div class="card-copy">
                 <p class="card-tag">MCP Server</p>
