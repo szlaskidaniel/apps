@@ -20,7 +20,7 @@
 
   <main class="legal">
     <h1>LowBat - Privacy Policy</h1>
-    <p><strong>Last Updated: April 21, 2026</strong></p>
+    <p><strong>Last Updated: September 14, 2026</strong></p>
 
     <section>
       <p>
@@ -31,9 +31,9 @@
 
       <h2>1. Information We Collect</h2>
       <p>
-        <strong>LowBat does not collect, store, or transmit any personal information.</strong>
+        <strong>LowBat does not upload your accessory battery data to us.</strong>
         The App has no accounts, no sign-up, no analytics, no advertising, and no tracking of any kind.
-        Everything runs locally on your device and your local network.
+        Battery monitoring and alert processing run on your device and your local network. The Hue discovery fallback and App Store purchases described below use third-party services.
       </p>
 
       <h2>2. Philips Hue Bridge</h2>
@@ -42,41 +42,41 @@
         Bridge over your local Wi-Fi network using the official Hue local API. A Hue cloud account is
         not required. The bridge IP address and the local API username issued by your bridge are stored
         only on your device (in the iOS Keychain and local app storage) and are never transmitted to us
-        or to any third party.
+        or uploaded to a LowBat server.
       </p>
+
+      <p>LowBat first looks for your Hue Bridge locally. If local discovery fails, it may contact Philips Hue’s discovery service at discovery.meethue.com to find the bridge. That request reaches a Philips-operated service and exposes the network’s public IP address to it. Accessory battery readings are then requested directly from your bridge on the local network.</p>
 
       <h2>3. HomeKit Data</h2>
       <p>
         If you grant LowBat access to HomeKit, the App reads battery-level characteristics from your
-        HomeKit accessories using Apple's HomeKit framework. HomeKit data never leaves your iPhone.
+        HomeKit accessories using Apple's HomeKit framework. LowBat processes these readings on your device and does not upload them to a LowBat server.
         Apple's handling of HomeKit data is governed by
         <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple's Privacy Policy</a>.
       </p>
 
-      <h2>4. Notifications</h2>
+      <h2>4. Notifications and Live Activities</h2>
       <p>
         LowBat can send local notifications when an accessory drops below your chosen battery threshold.
         These notifications are generated and delivered entirely on your device. No push notification
-        server is involved, and no device tokens are transmitted.
+        server is involved, and no remote notification device tokens are transmitted by LowBat. Live Activities are also created and updated locally on your device, without a LowBat server. Updates depend on iOS scheduling and accessory availability.
       </p>
 
       <h2>5. Widgets</h2>
       <p>
-        Home Screen widgets read battery data from the same local sources (your Hue Bridge and/or
-        HomeKit) and render on your device. Widget data is not transmitted off-device.
+        Home Screen and Lock Screen widgets read the battery snapshot stored locally by the app and render on your device. Widget data is not transmitted off-device.
       </p>
 
       <h2>6. Third-Party Services</h2>
       <p>
         LowBat does not use any third-party analytics, advertising, or tracking SDKs. The App is built
-        entirely with native Apple frameworks and standard local networking for the Hue Bridge.
+        with native Apple frameworks and local networking for Hue battery readings. Hue bridge discovery may use the Philips service described above. Optional in-app purchases are handled by Apple through the App Store; LowBat does not receive your payment card details.
       </p>
 
       <h2>7. Data Sharing</h2>
       <p>
         We do not sell, share, or transfer your data to any third parties, because we do not receive
-        any of your data in the first place. All information processed by LowBat stays on your device
-        and your local network.
+        your accessory battery data in the first place. Battery data processed by LowBat stays on your device and local network. Third-party discovery and purchase services operate as described above.
       </p>
 
       <h2>8. Data Retention</h2>
