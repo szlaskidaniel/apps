@@ -284,26 +284,52 @@
           </div>
           <span class="badge badge-new">New</span>
           <h2>Siri, Shortcuts, and Spotlight</h2>
+          <!-- Keep these examples aligned with SolisWidget/SolisWidget/SolarShortcutsIntents.swift. -->
+          <p>On iPhone, say “Hey Siri”, then ask one of these questions with the app name:</p>
           <ul class="feature-list">
             <li>
-              <strong>Just ask:</strong> "Hey Siri, what's my PV generation?"
-              and hear your current output without unlocking your phone
+              <strong>Current power:</strong> “What's my PV generation in Glance for PV?”
+              or “What's my solar generation in Glance for PV?” Hear your output in watts or kilowatts.
             </li>
             <li>
-              <strong>Shortcuts actions</strong> for live PV power, battery
-              state of charge, and today's generation - drop them into any
-              shortcut you already use
+              <strong>Today's energy:</strong> “What's my solar generation today in Glance for PV?”
+              Hear the energy generated today in kilowatt hours.
             </li>
             <li>
-              <strong>Automations that react to the sun:</strong> start the
-              dishwasher when generation crosses a threshold, or get a
-              notification when the battery is full
+              <strong>Solar overview:</strong> “Check my solar in Glance for PV.”
+              Hear current power, battery level, and today's generation when available.
             </li>
             <li>
-              <strong>Spotlight integration:</strong> pull up Glance and its
-              actions straight from search
+              <strong>Battery level:</strong> “What's my battery level in Glance for PV?”
+              Hear your home battery's charge as a percentage.
             </li>
           </ul>
+          <details>
+            <summary>Use a shorter Siri phrase</summary>
+            <p>Built-in phrases include “Glance for PV”. To ask just “What's my PV generation?”
+              or “What's my solar generation?”, set up a personal shortcut:</p>
+            <ol>
+              <li>Open Apple's Shortcuts app and create a new shortcut.</li>
+              <li>Add Glance for PV's <strong>Get PV Power</strong> action.</li>
+              <li>Name it <strong>What's my PV generation</strong> or
+                <strong>What's my solar generation</strong>. Create a second shortcut if you want both names.</li>
+              <li>Say “Hey Siri”, followed by the shortcut's name.</li>
+            </ol>
+          </details>
+          <details>
+            <summary>Find actions in Spotlight or build a shortcut</summary>
+            <p>Swipe down on the Home Screen and type or dictate “solar generation”,
+              “PV power”, or “battery level”. Tap the matching Glance for PV action to run it.
+              Dictation enters your search; it does not automatically run the action.</p>
+            <p>In Shortcuts, look for <strong>Check Solar Status</strong>,
+              <strong>Today's Generation</strong>, <strong>Get Battery Level</strong>, and
+              <strong>Get PV Power</strong>. PV power returns a number in kilowatts;
+              battery level returns a percentage. Use these values in conditions inside
+              shortcuts or automations you configure.</p>
+          </details>
+          <p>Requires inverter setup and unlocked live updates. Commands are currently in English.
+            Answers use a recent reading when available and may use the last saved reading
+            if your inverter cannot be reached.</p>
         </div>
         <div class="sift-feature">
           <div class="feature-icon">

@@ -113,6 +113,9 @@
 .glance-page .feature-list { margin: 0; padding-left: 0; color: var(--paragraph); font-size: 16px; line-height: 1.6; }
 .glance-page .feature-list li { margin-top: 12px; font-size: inherit; color: inherit; }
 .glance-page .feature-list strong { color: var(--text); font-weight: 600; }
+.glance-page .sift-feature > .feature-list + details { margin-top: 24px; }
+.glance-page .sift-feature > details + details { margin-top: 16px; }
+.glance-page .sift-feature > details + p { margin-top: 20px; }
 .glance-page .glance-availability { margin: 0 auto 32px; max-width: 680px; color: var(--muted); font-size: 14px; line-height: 1.6; text-align: center; }
 .glance-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 @media (max-width: 600px) {
