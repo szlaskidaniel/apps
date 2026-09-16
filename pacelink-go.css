@@ -40,9 +40,7 @@
 .pacelink-google-badge { position: relative; height: 52px; }
 .pacelink-google-badge img { position: absolute; width: 115.5%; height: auto; top: 50%; left: 50%; transform: translate(-50%, -50%); }
 .pacelink-store-note { display: block; margin-top: 8px; color: var(--muted); font-size: 14px; line-height: 1.5; }
-.pacelink-product-art { margin: 24px auto 80px; width: min(900px, 100%); }
-.pacelink-product-art img { display: block; width: 100%; height: auto; }
-.pacelink-page .sift-top { grid-template-columns: 1.15fr 1fr; gap: 72px; align-items: center; padding: 64px; background: #f5f5f7; border-radius: 32px; }
+.pacelink-page .sift-top { margin-top: 80px; grid-template-columns: 1.15fr 1fr; gap: 72px; align-items: center; padding: 64px; background: #f5f5f7; border-radius: 32px; }
 .pacelink-page .sift-left { min-width: 0; }
 .pacelink-page .sift-tagline { padding: 0; gap: 24px; }
 .pacelink-page .sift-tagline .eyebrow { font-size: 17px; color: var(--muted); }
@@ -51,8 +49,8 @@
 .pacelink-page .setup-step { gap: 16px; font-size: 17px; line-height: 1.5; color: var(--text); }
 .pacelink-page .step-number { width: 32px; height: 32px; background: #e6ebed; color: var(--accent); font-size: 15px; }
 .pacelink-page .sift-tagline > p:last-child { font-size: 16px; line-height: 1.5; }
-/* Multiply lets the white artwork blend into the surrounding gray surface. */
-.pacelink-page .sift-carousel { min-width: 0; width: 100%; border: 0; border-radius: 0; background: transparent; mix-blend-mode: multiply; }
+/* Preserve the original colors of both dark and light screenshots. */
+.pacelink-page .sift-carousel { min-width: 0; width: 100%; border: 0; border-radius: 0; background: transparent; }
 .pacelink-page .sift-carousel-slide { padding: 0; }
 .pacelink-page .sift-carousel-slide img { width: 100%; max-height: none; border-radius: 0; box-shadow: none; }
 .pacelink-page .sift-carousel-btn { background: #f5f5f7ed; border: 0; color: var(--text); }
@@ -60,6 +58,14 @@
 .pacelink-page .sift-carousel-dots { padding: 8px; gap: 0; }
 .pacelink-page .sift-carousel-dot { width: 32px; height: 32px; background: radial-gradient(circle, #86868b 3px, transparent 4px); border: 0; }
 .pacelink-page .sift-carousel-dot.active { background: radial-gradient(circle, #1d1d1f 3px, transparent 4px); transform: none; }
+.pacelink-preview { display: grid; grid-template-columns: 1.15fr 1fr; align-items: center; gap: 72px; margin-top: 80px; padding: 64px; border-radius: 32px; background: #eff6f7; }
+.pacelink-preview-copy { min-width: 0; }
+.pacelink-preview .eyebrow { margin: 0 0 20px; font-size: 17px; color: var(--muted); }
+.pacelink-preview h2 { margin: 0 0 24px; font-size: clamp(36px, 4.5vw, 56px); line-height: 1.06; letter-spacing: -0.05em; }
+.pacelink-preview h2 span { color: var(--accent); }
+.pacelink-preview-copy > p:not(.eyebrow) { font-size: 18px; line-height: 1.6; }
+.pacelink-preview-copy .pacelink-preview-duration { margin-top: 24px; color: var(--muted); font-size: 14px; }
+.pacelink-preview-video { display: block; width: 100%; max-width: 320px; height: auto; aspect-ratio: 6 / 13; justify-self: center; border-radius: 20px; background: #081116; box-shadow: 0 20px 50px #143b4526; }
 .pacelink-details { padding: 110px 0 0; }
 .pacelink-page .section-title { margin: 0 0 44px; font-size: clamp(36px, 4.8vw, 60px); line-height: 1.06; letter-spacing: -0.05em; }
 .pacelink-page .section-title span { color: #86868b; }
@@ -77,6 +83,7 @@
 .pacelink-theme :focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 @media (max-width: 900px) {
   .pacelink-page .sift-top { gap: 32px; padding: 36px; }
+  .pacelink-preview { gap: 32px; padding: 36px; }
   .pacelink-page .sift-features { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 600px) {
@@ -88,9 +95,9 @@
   .pacelink-page > .sift-hero { padding-top: 48px; }
   .pacelink-page .sift-hero-copy > p:not(.eyebrow) { font-size: 18px; }
   .pacelink-store-actions { gap: 16px; }
-  .pacelink-product-art { margin: 24px auto 48px; }
-  .pacelink-page .sift-top { grid-template-columns: 1fr; padding: 28px; border-radius: 24px; gap: 36px; }
+  .pacelink-page .sift-top { margin-top: 48px; grid-template-columns: 1fr; padding: 28px; border-radius: 24px; gap: 36px; }
   .pacelink-page .sift-carousel { max-width: 350px; margin: 0 auto; }
+  .pacelink-preview { grid-template-columns: 1fr; gap: 28px; margin-top: 48px; padding: 28px; border-radius: 24px; }
   .pacelink-details { padding-top: 64px; }
   .pacelink-page .section-title { margin-bottom: 28px; }
   .pacelink-page .sift-features { grid-template-columns: 1fr; gap: 16px; }
