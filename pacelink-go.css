@@ -116,3 +116,15 @@
   .pacelink-theme .brand-icon { width: 32px; height: 32px; border-radius: 7px; }
   .pacelink-theme .site-header { flex-wrap: wrap; }
 }
+
+.pacelink-page .sift-hero-copy > p.pacelink-price-note,
+.pacelink-page .sift-cta p.pacelink-price-note {
+  margin: 32px auto 0;
+  max-width: 100%;
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.6;
+  text-align: center;
+}
+.pacelink-price-note strong { font-weight: 600; white-space: nowrap; }
+.pacelink-price-note span { display: inline-block; margin-top: 5px; color: var(--muted); font-size: 13px; }
