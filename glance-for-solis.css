@@ -37,7 +37,7 @@
 .glance-store-badge img { display: block; width: 156px; height: 52px; }
 .glance-store-badge:hover { opacity: 0.8; }
 .glance-store-note { display: block; margin-top: 8px; color: var(--muted); font-size: 14px; line-height: 1.5; }
-.glance-product-art { margin: 24px auto 80px; width: min(900px, 100%); }
+.glance-product-art { margin: 24px auto 80px; width: min(460px, 100%); }
 .glance-product-art img { display: block; width: 100%; height: auto; }
 .glance-page .sift-top { grid-template-columns: 1.15fr 1fr; gap: 72px; align-items: center; padding: 64px; background: #f5f5f7; border-radius: 32px; }
 .glance-page .sift-left { min-width: 0; }
