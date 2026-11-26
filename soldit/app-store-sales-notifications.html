@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How to get instant notifications for App Store sales | SoldIt!</title>
+    <meta name="description" content="Connect your live iOS app to SoldIt! and turn on iPhone push alerts for In-App Purchases and subscription renewals.">
+    <link rel="canonical" href="https://danielszlaski.com/soldit/app-store-sales-notifications.html">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../light-theme.css">
+    <link rel="stylesheet" href="../app-header.css">
+    <link rel="stylesheet" href="guides.css">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body class="site-light">
+    <header class="site-header app-site-header">
+      <a class="brand app-brand" href="../soldit.html"><img class="brand-icon" src="../images/soldit/AppIcon.png" alt="" width="40" height="40"><span>SoldIt!</span></a>
+      <nav aria-label="Main">
+        <a href="../soldit.html#guides">All guides</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+    </header>
+    <main class="legal">
+      <article>
+        <h1>How to get instant notifications for App Store sales</h1>
+        <p>A customer buys a lifetime upgrade in your app. To see that sale as an iPhone banner, you need two things in place. Apple needs a destination for the purchase event, and SoldIt! needs permission to show the alert on your phone.</p>
+        <h2>Connect your app to SoldIt!</h2>
+        <ol>
+          <li>Sign in with Apple in SoldIt! and tap <strong>Add Your First App</strong>. Enter the bundle ID of your live App Store app, confirm the app name, and tap <strong>Create</strong>.</li>
+          <li>In that app’s settings in SoldIt!, tap <strong>Copy URL</strong> under <strong>Webhook URL</strong>. Each app has its own address.</li>
+          <li>In App Store Connect, select the same app and open <strong>App Information</strong>. If the production server URL is empty, enter the SoldIt! URL, choose <strong>Version 2</strong>, and save. If a service already uses that field, keep its URL in place until you have confirmed how both services will receive events.</li>
+        </ol>
+        <h2>Choose a banner for each sale</h2>
+        <p>In SoldIt! settings, open <strong>Notifications</strong>. Switch off <strong>Live Activity</strong> to reveal <strong>Push Notifications</strong>, turn it on, and tap <strong>Save</strong>. Allow notifications when iOS asks. If you previously declined, open the iPhone’s notification settings for SoldIt! and enable banners.</p>
+        <h2>Check the next purchase</h2>
+        <p>After the next paid In-App Purchase or subscription renewal, open the app’s <strong>Activity</strong> in SoldIt!. If the event appears there but the phone stayed quiet, delivery from Apple worked. Check whether a Focus silenced the banner or SoldIt!’s <strong>Quiet Hours</strong> grouped it into a later digest.</p>
+        <p>If the feed is empty too, compare the saved production URL with the URL for that app in SoldIt! and check that the app is active.</p>
+      </article>
+      <aside class="related-guide" aria-label="Related guide">
+        <a href="ios-app-revenue-lock-screen.html">How to monitor iOS app revenue on your Lock Screen</a>
+      </aside>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How to receive Apple In-App Purchase notifications without an SDK | SoldIt!</title>
+    <meta name="description" content="Receive alerts for purchases, renewals, and refunds from your existing iOS app using Apple’s signed server notifications and a SoldIt! webhook.">
+    <link rel="canonical" href="https://danielszlaski.com/soldit/apple-in-app-purchase-notifications-without-sdk.html">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../light-theme.css">
+    <link rel="stylesheet" href="../app-header.css">
+    <link rel="stylesheet" href="guides.css">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body class="site-light">
+    <header class="site-header app-site-header">
+      <a class="brand app-brand" href="../soldit.html"><img class="brand-icon" src="../images/soldit/AppIcon.png" alt="" width="40" height="40"><span>SoldIt!</span></a>
+      <nav aria-label="Main">
+        <a href="../soldit.html#guides">All guides</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+    </header>
+    <main class="legal">
+      <article>
+        <h1>How to receive Apple In-App Purchase notifications without an SDK</h1>
+        <p>You can add developer alerts to an app that already sells through StoreKit without submitting another build. When a purchase or subscription changes, Apple sends a signed event from its servers to the HTTPS address you register. SoldIt! receives that event and alerts your iPhone.</p>
+        <h2>What you need from your existing app</h2>
+        <p>Have the live app’s bundle ID and access to its App Information page in App Store Connect. Your app continues to handle checkout and grant access to purchases. The notification setup connects a second destination for information about what happened after checkout.</p>
+        <h2>Set up the receiving end</h2>
+        <p>Add the bundle ID in SoldIt! and copy the webhook URL from that app’s settings. For an app with an unused production notification URL, register the address in App Store Connect and select Version 2. If your subscription backend already receives Apple’s events, changing that URL redirects its traffic. Confirm a supported delivery path before editing it.</p>
+        <h2>Recognize the events in your feed</h2>
+        <ul>
+          <li><strong>One-time purchase.</strong> A customer buys a consumable or a permanent unlock. Apple can send a <code>ONE_TIME_CHARGE</code> event.</li>
+          <li><strong>Subscription renewal.</strong> A <code>DID_RENEW</code> event tells you an existing subscription renewed, even when the customer hasn’t opened your app.</li>
+          <li><strong>Refund.</strong> A <code>REFUND</code> event means Apple granted a refund. A refund request alone leaves the sales total unchanged.</li>
+        </ul>
+        <p>Open the connected app in SoldIt! to check its activity after a transaction. Apple’s reference explains the event names and subtypes. <a href="https://developer.apple.com/documentation/appstoreservernotifications">App Store Server Notifications reference</a></p>
+      </article>
+      <aside class="related-guide" aria-label="Related guide">
+        <a href="configure-app-store-server-notifications-v2.html">How to configure App Store Server Notifications V2</a>
+      </aside>
+    </main>
+  </body>
+</html>

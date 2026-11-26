@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How to configure App Store Server Notifications V2 | SoldIt!</title>
+    <meta name="description" content="Set production and sandbox notification URLs in App Store Connect, select Version 2, and verify delivery with an Apple test notification.">
+    <link rel="canonical" href="https://danielszlaski.com/soldit/configure-app-store-server-notifications-v2.html">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../light-theme.css">
+    <link rel="stylesheet" href="../app-header.css">
+    <link rel="stylesheet" href="guides.css">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body class="site-light">
+    <header class="site-header app-site-header">
+      <a class="brand app-brand" href="../soldit.html"><img class="brand-icon" src="../images/soldit/AppIcon.png" alt="" width="40" height="40"><span>SoldIt!</span></a>
+      <nav aria-label="Main">
+        <a href="../soldit.html#guides">All guides</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+    </header>
+    <main class="legal">
+      <article>
+        <h1>How to configure App Store Server Notifications V2</h1>
+        <p>App Store Connect lets you choose where Apple sends signed purchase events for each app. You need an HTTPS endpoint that accepts Version 2 notifications and access as an Account Holder, Admin, App Manager, or Marketing user. For SoldIt!, copy the webhook URL from the settings for the app you want to monitor.</p>
+        <h2>Set the production destination</h2>
+        <ol>
+          <li>Open <strong>Apps</strong> in App Store Connect and select your app. In the sidebar under <strong>General</strong>, open <strong>App Information</strong>.</li>
+          <li>Find <strong>App Store Server Notifications</strong>. Check the current <strong>Production Server URL</strong>. Apple uses one destination per environment, so replacing an existing URL redirects events away from the previous receiver.</li>
+          <li>For an empty field, click <strong>Set Up URL</strong>, paste the complete HTTPS address, choose <strong>Version 2</strong>, and click <strong>Save</strong>. To update an existing destination after planning the change, use <strong>Edit</strong>.</li>
+        </ol>
+        <h2>Choose where sandbox events go</h2>
+        <p>For a separate test receiver, set the <strong>Sandbox Server URL</strong> and select Version 2 there as well. If you leave sandbox empty, Apple sends sandbox events to the production URL. Setting only a sandbox URL lets you test while production delivery is unconfigured. <a href="https://developer.apple.com/help/app-store-connect/configure-in-app-purchase-settings/enter-server-urls-for-app-store-server-notifications">Apple’s URL configuration guide</a></p>
+        <h2>Verify delivery before waiting for a sale</h2>
+        <p>With App Store Server API access, call <strong>Request a Test Notification</strong> for the environment you configured. Pass the returned <code>testNotificationToken</code> to <strong>Get Test Notification Status</strong> in the same environment and check the delivery result. If it fails, recheck the saved URL and the receiver’s HTTPS response.</p>
+        <p>A successful <code>TEST</code> confirms that the endpoint responded. To check the full sale-alert path, look for the next qualifying purchase in SoldIt! and on your iPhone. <a href="https://developer.apple.com/documentation/storekit/enabling-app-store-server-notifications">Apple’s server setup and testing instructions</a></p>
+      </article>
+      <aside class="related-guide" aria-label="Related guide">
+        <a href="apple-in-app-purchase-notifications-without-sdk.html">How to receive Apple In-App Purchase notifications without an SDK</a>
+      </aside>
+    </main>
+  </body>
+</html>
